@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 from tqdm import tqdm
+import time
 
 #
 # (rough) script to query all entries for the number of associated protein sequences
@@ -23,9 +24,9 @@ def get_protein_count(tax_id, max_retries=10):
                 if header.lower() == 'x-total-results':
                     return int(value)
             return 0
-        except RequestException as e:
+        except Exception as e:
             print(f"Retrying {tax_id} due to {e}")
-            sleep(2 * (i + 1))  # Wait before retrying
+            time.sleep(2 * (i + 1))  # Wait before retrying
     return 0  # Give up after max_retries
 
 # create a new column by running the method above with a progress bar
