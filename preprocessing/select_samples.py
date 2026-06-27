@@ -20,19 +20,18 @@ import pandas as pd
 # - within each bin group by phylum_id -
 # - select proportionally to the max sample count per bin from each phylum
 # - create a new dataframe
-#   - with all columns or just a selection?
 
 # temperature bin configuration list
-# tuple of low and high temperature value
+# tuple of low and high temperature value and bin name
 # low will be included, high will be excluded
 bin_config = [
-    (-10, 15),    # psychrophiles
-    (15, 25),     # mesophiles bin 1
-    (25, 35),     # mesophiles bin 2
-    (35, 45),     # mesophiles bin 3
-    (45, 60),     # mesophiles bin 4
-    (60, 80),     # thermophiles
-    (80, 120)     # hyperthermophiles
+    (-10, 15, 'psychrophiles'),
+    (15, 25, 'mesophiles bin 1'),
+    (25, 35, 'mesophiles bin 2'),
+    (35, 45, 'mesophiels bin 3'),
+    (45, 60, 'mesophiles bin 4'),
+    (60, 80, 'thermophiles'),
+    (80, 120, 'hyperthermophiles')
 ]
 
 # data file to read
@@ -60,8 +59,49 @@ rem_count_no_phylum = int(mask.sum())
 df = df.drop(index=df.index[mask])
 print(f'Removed {rem_count_no_phylum} entries without phylum ID.')
 
-print('The first five rows of the dataset:')
-print(df.head())
+# print('The first five rows of the dataset:')
+# print(df.head())
+
+# sample count set from the number of psychrophiles
+s_count = len(df[(df['Temp_Duplicate_Average'] >= bin_config[0][0]) & (df['Temp_Duplicate_Average'] < bin_config[0][1])])
+
+# all psychrophiles
+# print(df[(df['Temp_Duplicate_Average'] >= bin_config[0][0]) & (df['Temp_Duplicate_Average'] < bin_config[0][1])])
+
+print(f'Sample count set to {s_count}.')
+
+# list of selected organisms
+selected_parts = []
 
 for b in bin_config:
-    print(f'Working on bin {b}.')
+    t_low, t_high, bin_name = b
+    print(f'Working on bin {bin_name} ({t_low}°C <= X < {t_high}°C).')
+
+    # select the given temperature bin
+    df_bin = df[(df['Temp_Duplicate_Average'] >= t_low) & (df['Temp_Duplicate_Average'] < t_high)]
+
+    if df_bin.empty: continue
+
+    # group by phylum and proportionally to the sample count select random samples, also add the bin name
+    selected = (df_bin
+        .groupby("phylum", group_keys=False)
+        .apply(lambda x: x.sample(
+            min(
+                len(x),
+                max(1, round(s_count * len(x) / len(df_bin)))
+            ),
+            random_state=1202)
+        )
+        .head(s_count)
+        .assign(bin_name=bin_name)
+        )
+    
+    selected_parts.append(selected)
+
+# combine the selection of all bins
+df_selected = pd.concat(selected_parts, ignore_index=True)
+
+# write to a new CSV file
+df_selected.to_csv(data_out_file, index=False)
+
+print(f'Stratified selection saved to {data_out_file}.')
