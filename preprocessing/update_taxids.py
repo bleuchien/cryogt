@@ -70,7 +70,7 @@ asm = load_assembly_summary(summary_path)
 
 # create a list of all IDs in dataset
 taxids_after_taxonomy_update = set(df_updated[taxid_col].astype(int).unique())
-# create a list of all IDs in the assemlby list
+# create a list of all IDs from the dataset in the assembly list
 taxids_with_refseq = refseq_available_taxids(asm, taxids_after_taxonomy_update)
 
 # check if each dataset ID is available in the assembly
