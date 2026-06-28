@@ -1,4 +1,5 @@
 import pandas as pd
+from pathlib import Path
 
 #
 # this program analyzes the OGT sample file with protein counts, selects samples and saves them to a new file for further processsing
@@ -35,10 +36,10 @@ bin_config = [
 ]
 
 # data file to read
-data_in_file = '../data/growth_temp_dataset_manual_cleanup_final_with_counts.csv'
+data_in_file = Path('../data/growth_temp_dataset_manual_cleanup_final_with_counts_updated.csv')
 
 # data file to write
-data_out_file = '../data/growth_temp_dataset_selection.csv'
+data_out_file = Path('../data/growth_temp_dataset_selection.csv')
 
 # protein count threshold
 prot_threshold = 20
