@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 from tqdm import tqdm
 import time
+from pathlib import Path
 
 #
 # (rough) script to query all entries for the number of associated protein sequences
@@ -11,7 +12,7 @@ import time
 tqdm.pandas()
 
 # read datasource
-df = pd.read_csv('../data/growth_temp_dataset_manual_cleanup_final.csv')
+df = pd.read_csv(Path('../data/growth_temp_dataset_manual_cleanup_final.csv'))
 #df = pd.read_csv('test.csv')
 
 # query uniprot for the number of proteins
@@ -33,4 +34,4 @@ def get_protein_count(tax_id, max_retries=10):
 df['protein_count'] = df['ncbiTaxID_new'].progress_apply(get_protein_count)
 
 # save output
-df.to_csv('../data/growth_temp_dataset_manual_cleanup_final_with_counts.csv', index=False)
+df.to_csv(Path('../data/growth_temp_dataset_manual_cleanup_final_with_counts.csv'), index=False)
