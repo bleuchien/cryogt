@@ -219,3 +219,6 @@ __marimo__/
 
 # Mac Stuff
 .DS_Store
+
+# ignore everything that ends with a .bak
+*.bak
