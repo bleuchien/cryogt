@@ -222,3 +222,6 @@ __marimo__/
 
 # ignore everything that ends with a .bak
 *.bak
+
+# ignore the extracted dump files
+*.dmp
