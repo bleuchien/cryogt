@@ -17,7 +17,7 @@ data_dir = Path('../data')
 proteomes_path = data_dir / 'proteomes'
 
 # the results of the selection
-proteomes_selected = data_dir / 'proteomes_selected'
+proteomes_selected = data_dir / 'proteomes_sampled'
 
 # create directories if they don't exist
 proteomes_selected.mkdir(parents=True, exist_ok=True)
@@ -56,8 +56,7 @@ def process_proteome(fasta_file, rng, min_length=50, max_length=1022, n_samples=
 
 
 def write_samples(records, output_path):
-    with gzip.open(output_path, 'wt') as handle:
-        SeqIO.write(records, handle, 'fasta')
+    SeqIO.write(records, output_path, 'fasta')
 
 count = 0
 skipped = 0
@@ -77,7 +76,7 @@ for file in sorted(proteomes_path.glob('*.faa.gz')):
         skipped += 1
         continue
 
-    write_samples(selection, proteomes_selected / file.name)
+    write_samples(selection, proteomes_selected / file.stem)
     count += 1
 
 print(f'{count} files sampled, {skipped} skipped, {failed} failed.')
