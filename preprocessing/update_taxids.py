@@ -21,7 +21,7 @@ from ncbi_utils import (
 data_dir = Path('../data')
 
 # in and output file names
-data_in_file = data_dir / 'growth_temp_dataset_manual_cleanup_final_with_counts.csv'
+data_in_file = data_dir / 'growth_temp_dataset_manual_cleanup_final.csv'
 data_out_file = data_in_file.with_name(data_in_file.stem + '_updated.csv')
 dropped_refseq_missing_out = data_in_file.with_name(data_in_file.stem + '_refseq_missing_dropped.csv')
 

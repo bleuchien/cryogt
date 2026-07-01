@@ -1,0 +1,2 @@
+data/assembly_summary_refseq.txt filter=lfs diff=lfs merge=lfs -text
+data/taxdump.tar.gz filter=lfs diff=lfs merge=lfs -text
