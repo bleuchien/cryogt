@@ -1,5 +1,10 @@
 import pandas as pd
 from pathlib import Path
+from ncbi_utils import (
+    ensure_refseq_assembly_summary,
+    load_assembly_summary,
+    pick_best_assemblies
+)
 
 #
 # this program analyzes the OGT sample file with protein counts, selects samples and saves them to a new file for further processsing
@@ -35,30 +40,39 @@ bin_config = [
     (80, 120, 'hyperthermophiles')
 ]
 
+# main data directory
+data_dir = Path('../data')
+
 # data file to read
-data_in_file = Path('../data/growth_temp_dataset_manual_cleanup_final_with_counts_updated.csv')
+data_in_file = data_dir / 'growth_temp_dataset_manual_cleanup_final_updated.csv'
 
 # data file to write
-data_out_file = Path('../data/growth_temp_dataset_selection.csv')
-
-# protein count threshold
-prot_threshold = 20
+data_out_file = data_dir / 'growth_temp_dataset_selection.csv'
 
 # read data file
 df = pd.read_csv(data_in_file)
 print(f'{len(df)} entried read from {data_in_file}.')
-
-# remove entries with 0 protein count
-mask = df['protein_count'] < prot_threshold
-rem_count_low_prot = int(mask.sum())
-df = df.drop(index=df.index[mask])
-print(f'Removed {rem_count_low_prot} entries with protein count smaller than {prot_threshold}.')
 
 # remove entries with no phylum_id
 mask = df['phylum_id'].isna() | df['phylum_id'].astype(str).str.strip().eq('')
 rem_count_no_phylum = int(mask.sum())
 df = df.drop(index=df.index[mask])
 print(f'Removed {rem_count_no_phylum} entries without phylum ID.')
+
+print('Cross-referencing dataset taxonomy IDs with RefSeq Assembly Summary.')
+taxids = set(df['ncbiTaxID_new'].astype(int).unique())
+
+summary_path = ensure_refseq_assembly_summary(data_dir)
+asm = load_assembly_summary(summary_path)
+best_assemblies = pick_best_assemblies(asm, taxids)
+
+valid_taxids = set(best_assemblies['input_taxid'].unique())
+missing_count = len(taxids) - len(valid_taxids)
+
+# filter dataset to only include organisms with downloadable RefSeq genomes
+df = df[df['ncbiTaxID_new'].isin(valid_taxids)].copy()
+print(f'Kept {len(valid_taxids)} organisms with valid RefSeq assemblies.')
+print(f'Dropped {missing_count} organisms missing from RefSeq.')
 
 # print('The first five rows of the dataset:')
 # print(df.head())
