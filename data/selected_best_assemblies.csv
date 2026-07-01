@@ -1,0 +1,540 @@
+input_taxid,taxid,species_taxid,organism_name,assembly_accession,refseq_category,assembly_level,seq_rel_date,ftp_path
+52,52,52,Chondromyces crocatus,GCF_001189295.1,reference genome,Complete Genome,2015-07-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/189/295/GCF_001189295.1_ASM118929v1/
+128,575540,128,Isosphaera pallida ATCC 43644,GCF_000186345.1,reference genome,Complete Genome,2011-01-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/186/345/GCF_000186345.1_ASM18634v1/
+154,869211,154,Winmispira thermophila DSM 6578,GCF_000184345.1,reference genome,Complete Genome,2011-07-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/184/345/GCF_000184345.1_ASM18434v2/
+253,253,253,Chryseobacterium indologenes,GCF_900460995.1,reference genome,Contig,2018-08-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/460/995/GCF_900460995.1_42552_F01/
+271,498848,271,Thermus aquaticus Y51MC23,GCF_001399775.1,reference genome,Complete Genome,2015-10-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/399/775/GCF_001399775.1_ASM139977v1/
+276,276,276,Thermus filiformis,GCF_000771745.2,reference genome,Contig,2015-02-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/771/745/GCF_000771745.2_THFILIv2/
+645,645,645,Aeromonas salmonicida,GCF_028355655.1,reference genome,Complete Genome,2023-01-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/028/355/655/GCF_028355655.1_ASM2835565v1/
+785,257363,785,Rickettsia typhi str. Wilmington,GCF_000008045.1,reference genome,Complete Genome,2004-08-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/008/045/GCF_000008045.1_ASM804v1/
+818,818,818,Bacteroides thetaiotaomicron,GCF_014131755.1,reference genome,Complete Genome,2020-08-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/131/755/GCF_014131755.1_ASM1413175v1/
+833,59374,833,Fibrobacter succinogenes subsp. succinogenes S85,GCF_000146505.1,reference genome,Complete Genome,2010-08-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146/505/GCF_000146505.1_ASM14650v1/
+940,608538,940,Hydrogenobacter thermophilus TK-6,GCF_000164905.1,reference genome,Complete Genome,2010-10-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/164/905/GCF_000164905.1_ASM16490v1/
+983,983,983,Flavobacterium flevense,GCF_900142775.1,reference genome,Scaffold,2016-12-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/142/775/GCF_900142775.1_IMG-taxon_2700988729_annotated_assembly/
+1018,521097,1018,Capnocytophaga ochracea DSM 7271,GCF_000023285.1,reference genome,Complete Genome,2009-08-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/023/285/GCF_000023285.1_ASM2328v1/
+1069,648757,1069,Rhodomicrobium vannielii ATCC 17100,GCF_016461745.1,reference genome,Contig,2021-01-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/016/461/745/GCF_016461745.1_ASM1646174v1/
+1092,290315,1092,Chlorobium limicola DSM 245,GCF_000020465.1,reference genome,Complete Genome,2008-06-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/020/465/GCF_000020465.1_ASM2046v1/
+1097,194439,1097,Chlorobaculum tepidum TLS,GCF_000006985.1,reference genome,Complete Genome,2002-07-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/006/985/GCF_000006985.1_ASM698v1/
+1426,1426,1426,Parageobacillus thermoglucosidasius,GCF_001700985.1,reference genome,Complete Genome,2016-08-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/700/985/GCF_001700985.1_ASM170098v1/
+1457,1457,1457,Paenalicyclobacillus cycloheptanicus,GCF_028751525.1,reference genome,Complete Genome,2023-02-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/028/751/525/GCF_028751525.1_ASM2875152v1/
+1462,1462,1462,Geobacillus kaustophilus,GCF_055385665.1,na,Complete Genome,2024-12-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/385/665/GCF_055385665.1_ASM5538566v1/
+1525,1525,1525,Neomoorella thermoacetica,GCF_001267435.1,reference genome,Complete Genome,2015-08-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/267/435/GCF_001267435.1_ASM126743v1/
+1529,1529,1529,Clostridium cadaveris,GCF_020911725.1,reference genome,Complete Genome,2021-11-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/020/911/725/GCF_020911725.1_ASM2091172v1/
+1536,1536,1536,Hathewaya limosa,GCF_030815255.1,reference genome,Contig,2023-08-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/030/815/255/GCF_030815255.1_ASM3081525v1/
+1703,1703,1703,Brevibacterium linens,GCF_003999335.1,reference genome,Complete Genome,2019-01-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/999/335/GCF_003999335.1_ASM399933v1/
+2021,269800,2021,Thermobifida fusca YX,GCF_000012405.1,reference genome,Complete Genome,2005-08-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/012/405/GCF_000012405.1_ASM1240v1/
+2036,2036,2036,Curtobacterium citreum,GCF_030178475.1,reference genome,Complete Genome,2023-06-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/030/178/475/GCF_030178475.1_ASM3017847v1/
+2051,548479,2051,Mobiluncus curtisii ATCC 43063,GCF_000196535.1,reference genome,Complete Genome,2010-06-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/196/535/GCF_000196535.1_ASM19653v1/
+2234,2234,2234,Archaeoglobus fulgidus,GCF_900069765.1,na,Contig,2016-09-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/069/765/GCF_900069765.1_ASM90006976v1/
+2257,348780,2257,Natronomonas pharaonis DSM 2160,GCF_000026045.1,reference genome,Complete Genome,2005-09-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/026/045/GCF_000026045.1_ASM2604v1/
+2262,2262,2262,Pyrococcus woesei,GCF_050496105.1,reference genome,Complete Genome,2025-05-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/496/105/GCF_050496105.1_ASM5049610v1/
+2264,1293037,2264,Thermococcus celer Vu 13 = JCM 8558,GCF_002214365.1,reference genome,Complete Genome,2017-07-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/365/GCF_002214365.1_ASM221436v1/
+2269,368408,2269,Thermofilum pendens Hrk 5,GCF_000015225.1,reference genome,Complete Genome,2006-12-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/015/225/GCF_000015225.1_ASM1522v1/
+2275,675631,2275,Desulfurococcus mucosus DSM 2161,GCF_001006085.1,na,Scaffold,2015-05-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/006/085/GCF_001006085.1_ASM100608v1/
+2278,2278,2278,Pyrobaculum organotrophum,GCF_055384425.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/384/425/GCF_055384425.1_ASM5538442v1/
+2286,523848,2286,Saccharolobus shibatae B12,GCF_019175345.1,reference genome,Complete Genome,2021-07-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/019/175/345/GCF_019175345.1_ASM1917534v1/
+2287,2287,2287,Saccharolobus solfataricus,GCF_003852155.1,reference genome,Complete Genome,2018-11-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/852/155/GCF_003852155.1_ASM385215v1/
+2698,2698,2698,Heliobacterium chlorum,GCF_014502795.1,reference genome,Contig,2020-09-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/502/795/GCF_014502795.1_ASM1450279v1/
+2746,768066,2746,Halomonas elongata DSM 2581,GCF_000196875.2,reference genome,Complete Genome,2017-01-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/196/875/GCF_000196875.2_ASM19687v2/
+5763,5763,5763,Naegleria fowleri,GCF_008403515.1,reference genome,Scaffold,2019-09-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/403/515/GCF_008403515.1_ASM840351v1/
+12915,12915,12915,Acidianus infernus,GCF_009729545.1,reference genome,Contig,2019-12-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/729/545/GCF_009729545.1_ASM972954v1/
+28034,929705,28034,Sulfobacillus thermosulfidooxidans DSM 9293,GCF_900176145.1,reference genome,Scaffold,2017-04-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/176/145/GCF_900176145.1_IMG-taxon_2506210005_annotated_assembly/
+28229,167879,28229,Colwellia psychrerythraea 34H,GCF_000012325.1,reference genome,Complete Genome,2005-07-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/012/325/GCF_000012325.1_ASM1232v1/
+29313,29313,29313,Mycobacterium shimoidei,GCF_900417275.1,reference genome,Scaffold,2018-07-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/417/275/GCF_900417275.1_PRJEB26812/
+29344,29344,29344,Caloramator fervidus,GCF_900108045.1,reference genome,Contig,2016-10-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/108/045/GCF_900108045.1_IMG-taxon_2599185232_annotated_assembly/
+29350,1291048,29350,Thermoanaerobacter thermocopriae JCM 7501,GCF_000518565.1,reference genome,Scaffold,2014-01-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/518/565/GCF_000518565.1_ASM51856v1/
+29372,29372,29372,Clostridium thermobutyricum,GCF_000371465.1,reference genome,Scaffold,2013-04-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/371/465/GCF_000371465.1_Clos_coli_209318_V1/
+29376,29376,29376,Desulfofundulus thermobenzoicus,GCF_009428905.1,reference genome,Contig,2019-10-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/428/905/GCF_009428905.1_ASM942890v1/
+29555,1117644,29555,Mycoplasmopsis canis PG 14,GCF_001553195.1,reference genome,Complete Genome,2016-02-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/553/195/GCF_001553195.1_ASM155319v1/
+32025,235279,32025,Helicobacter hepaticus ATCC 51449,GCF_000007905.1,reference genome,Complete Genome,2003-06-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/007/905/GCF_000007905.1_ASM790v1/
+33070,1917166,33070,Parathermosynechococcus lividus PCC 6715,GCF_002754935.1,reference genome,Complete Genome,2017-11-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/754/935/GCF_002754935.1_ASM275493v1/
+33938,33938,33938,Geobacillus thermocatenulatus,GCF_002217655.1,reference genome,Contig,2017-07-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/217/655/GCF_002217655.1_ASM221765v1/
+33941,33941,33941,Geobacillus thermoleovorans,GCF_001610955.1,reference genome,Complete Genome,2016-04-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/610/955/GCF_001610955.1_ASM161095v1/
+34090,324925,34090,Pelodictyon phaeoclathratiforme BU-1,GCF_000020645.1,reference genome,Complete Genome,2008-07-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/020/645/GCF_000020645.1_ASM2064v1/
+35616,35616,35616,Pyrodictium brockii,GCF_055379715.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/379/715/GCF_055379715.1_ASM5537971v1/
+35743,35743,35743,Halorubrum sodomense,GCF_900111935.1,reference genome,Scaffold,2016-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/111/935/GCF_900111935.1_IMG-taxon_2617270732_annotated_assembly/
+35746,35746,35746,Haloferax gibbonsii,GCF_001190965.1,reference genome,Complete Genome,2015-08-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/190/965/GCF_001190965.1_ASM119096v1/
+35786,309798,35786,Coprothermobacter proteolyticus DSM 5265,GCF_000020945.1,reference genome,Complete Genome,2008-09-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/020/945/GCF_000020945.1_ASM2094v1/
+35787,35787,35787,Limosilactobacillus pontis,GCF_009428965.1,reference genome,Complete Genome,2019-10-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/428/965/GCF_009428965.1_ASM942896v1/
+37448,37448,37448,Polaromonas vacuolata,GCF_012584515.1,reference genome,Complete Genome,2020-04-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/012/584/515/GCF_012584515.1_ASM1258451v1/
+41675,41675,41675,Stygiolobus azoricus,GCF_009729035.1,reference genome,Complete Genome,2019-12-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/729/035/GCF_009729035.1_ASM972903v1/
+43080,43080,43080,Saccharolobus islandicus,GCF_050870885.1,na,Complete Genome,2025-06-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/870/885/GCF_050870885.1_Y08_82_36/
+43661,43661,43661,Shewanella benthica,GCF_015069875.1,reference genome,Scaffold,2020-10-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/015/069/875/GCF_015069875.1_ASM1506987v1/
+43687,43687,43687,Metallosphaera sedula,GCF_005222525.1,reference genome,Complete Genome,2019-05-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/005/222/525/GCF_005222525.1_ASM522252v1/
+45157,280699,45157,Cyanidioschyzon merolae strain 10D,GCF_000091205.1,reference genome,Complete Genome,2007-07-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/091/205/GCF_000091205.1_ASM9120v1/
+45610,45610,45610,Psychrobacter urativorans,GCF_904846695.1,reference genome,Contig,2020-11-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/904/846/695/GCF_904846695.1_ASM90484669v1/
+46540,46540,46540,Thermococcus fumicolans,GCF_055386755.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/386/755/GCF_055386755.1_ASM5538675v1/
+49338,272564,49338,Desulfitobacterium hafniense DCB-2,GCF_000021925.1,reference genome,Complete Genome,2009-01-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/021/925/GCF_000021925.1_ASM2192v1/
+49899,49899,49899,Thermococcus profundus,GCF_002214585.1,reference genome,Complete Genome,2017-07-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/585/GCF_002214585.1_ASM221458v1/
+52023,926560,52023,Calidithermus chliarophilus DSM 9957,GCF_000430045.1,reference genome,Scaffold,2013-07-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/430/045/GCF_000430045.1_ASM43004v1/
+52697,52697,52697,Actinoplanes regularis,GCF_900188005.1,reference genome,Scaffold,2017-07-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/188/005/GCF_900188005.1_IMG-taxon_2724679777_annotated_assembly/
+52704,52704,52704,Clostridium vincentii,GCF_002995745.1,reference genome,Contig,2018-03-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/995/745/GCF_002995745.1_ASM299574v1/
+53426,53426,53426,Sulfophobococcus zilligii,GCF_055398255.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/398/255/GCF_055398255.1_ASM5539825v1/
+53442,53442,53442,Eubacterium callanderi,GCF_000152245.2,reference genome,Complete Genome,2011-11-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/152/245/GCF_000152245.2_ASM15224v2/
+53946,391616,53946,Octadecabacter arcticus 238,GCF_000155735.2,reference genome,Complete Genome,2013-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/155/735/GCF_000155735.2_ASM15573v2/
+54076,1151117,54076,Thermococcus zilligii AN1,GCF_000258515.1,reference genome,Contig,2012-04-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/258/515/GCF_000258515.1_TheZil1.0/
+54254,633148,54254,Thermosphaera aggregans DSM 11486,GCF_000092185.1,reference genome,Complete Genome,2010-05-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/092/185/GCF_000092185.1_ASM9218v1/
+54262,54262,54262,Thermococcus chitonophagus,GCF_002214605.1,reference genome,Complete Genome,2017-07-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/605/GCF_002214605.1_ASM221460v1/
+54265,1119529,54265,Carboxydothermus ferrireducens DSM 11255,GCF_000427565.1,reference genome,Scaffold,2013-07-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/427/565/GCF_000427565.1_ASM42756v1/
+55505,1313301,55505,Thermonema rossianum DSM 10300,GCF_000426825.1,reference genome,Scaffold,2014-06-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/426/825/GCF_000426825.1_ASM42682v1/
+55802,55802,55802,Thermococcus barophilus,GCF_001433455.1,na,Complete Genome,2015-11-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/433/455/GCF_001433455.1_ASM143345v1/
+56055,56055,56055,Allobogoriella caseilytica,GCF_003752405.1,reference genome,Contig,2018-11-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/752/405/GCF_003752405.1_ASM375240v1/
+56636,56636,56636,Aeropyrum pernix,GCF_004323575.1,na,Scaffold,2019-01-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/323/575/GCF_004323575.1_ASM432357v1/
+56810,56810,56810,Psychrobacter glacincola,GCF_904846215.1,reference genome,Contig,2020-11-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/904/846/215/GCF_904846215.1_ASM90484621v1/
+56813,56813,56813,Shewanella gelidimarina,GCF_023283945.1,reference genome,Contig,2022-05-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/023/283/945/GCF_023283945.1_ASM2328394v1/
+57029,313595,57029,Psychroflexus torquis ATCC 700755,GCF_000153485.2,reference genome,Complete Genome,2012-10-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/153/485/GCF_000153485.2_ASM15348v2/
+58137,1121431,58137,Desulfallas thermosapovorans DSM 6562,GCF_008124625.1,reference genome,Contig,2019-08-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/124/625/GCF_008124625.1_ASM812462v1/
+59277,59277,59277,Methanobacterium subterraneum,GCF_002813695.1,reference genome,Complete Genome,2017-12-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/813/695/GCF_002813695.1_ASM281369v1/
+59602,59602,59602,Gelidibacter gilvus,GCF_004115975.1,reference genome,Contig,2019-01-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/115/975/GCF_004115975.1_ASM411597v1/
+59893,1087481,59893,Paenibacillus peoriae KCTC 3763,GCF_000236805.1,reference genome,Scaffold,2011-12-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/236/805/GCF_000236805.1_PPe03/
+60217,637905,60217,Shewanella violacea DSS12,GCF_000091325.1,reference genome,Complete Genome,2010-04-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/091/325/GCF_000091325.1_ASM9132v1/
+67573,67573,67573,Psychromonas antarctica,GCF_022267535.1,reference genome,Contig,2022-02-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/022/267/535/GCF_022267535.1_ASM2226753v1/
+69014,69014,311400,Thermococcus kodakarensis KOD1,GCF_000009965.1,reference genome,Complete Genome,2005-01-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/009/965/GCF_000009965.1_ASM996v1/
+70864,398579,70864,Shewanella pealeana ATCC 700345,GCF_000018285.1,reference genome,Complete Genome,2007-10-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/018/285/GCF_000018285.1_ASM1828v1/
+71997,71997,71997,Thermococcus gorgonarius,GCF_002214385.1,reference genome,Complete Genome,2017-07-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/385/GCF_002214385.1_ASM221438v1/
+71998,71998,71998,Thermococcus pacificus,GCF_002214485.1,reference genome,Complete Genome,2017-07-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/485/GCF_002214485.1_ASM221448v1/
+72144,72144,72144,Remersonia thermophila,GCF_042764415.1,reference genome,Complete Genome,2024-10-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/764/415/GCF_042764415.1_Remth1/
+72803,72803,72803,Thermococcus siculi,GCF_002214505.1,reference genome,Complete Genome,2017-07-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/505/GCF_002214505.1_ASM221450v1/
+74109,314280,74109,Photobacterium profundum 3TCK,GCF_000153425.1,reference genome,Scaffold,2006-05-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/153/425/GCF_000153425.1_ASM15342v1/
+74348,74348,74348,Sulfitobacter brevis,GCF_900112755.1,reference genome,Contig,2016-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/112/755/GCF_900112755.1_IMG-taxon_2619619004_annotated_assembly/
+74700,74700,74700,Entomoplasma freundtii,GCF_002804205.1,reference genome,Complete Genome,2017-12-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/804/205/GCF_002804205.1_ASM280420v1/
+75906,75906,75906,Thermocrinis ruber,GCF_000512735.1,reference genome,Complete Genome,2014-01-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/512/735/GCF_000512735.1_ASM51273v1/
+79601,1293036,79601,Metallosphaera hakonensis JCM 8857 = DSM 7519,GCF_003201675.2,reference genome,Complete Genome,2020-03-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/201/675/GCF_003201675.2_ASM320167v2/
+79929,79929,145263,Methanothermobacter marburgensis str. Marburg,GCF_000145295.1,reference genome,Complete Genome,2010-08-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/145/295/GCF_000145295.1_ASM14529v1/
+81459,81459,81459,Mesoplasma melaleucae,GCF_002804105.1,reference genome,Complete Genome,2017-12-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/804/105/GCF_002804105.1_ASM280410v1/
+81464,1120992,81464,Anaeromusa acidaminophila DSM 3853,GCF_000374545.1,reference genome,Scaffold,2013-04-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/374/545/GCF_000374545.1_ASM37454v1/
+81479,81479,81479,Rhodoferax antarcticus,GCF_001955735.1,reference genome,Complete Genome,2017-01-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/955/735/GCF_001955735.1_ASM195573v1/
+83262,83262,83262,Mycobacteroides immunogenum,GCF_001605725.1,reference genome,Complete Genome,2016-03-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/605/725/GCF_001605725.1_ASM160572v1/
+83552,765952,83552,Parachlamydia acanthamoebae UV-7,GCF_000253035.1,reference genome,Complete Genome,2011-06-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/253/035/GCF_000253035.1_ASM25303v1/
+83868,588319,83868,Palaeococcus ferrophilus DSM 13482,GCF_000966265.1,reference genome,Contig,2015-03-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/966/265/GCF_000966265.1_ASM96626v1/
+84597,84597,84597,Thermococcus aegaeus,GCF_055393685.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/393/685/GCF_055393685.1_ASM5539368v1/
+85991,85991,85991,Chlamydia pecorum,GCF_020549965.1,reference genome,Complete Genome,2021-10-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/020/549/965/GCF_020549965.1_ASM2054996v1/
+91623,1121293,91623,Clostridium akagii DSM 12554,GCF_000686725.1,reference genome,Scaffold,2014-05-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/686/725/GCF_000686725.1_ASM68672v1/
+92642,92642,92642,Hydrogenobacter subterraneus,GCF_055390195.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/390/195/GCF_055390195.1_ASM5539019v1/
+94694,490899,94694,Desulfurococcus amylolyticus 1221n,GCF_000020905.1,na,Complete Genome,2008-12-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/020/905/GCF_000020905.1_ASM2090v1/
+96345,1452724,96345,Flavobacterium psychrophilum FPG3,GCF_000754405.1,reference genome,Complete Genome,2014-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/754/405/GCF_000754405.1_ASM75440v1/
+96941,96941,96941,Methylobacter psychrophilus,GCF_025583945.1,reference genome,Contig,2022-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/025/583/945/GCF_025583945.1_ASM2558394v1/
+97393,333146,97393,Ferroplasma acidarmanus Fer1,GCF_000152265.2,reference genome,Complete Genome,2013-06-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/152/265/GCF_000152265.2_ASM15226v2/
+104269,104269,104269,Tenacibaculum amylolyticum,GCF_964511145.1,reference genome,Contig,2024-12-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/964/511/145/GCF_964511145.1_ASM96451114v1/
+105422,105422,105422,Streptacidiphilus carbonis,GCF_000787775.1,reference genome,Scaffold,2014-11-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/787/775/GCF_000787775.1_ASM78777v1/
+105851,105851,105851,Acidilobus aceticus,GCF_055392325.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/392/325/GCF_055392325.1_ASM5539232v1/
+108007,926567,108007,Thermanaerovibrio velox DSM 12556,GCF_000237825.1,reference genome,Chromosome,2011-12-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/237/825/GCF_000237825.1_ASM23782v1/
+108328,1120990,108328,Anaerobranca gottschalkii DSM 13577,GCF_900111575.1,reference genome,Scaffold,2016-10-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/111/575/GCF_900111575.1_IMG-taxon_2602042032_annotated_assembly/
+112900,1123286,112900,Sporomusa acidovorans DSM 3132,GCF_002257695.2,reference genome,Complete Genome,2024-09-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/257/695/GCF_002257695.2_SPACI/
+113653,113653,113653,Geoglobus ahangari,GCF_001006045.1,reference genome,Complete Genome,2015-05-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/006/045/GCF_001006045.1_ASM100604v1/
+121277,340102,121277,Pyrobaculum arsenaticum DSM 13514,GCF_000016385.1,reference genome,Complete Genome,2007-04-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/016/385/GCF_000016385.1_ASM1638v1/
+128945,128945,128945,Nautilia lithotrophica,GCF_054656815.1,reference genome,Contig,2025-07-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/054/656/815/GCF_054656815.1_ASM5465681v1/
+129339,129339,129339,Geobacillus uzenensis,GCF_002217665.1,na,Contig,2017-07-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/217/665/GCF_002217665.1_ASM221766v1/
+131540,1123514,131540,Thiomicrorhabdus arctica DSM 13458,GCF_000381085.1,reference genome,Scaffold,2013-04-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/381/085/GCF_000381085.1_ASM38108v1/
+136094,638303,136094,Thermocrinis albus DSM 14484,GCF_000025605.1,reference genome,Complete Genome,2010-02-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/025/605/GCF_000025605.1_ASM2560v1/
+139207,139207,139207,Thermococcus alcaliphilus,GCF_024054535.1,reference genome,Contig,2022-06-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/024/054/535/GCF_024054535.1_ASM2405453v1/
+139438,139438,139438,Geovibrio thiophilus,GCF_004087915.1,reference genome,Complete Genome,2019-01-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/087/915/GCF_004087915.1_ASM408791v1/
+142842,142842,142842,Selenihalanaerobacter shriftii,GCF_900167185.1,reference genome,Scaffold,2017-03-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/167/185/GCF_900167185.1_IMG-taxon_2582581323_annotated_assembly/
+145262,145262,145262,Methanothermobacter thermautotrophicus,GCF_027554905.1,reference genome,Complete Genome,2023-01-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/027/554/905/GCF_027554905.1_ASM2755490v1/
+145483,145483,145483,Frigoribacterium faeni,GCF_007988805.1,reference genome,Contig,2019-08-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/988/805/GCF_007988805.1_ASM798880v1/
+146827,146827,146827,Corynebacterium simulans,GCF_001586235.1,reference genome,Complete Genome,2016-03-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/586/235/GCF_001586235.1_ASM158623v1/
+150832,150832,150832,Nesterenkonia lacusekhoensis,GCF_017876395.1,reference genome,Contig,2021-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/017/876/395/GCF_017876395.1_ASM1787639v1/
+153151,153151,153151,Parageobacillus toebii,GCF_016939435.1,reference genome,Complete Genome,2021-02-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/016/939/435/GCF_016939435.1_ASM1693943v1/
+157784,1123021,157784,Pseudomonas thermotolerans DSM 14292,GCF_000364625.1,reference genome,Scaffold,2013-04-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/364/625/GCF_000364625.1_ASM36462v1/
+161360,1185653,161360,Planococcus antarcticus DSM 14505,GCF_001687565.2,reference genome,Complete Genome,2016-11-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/687/565/GCF_001687565.2_ASM168756v2/
+163003,163003,163003,Thermococcus cleftensis,GCF_000265525.1,reference genome,Complete Genome,2012-06-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/265/525/GCF_000265525.1_ASM26552v1/
+163361,163361,163361,Streptomyces beijiangensis,GCF_039526835.1,reference genome,Scaffold,2024-02-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/526/835/GCF_039526835.1_ASM3952683v1/
+167642,572544,167642,Ilyobacter polytropus DSM 2926,GCF_000165505.1,reference genome,Complete Genome,2010-10-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/165/505/GCF_000165505.1_ASM16550v1/
+171695,667014,171695,Thermodesulfatator indicus DSM 15286,GCF_000217795.1,reference genome,Complete Genome,2011-06-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/217/795/GCF_000217795.1_ASM21779v1/
+171864,1293587,171864,Thermus kawarayensis JCM 12314,GCF_055393575.1,reference genome,Complete Genome,2025-08-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/393/575/GCF_055393575.1_ASM5539357v1/
+177439,177439,84980,Desulfotalea psychrophila LSv54,GCF_000025945.1,reference genome,Complete Genome,2004-07-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/025/945/GCF_000025945.1_ASM2594v1/
+178899,178899,178899,Carboxydocella thermautotrophica,GCF_003047205.1,reference genome,Complete Genome,2018-04-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/047/205/GCF_003047205.1_ASM304720v1/
+179637,179637,179637,Halococcus dombrowskii,GCF_022870485.1,reference genome,Complete Genome,2022-04-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/022/870/485/GCF_022870485.1_ASM2287048v1/
+181486,410359,181486,Pyrobaculum calidifontis JCM 11548,GCF_000015805.1,reference genome,Complete Genome,2007-02-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/015/805/GCF_000015805.1_ASM1580v1/
+182773,182773,182773,Clostridium isatidis,GCF_002285495.1,reference genome,Complete Genome,2017-09-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/285/495/GCF_002285495.1_ASM228549v1/
+186497,186497,2261,Pyrococcus furiosus DSM 3638,GCF_008245085.1,reference genome,Complete Genome,2019-09-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/245/085/GCF_008245085.1_ASM824508v1/
+187145,880073,187145,Caldithrix abyssi DSM 13497,GCF_001886815.1,reference genome,Complete Genome,2016-11-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/886/815/GCF_001886815.1_ASM188681v1/
+187880,187880,187880,Thermococcus radiotolerans,GCF_002214565.1,reference genome,Complete Genome,2017-07-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/565/GCF_002214565.1_ASM221456v1/
+191497,191497,191497,Rhodoglobus aureus,GCF_039527955.1,reference genome,Contig,2024-02-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/527/955/GCF_039527955.1_ASM3952795v1/
+195522,195522,195522,Thermococcus nautili,GCF_000585495.1,reference genome,Complete Genome,2014-03-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/585/495/GCF_000585495.1_ASM58549v1/
+195907,865937,195907,Gillisia limnaea DSM 15749,GCF_000243235.1,reference genome,Scaffold,2012-01-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/243/235/GCF_000243235.1_ASM24323v1/
+198347,198347,198347,Clostridium algoriphilum,GCF_020443705.1,reference genome,Contig,2021-10-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/020/443/705/GCF_020443705.1_ASM2044370v1/
+202604,1122241,202604,Moorella mulderi DSM 14980,GCF_001594015.1,reference genome,Contig,2016-03-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/594/015/GCF_001594015.1_ASM159401v1/
+203471,1123354,203471,Tepidiphilus margaritifer DSM 15129,GCF_000425565.1,reference genome,Scaffold,2013-07-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/425/565/GCF_000425565.1_ASM42556v1/
+204470,1111479,204470,Alicyclobacillus pomorum DSM 14955,GCF_000472905.1,reference genome,Scaffold,2013-09-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/472/905/GCF_000472905.1_ASM47290v1/
+206045,206045,206045,Vulcanithermus mediatlanticus,GCF_055385885.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/385/885/GCF_055385885.1_ASM5538588v1/
+207809,207809,207809,Sulfolobus tengchongensis,GCF_036967215.1,reference genome,Complete Genome,2024-03-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/036/967/215/GCF_036967215.1_ASM3696721v1/
+209285,759272,209285,Thermochaetoides thermophila DSM 1495,GCF_000221225.1,reference genome,Scaffold,2011-07-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/221/225/GCF_000221225.1_CTHT_3.0/
+210623,210623,210623,Anoxynatronum sibiricum,GCF_039414295.1,reference genome,Contig,2024-05-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/414/295/GCF_039414295.1_ASM3941429v1/
+212021,212021,212021,Shewanella kaireitica,GCF_023284045.1,reference genome,Contig,2022-05-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/023/284/045/GCF_023284045.1_ASM2328404v1/
+212765,212765,212765,Mycolicibacterium madagascariense,GCF_010729665.1,reference genome,Complete Genome,2020-02-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/010/729/665/GCF_010729665.1_ASM1072966v1/
+213248,213248,213248,Mesonia algae,GCF_003253545.1,reference genome,Scaffold,2018-06-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/253/545/GCF_003253545.1_ASM325354v1/
+218490,218490,218490,Polaribacter butkevichii,GCF_038024105.1,reference genome,Complete Genome,2024-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/038/024/105/GCF_038024105.1_ASM3802410v1/
+218670,1306954,218670,Marinobacter excellens LAMA 842,GCF_001574445.1,na,Scaffold,2016-02-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/574/445/GCF_001574445.1_ASM157444v1/
+220753,220753,220753,Halobacillus locisalis,GCF_013694105.1,reference genome,Scaffold,2020-07-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/013/694/105/GCF_013694105.1_ASM1369410v1/
+224324,224324,63363,Aquifex aeolicus VF5,GCF_000008625.1,reference genome,Complete Genome,1999-12-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/008/625/GCF_000008625.1_ASM862v1/
+224325,224325,2234,Archaeoglobus fulgidus DSM 4304,GCF_000008665.1,reference genome,Complete Genome,1999-12-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/008/665/GCF_000008665.1_ASM866v1/
+224999,224999,224999,Tepidanaerobacter syntrophicus,GCF_001485475.2,reference genome,Scaffold,2015-12-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/485/475/GCF_001485475.2_ASM148547v2/
+225848,225848,225848,Shewanella psychrophila,GCF_002005305.1,reference genome,Complete Genome,2017-02-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/005/305/GCF_002005305.1_ASM200530v1/
+227597,227597,227597,Thermococcus coalescens,GCF_055392585.1,reference genome,Complete Genome,2025-08-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/392/585/GCF_055392585.1_ASM5539258v1/
+228745,648996,228745,Thermovibrio ammonificans HB-1,GCF_000185805.1,reference genome,Complete Genome,2011-01-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/185/805/GCF_000185805.1_ASM18580v1/
+235909,235909,1462,Geobacillus kaustophilus HTA426,GCF_000009785.1,reference genome,Complete Genome,2004-12-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/009/785/GCF_000009785.1_ASM978v1/
+237069,237069,237069,Tenuibacillus multivorans,GCF_900103915.1,reference genome,Scaffold,2016-10-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/103/915/GCF_900103915.1_IMG-taxon_2675903005_annotated_assembly/
+237679,237679,237679,Lentibacillus halodurans,GCF_900112045.1,reference genome,Scaffold,2016-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/112/045/GCF_900112045.1_IMG-taxon_2617270778_annotated_assembly/
+238834,238834,238834,Clostridium estertheticum,GCF_026651045.1,reference genome,Complete Genome,2022-12-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/026/651/045/GCF_026651045.1_ASM2665104v1/
+238836,238836,238836,Shewanella donghaensis,GCF_007567505.1,reference genome,Complete Genome,2019-07-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/567/505/GCF_007567505.1_ASM756750v1/
+240167,240167,240167,Thermovibrio guaymasensis,GCF_003633715.1,reference genome,Scaffold,2018-10-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/633/715/GCF_003633715.1_ASM363371v1/
+246272,1408424,246272,Alkalihalobacillus bogoriensis ATCC BAA-922,GCF_000621445.1,reference genome,Scaffold,2014-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/621/445/GCF_000621445.1_ASM62144v1/
+246969,246969,246969,Thermococcus sp. AM4,GCF_000151205.2,na,Complete Genome,2011-09-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/151/205/GCF_000151205.2_ASM15120v2/
+249189,249189,249189,Enterococcus hermanniensis,GCF_053761245.1,reference genome,Contig,2025-11-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/761/245/GCF_053761245.1_ASM5376124v1/
+249351,249351,249351,Flavobacterium psychrolimnae,GCF_003312425.1,reference genome,Contig,2018-07-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/312/425/GCF_003312425.1_ASM331242v1/
+249403,1121380,249403,Deinococcus frigens DSM 12807,GCF_000701425.1,reference genome,Scaffold,2014-06-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/701/425/GCF_000701425.1_ASM70142v1/
+249406,249406,249406,Deinococcus saxicola,GCF_050341015.1,reference genome,Contig,2025-05-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/341/015/GCF_050341015.1_ASM5034101v1/
+249408,249408,249408,Deinococcus marmoris,GCF_965139285.1,na,Scaffold,2025-02-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/965/139/285/GCF_965139285.1_CIP109039T/
+253107,1227499,253107,Natronolimnohabitans innermongolicus JCM 12255,GCF_000337215.1,reference genome,Contig,2013-02-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/337/215/GCF_000337215.1_ASM33721v1/
+253108,253108,253108,Natronolimnobius baerhuensis,GCF_002177135.1,reference genome,Contig,2017-06-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/177/135/GCF_002177135.1_ASM217713v1/
+253703,253703,253703,Paenibacillus antarcticus,GCF_008369725.1,reference genome,Complete Genome,2019-09-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/369/725/GCF_008369725.1_ASM836972v1/
+264574,1279015,264574,Oceanimonas smirnovii ATCC BAA-899,GCF_000381965.1,reference genome,Scaffold,2013-04-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/381/965/GCF_000381965.1_ASM38196v1/
+264736,264736,264736,Photobacterium frigidiphilum,GCF_003025615.1,reference genome,Contig,2018-03-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/025/615/GCF_003025615.1_ASM302561v1/
+265477,1121422,265477,Desulfotruncus alcoholivorax DSM 16058,GCF_000430885.1,reference genome,Scaffold,2013-07-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/430/885/GCF_000430885.1_ASM43088v1/
+266749,266749,266749,Kaistella jeonii,GCF_900638245.1,reference genome,Complete Genome,2018-12-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/638/245/GCF_900638245.1_56772_F02/
+268735,268735,268735,Halonotius pteroides,GCF_003605635.1,reference genome,Contig,2018-10-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/605/635/GCF_003605635.1_ASM360563v1/
+269259,1069081,269259,Nitratiruptor tergarcus DSM 16512,GCF_027946175.1,reference genome,Complete Genome,2022-11-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/027/946/175/GCF_027946175.1_ASM2794617v1/
+271096,271096,271096,Shewanella canadensis,GCF_003966225.1,reference genome,Contig,2018-12-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/966/225/GCF_003966225.1_ASM396622v1/
+271098,458817,271098,Shewanella halifaxensis HAW-EB4,GCF_000019185.1,reference genome,Complete Genome,2008-02-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/019/185/GCF_000019185.1_ASM1918v1/
+271099,271099,271099,Shewanella atlantica,GCF_003966265.1,reference genome,Scaffold,2018-12-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/966/265/GCF_003966265.1_ASM396626v1/
+271155,271155,271155,Flavobacterium antarcticum,GCF_965139325.1,na,Contig,2025-02-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/965/139/325/GCF_965139325.1_CIP108750T/
+272557,272557,56636,Aeropyrum pernix K1,GCF_000011125.1,reference genome,Complete Genome,2006-10-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/011/125/GCF_000011125.1_ASM1112v1/
+272569,272569,2238,Haloarcula marismortui ATCC 43049,GCF_000011085.1,reference genome,Complete Genome,2004-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/011/085/GCF_000011085.1_ASM1108v1/
+277988,277988,277988,Thermococcus thioreducens,GCF_900109425.1,reference genome,Scaffold,2016-10-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/109/425/GCF_900109425.1_IMG-taxon_2654588132_annotated_assembly/
+279824,279824,279824,Algoriphagus alkaliphilus,GCF_900103735.1,reference genome,Scaffold,2016-10-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/103/735/GCF_900103735.1_IMG-taxon_2595698204_annotated_assembly/
+281738,281738,281738,Psychrobacter nivimaris,GCF_043419765.1,reference genome,Scaffold,2024-10-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/043/419/765/GCF_043419765.1_ASM4341976v1/
+283786,283786,283786,Bizionia paragorgiae,GCF_900107625.1,reference genome,Scaffold,2016-10-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/107/625/GCF_900107625.1_IMG-taxon_2622736593_annotated_assembly/
+283816,283816,283816,Metabacillus herbersteinensis,GCF_042433335.1,reference genome,Scaffold,2024-09-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/433/335/GCF_042433335.1_ASM4243333v1/
+287535,1121104,287535,Balneola vulgaris DSM 17893,GCF_000375465.1,reference genome,Contig,2013-04-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/375/465/GCF_000375465.1_ASM37546v1/
+289376,289376,28262,Thermodesulfovibrio yellowstonii DSM 11347,GCF_000020985.1,reference genome,Complete Genome,2008-09-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/020/985/GCF_000020985.1_ASM2098v1/
+290335,290335,290335,Tetragenococcus koreensis,GCF_003795145.1,reference genome,Complete Genome,2018-11-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/795/145/GCF_003795145.1_ASM379514v1/
+290588,290588,290588,Shouchella oshimensis,GCF_002019765.1,reference genome,Scaffold,2017-03-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/019/765/GCF_002019765.1_ASM201976v1/
+291179,291179,291179,Subsaximicrobium wynnwilliamsii,GCF_007997225.1,reference genome,Contig,2019-08-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/997/225/GCF_007997225.1_ASM799722v1/
+291187,291187,291187,Algorimicrobium algoritergicola,GCF_008086165.1,reference genome,Contig,2019-08-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/086/165/GCF_008086165.1_ASM808616v1/
+291190,291190,291190,Gillisia hiemivivida,GCF_007997295.1,reference genome,Contig,2019-08-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/997/295/GCF_007997295.1_ASM799729v1/
+291989,291989,291989,Thermosediminibacter litoriperuensis,GCF_008124715.1,reference genome,Scaffold,2019-08-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/124/715/GCF_008124715.1_ASM812471v1/
+292566,13035,292566,Dactylococcopsis salina PCC 8305,GCF_000317615.1,reference genome,Complete Genome,2012-12-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/317/615/GCF_000317615.1_ASM31761v1/
+300852,300852,274,Thermus thermophilus HB8,GCF_000091545.1,reference genome,Complete Genome,2004-11-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/091/545/GCF_000091545.1_ASM9154v1/
+304413,304413,304413,Desulfuromonas svalbardensis,GCF_055389415.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/389/415/GCF_055389415.1_ASM5538941v1/
+306541,306541,306541,Halolactibacillus miurensis,GCF_007990305.1,reference genome,Contig,2019-08-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/990/305/GCF_007990305.1_ASM799030v1/
+309799,309799,14,Dictyoglomus thermophilum H-6-12,GCF_000020965.1,reference genome,Complete Genome,2008-09-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/020/965/GCF_000020965.1_ASM2096v1/
+309803,309803,2337,Thermotoga neapolitana DSM 4359,GCF_000018945.1,reference genome,Complete Genome,2009-01-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/018/945/GCF_000018945.1_ASM1894v1/
+309806,204536,309806,Sulfurihydrogenibium azorense Az-Fu1,GCF_000021545.1,reference genome,Complete Genome,2009-03-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/021/545/GCF_000021545.1_ASM2154v1/
+317658,317658,317658,Sulfurimonas paralvinellae,GCF_014905135.1,reference genome,Complete Genome,2020-10-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/905/135/GCF_014905135.1_ASM1490513v1/
+324602,324602,1108,Chloroflexus aurantiacus J-10-fl,GCF_000018865.1,reference genome,Complete Genome,2007-12-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/018/865/GCF_000018865.1_ASM1886v1/
+325778,325778,325778,Methanococcoides alaskense,GCF_031454185.1,reference genome,Contig,2023-09-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/031/454/185/GCF_031454185.1_ASM3145418v1/
+333138,333138,333138,Halalkalibacter okhensis,GCF_000787375.1,reference genome,Contig,2014-11-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/787/375/GCF_000787375.1_ASM78737v1/
+335431,335431,335431,Tepidimonas thermarum,GCF_007556705.1,reference genome,Contig,2019-07-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/556/705/GCF_007556705.1_ASM755670v1/
+335975,335975,335975,Sulfitobacter litoralis,GCF_900103185.1,reference genome,Contig,2016-10-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/103/185/GCF_900103185.1_IMG-taxon_2622736527_annotated_assembly/
+336828,1123057,336828,Rhodonellum psychrophilum GCM71 = DSM 17998,GCF_000473765.1,reference genome,Contig,2013-09-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/473/765/GCF_000473765.1_Rpsyc1.0/
+340095,1123376,340095,Thermodesulfovibrio thiophilus DSM 17215,GCF_000423865.1,reference genome,Scaffold,2013-07-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/423/865/GCF_000423865.1_ASM42386v1/
+340146,340146,340146,Exiguobacterium mexicanum,GCF_025234795.1,reference genome,Contig,2022-09-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/025/234/795/GCF_025234795.1_ASM2523479v1/
+342949,342949,342949,Pyrococcus sp. NA2,GCF_000211475.1,na,Complete Genome,2011-04-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/211/475/GCF_000211475.1_ASM21147v1/
+348842,1121468,348842,Desulfovirgula thermocuniculi DSM 16036,GCF_000429345.1,reference genome,Scaffold,2013-09-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/429/345/GCF_000429345.1_ASM42934v1/
+351627,351627,44001,Caldicellulosiruptor saccharolyticus DSM 8903,GCF_000016545.1,reference genome,Complete Genome,2007-04-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/016/545/GCF_000016545.1_ASM1654v1/
+354630,354630,354630,Mucilaginibacter lappiensis,GCF_900155965.1,reference genome,Scaffold,2017-01-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/155/965/GCF_900155965.1_IMG-taxon_2681812809_annotated_assembly/
+372484,372484,372484,Sanguibacter antarcticus,GCF_002564005.1,reference genome,Contig,2017-10-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/564/005/GCF_002564005.1_ASM256400v1/
+379066,379066,173480,Gemmatimonas aurantiaca T-27,GCF_000010305.1,reference genome,Complete Genome,2009-04-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/010/305/GCF_000010305.1_ASM1030v1/
+381751,381751,381751,Thermocrinis minervae,GCF_900142435.1,reference genome,Chromosome,2016-12-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/142/435/GCF_900142435.1_IMG-taxon_2698536703_annotated_assembly/
+384616,384616,2277,Pyrobaculum islandicum DSM 4184,GCF_000015205.1,reference genome,Complete Genome,2006-12-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/015/205/GCF_000015205.1_ASM1520v1/
+386302,386302,386302,Salinibacterium xinjiangense,GCF_900230175.1,reference genome,Scaffold,2017-10-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/230/175/GCF_900230175.1_IMG-taxon_2721755902_annotated_assembly/
+390874,390874,93929,Thermotoga petrophila RKU-1,GCF_000016785.1,reference genome,Complete Genome,2007-05-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/016/785/GCF_000016785.1_ASM1678v1/
+391623,391623,55802,Thermococcus barophilus MP,GCF_000151105.2,reference genome,Complete Genome,2010-12-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/151/105/GCF_000151105.2_ASM15110v2/
+392413,1121382,392413,Deinococcus misasensis DSM 22328,GCF_000745915.1,reference genome,Scaffold,2014-08-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/745/915/GCF_000745915.1_ASM74591v1/
+392714,392714,392714,Nonlabens antarcticus,GCF_015356755.1,reference genome,Contig,2020-11-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/015/356/755/GCF_015356755.1_ASM1535675v1/
+394264,394264,394264,Sulfitobacter marinus,GCF_900116285.1,reference genome,Contig,2016-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/116/285/GCF_900116285.1_IMG-taxon_2619619641_annotated_assembly/
+395965,395965,199596,Methylocella silvestris BL2,GCF_000021745.1,reference genome,Complete Genome,2008-12-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/021/745/GCF_000021745.1_ASM2174v1/
+397948,397948,76887,Caldivirga maquilingensis IC-167,GCF_000018305.1,reference genome,Complete Genome,2007-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/018/305/GCF_000018305.1_ASM1830v1/
+399370,1423750,399370,Liquorilactobacillus ghanensis DSM 18630,GCF_001435235.1,reference genome,Scaffold,2015-11-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/435/235/GCF_001435235.1_ASM143523v1/
+401526,401526,261685,Thermosinus carboxydivorans Nor1,GCF_000169155.1,reference genome,Contig,2007-01-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/169/155/GCF_000169155.1_ASM16915v1/
+402877,1294023,402877,Syntrophomonas palmitatica JCM 14374,GCF_001311885.1,reference genome,Contig,2015-10-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/311/885/GCF_001311885.1_ASM131188v1/
+404937,404937,404937,Anoxybacillus thermarum,GCF_000836725.1,reference genome,Contig,2015-02-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/836/725/GCF_000836725.1_ASM83672v1/
+405212,521098,405212,Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446,GCF_000024285.1,reference genome,Complete Genome,2009-09-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/024/285/GCF_000024285.1_ASM2428v1/
+406548,406548,406548,Aquisphaera giovannonii,GCF_008087625.1,reference genome,Complete Genome,2019-08-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/087/625/GCF_008087625.1_ASM808762v1/
+410358,410358,83984,Methanocorpusculum labreanum Z,GCF_000015765.1,reference genome,Complete Genome,2007-02-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/015/765/GCF_000015765.1_ASM1576v1/
+414771,414771,414771,Paenibacillus donghaensis,GCF_002192415.1,reference genome,Complete Genome,2017-06-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/192/415/GCF_002192415.1_ASM219241v1/
+419015,1120979,419015,Alloscardovia omnicolens DSM 21503,GCF_000420505.1,reference genome,Contig,2013-07-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/420/505/GCF_000420505.1_ASM42050v1/
+421000,1300350,421000,Sulfitobacter donghicola DSW-25 = KCTC 12864 = JCM 14565,GCF_000622405.1,reference genome,Contig,2014-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/622/405/GCF_000622405.1_12864_draft/
+425104,425104,271097,Shewanella sediminis HAW-EB3,GCF_000018025.1,reference genome,Complete Genome,2007-09-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/018/025/GCF_000018025.1_ASM1802v1/
+425498,425498,425498,Algibacter mikhailovii,GCF_014651495.1,reference genome,Contig,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/651/495/GCF_014651495.1_ASM1465149v1/
+425514,425514,425514,Pedobacter hartonius,GCF_900107535.1,reference genome,Scaffold,2016-10-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/107/535/GCF_900107535.1_IMG-taxon_2693429882_annotated_assembly/
+426118,426118,43080,Saccharolobus islandicus M.16.4,GCF_000022445.1,reference genome,Complete Genome,2009-05-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/022/445/GCF_000022445.1_ASM2244v1/
+427317,427317,43080,Saccharolobus islandicus M.14.25,GCF_000022405.1,na,Complete Genome,2009-04-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/022/405/GCF_000022405.1_ASM2240v1/
+429009,429009,42838,Ammonifex degensii KC4,GCF_000024605.1,reference genome,Complete Genome,2009-10-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/024/605/GCF_000024605.1_ASM2460v1/
+439481,439481,379547,Aciduliprofundum boonei T469,GCF_000025665.1,na,Complete Genome,2010-02-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/025/665/GCF_000025665.1_ASM2566v1/
+444093,444093,444093,Ammonifex thiophilus,GCF_003368535.1,reference genome,Contig,2018-08-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/368/535/GCF_003368535.1_ASM336853v1/
+445932,445932,423605,Elusimicrobium minutum Pei191,GCF_000020145.1,reference genome,Complete Genome,2008-04-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/020/145/GCF_000020145.1_ASM2014v1/
+453591,453591,160233,Ignicoccus hospitalis KIN4/I,GCF_000017945.1,reference genome,Complete Genome,2007-08-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/017/945/GCF_000017945.1_ASM1794v1/
+456330,1121256,456330,Caldanaerobius fijiensis DSM 17918,GCF_900129075.1,reference genome,Scaffold,2016-12-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/129/075/GCF_900129075.1_IMG-taxon_2582581265_annotated_assembly/
+456442,456442,358766,Methanoregula boonei 6A8,GCF_000017625.1,reference genome,Complete Genome,2007-07-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/017/625/GCF_000017625.1_ASM1762v1/
+466153,886293,466153,Singulisphaera acidiphila DSM 18658,GCF_000242455.2,reference genome,Complete Genome,2012-12-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/242/455/GCF_000242455.2_ASM24245v3/
+468913,468913,468913,Deinococcus alpinitundrae,GCF_009982895.1,reference genome,Scaffold,2020-01-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/982/895/GCF_009982895.1_ASM998289v1/
+468914,468914,468914,Deinococcus altitudinis,GCF_045784255.1,reference genome,Complete Genome,2024-12-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/045/784/255/GCF_045784255.1_ASM4578425v1/
+468916,468916,468916,Deinococcus radiomollis,GCF_045784305.1,reference genome,Complete Genome,2024-12-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/045/784/305/GCF_045784305.1_DRML_24019/
+469799,469799,469799,Nesterenkonia flava,GCF_031432335.1,reference genome,Scaffold,2023-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/031/432/335/GCF_031432335.1_ASM3143233v1/
+475255,475255,475255,Pedobacter nyackensis,GCF_900176505.1,reference genome,Scaffold,2017-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/176/505/GCF_900176505.1_IMG-taxon_2622736511_annotated_assembly/
+478009,478009,2242,Halobacterium salinarum R1,GCF_000069025.1,na,Complete Genome,2008-02-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/069/025/GCF_000069025.1_ASM6902v1/
+478105,478105,478105,Exilispira thermophila,GCF_055389015.1,reference genome,Complete Genome,2025-07-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/389/015/GCF_055389015.1_ASM5538901v1/
+486407,486407,486407,Paenochrobactrum glaciei,GCF_039522165.1,reference genome,Contig,2024-02-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/522/165/GCF_039522165.1_ASM3952216v1/
+494023,494023,494023,Paeniglutamicibacter antarcticus,GCF_039544305.1,reference genome,Contig,2024-02-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/544/305/GCF_039544305.1_ASM3954430v1/
+504936,504936,504936,Periweissella beninensis,GCF_023701865.1,reference genome,Contig,2022-06-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/023/701/865/GCF_023701865.1_ASM2370186v1/
+505250,1122191,505250,Maribacter antarcticus DSM 21422,GCF_000621125.1,reference genome,Scaffold,2014-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/621/125/GCF_000621125.1_ASM62112v1/
+506591,506591,506591,Leisingera caerulea,GCF_025139665.1,reference genome,Complete Genome,2022-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/025/139/665/GCF_025139665.1_ASM2513966v1/
+511051,511051,693075,Caldisericum exile AZM16c01,GCF_000284335.1,reference genome,Complete Genome,2012-03-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/284/335/GCF_000284335.1_ASM28433v1/
+523844,523844,2210,Methanosarcina thermophila TM-1,GCF_000969885.1,reference genome,Complete Genome,2015-04-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/969/885/GCF_000969885.1_ASM96988v1/
+523851,523851,53952,Thermococcus peptonophilus OG-1 = JCM 9653,GCF_001315905.1,na,Contig,2015-10-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/315/905/GCF_001315905.1_ASM131590v1/
+529709,529709,1008460,Pyrococcus yayanosii CH1,GCF_000215995.1,reference genome,Complete Genome,2011-06-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/215/995/GCF_000215995.1_ASM21599v1/
+536044,536044,536044,Methanolobus zinderi,GCF_013388255.1,reference genome,Complete Genome,2020-07-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/013/388/255/GCF_013388255.1_ASM1338825v1/
+550542,550542,550542,Geobacillus sp. Y412MC52,GCF_000174795.2,na,Complete Genome,2011-01-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/174/795/GCF_000174795.2_ASM17479v2/
+552518,552518,552518,Elstera litoralis,GCF_000963705.1,reference genome,Contig,2015-03-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/963/705/GCF_000963705.1_Ellito1.0/
+553468,553468,553468,Haladaptatus litoreus,GCF_900156425.1,reference genome,Scaffold,2017-01-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/156/425/GCF_900156425.1_IMG-taxon_2681812914_annotated_assembly/
+555311,555311,2287,Saccharolobus solfataricus 98/2,GCF_000175555.1,na,Contig,2009-07-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/175/555/GCF_000175555.1_ASM17555v1/
+556529,556529,556529,Flavobacterium algicola,GCF_022399565.1,reference genome,Scaffold,2022-02-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/022/399/565/GCF_022399565.1_ASM2239956v1/
+570835,1121860,570835,Edaphobacter aggregans DSM 19364,GCF_000745965.1,reference genome,Scaffold,2014-08-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/745/965/GCF_000745965.1_ASM74596v1/
+571913,571913,571913,Luteipulveratus mongoliensis,GCF_001190945.1,reference genome,Complete Genome,2015-08-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/190/945/GCF_001190945.1_ASM119094v1/
+572478,572478,164451,Vulcanisaeta distributa DSM 14429,GCF_000148385.1,reference genome,Complete Genome,2010-09-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/148/385/GCF_000148385.1_ASM14838v1/
+572546,572546,84156,Archaeoglobus profundus DSM 5631,GCF_000025285.1,reference genome,Complete Genome,2010-01-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/025/285/GCF_000025285.1_ASM2528v1/
+573061,573061,1493,Clostridium cellulovorans 743B,GCF_000145275.1,reference genome,Complete Genome,2010-08-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/145/275/GCF_000145275.1_ASM14527v1/
+573064,573064,83171,Methanocaldococcus fervens AG86,GCF_000023985.1,reference genome,Complete Genome,2009-08-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/023/985/GCF_000023985.1_ASM2398v1/
+581036,581036,581036,Paranoxybacillus vitaminiphilus,GCF_003259935.1,reference genome,Scaffold,2018-06-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/259/935/GCF_003259935.1_ASM325993v1/
+584605,584605,584605,Aquimarina litoralis,GCF_039523995.1,reference genome,Scaffold,2024-02-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/523/995/GCF_039523995.1_ASM3952399v1/
+589436,1236517,589436,Prevotella fusca JCM 17724,GCF_001262015.1,reference genome,Complete Genome,2015-08-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/262/015/GCF_001262015.1_ASM126201v1/
+589437,1236518,589437,Prevotella scopos JCM 17725,GCF_018127785.1,reference genome,Complete Genome,2021-04-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/018/127/785/GCF_018127785.1_ASM1812778v1/
+589924,589924,54261,Ferroglobus placidus DSM 10642,GCF_000025505.1,reference genome,Complete Genome,2010-02-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/025/505/GCF_000025505.1_ASM2550v1/
+590168,590168,93929,Thermotoga petrophila RKU-10,GCF_000025105.1,na,Complete Genome,2009-12-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/025/105/GCF_000025105.1_ASM2510v1/
+591019,591019,84599,Staphylothermus hellenicus DSM 12710,GCF_000092465.1,reference genome,Complete Genome,2010-06-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/092/465/GCF_000092465.1_ASM9246v1/
+595494,595494,43948,Tolumonas auensis DSM 9187,GCF_000023065.1,reference genome,Complete Genome,2009-05-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/023/065/GCF_000023065.1_ASM2306v1/
+604332,604331,604332,Meiothermus rufus DSM 22234,GCF_000423425.1,reference genome,Scaffold,2013-07-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/423/425/GCF_000423425.1_ASM42342v1/
+633813,633813,633813,Rhodothermus profundi,GCF_900142415.1,reference genome,Scaffold,2016-12-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/142/415/GCF_900142415.1_IMG-taxon_2622736637_annotated_assembly/
+634956,634956,1426,Parageobacillus thermoglucosidasius C56-YS93,GCF_000178395.2,na,Complete Genome,2011-06-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/178/395/GCF_000178395.2_ASM17839v2/
+635013,635013,278994,Thermincola carboxydiphila JR,GCF_000092945.1,reference genome,Complete Genome,2010-05-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/092/945/GCF_000092945.1_ASM9294v1/
+639282,639282,197162,Deferribacter desulfuricans SSM1,GCF_000010985.1,reference genome,Complete Genome,2010-03-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/010/985/GCF_000010985.1_ASM1098v1/
+641665,641665,641665,Colwellia chukchiensis,GCF_002104455.1,reference genome,Contig,2017-04-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/104/455/GCF_002104455.1_ASM210445v1/
+645597,645597,645597,Luteimonas terricola,GCF_004352845.1,reference genome,Contig,2019-03-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/352/845/GCF_004352845.1_ASM435284v1/
+645964,645964,645964,Oceanobacillus aidingensis,GCF_042654105.1,reference genome,Contig,2024-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/654/105/GCF_042654105.1_ASM4265410v1/
+651661,651661,651661,Dyadobacter psychrophilus,GCF_900167945.1,reference genome,Scaffold,2017-03-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/167/945/GCF_900167945.1_IMG-taxon_2595698219_annotated_assembly/
+651662,651662,651662,Hymenobacter psychrophilus,GCF_900107135.1,reference genome,Scaffold,2016-10-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/107/135/GCF_900107135.1_IMG-taxon_2617270879_annotated_assembly/
+655607,655607,655607,Tepidibacter mesophilus,GCF_002724055.1,reference genome,Contig,2017-10-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/724/055/GCF_002724055.1_ASM272405v1/
+661478,661478,1005039,Fimbriimonas ginsengisoli Gsoil 348,GCF_000724625.1,reference genome,Complete Genome,2014-07-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/724/625/GCF_000724625.1_ASM72462v1/
+667306,667306,667306,Aciditerrimonas ferrireducens,GCF_023130475.1,reference genome,Scaffold,2022-04-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/023/130/475/GCF_023130475.1_ASM2313047v1/
+674972,674972,674972,Microaerobacter geothermalis,GCF_021608135.1,reference genome,Contig,2022-01-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/021/608/135/GCF_021608135.1_ASM2160813v1/
+680118,680118,680118,Methanothermobacter tenebrarum,GCF_023167465.1,reference genome,Complete Genome,2022-04-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/023/167/465/GCF_023167465.1_ASM2316746v1/
+688079,688079,688079,Halalkalibacter nanhaiisediminis,GCF_007830185.1,reference genome,Scaffold,2019-08-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/830/185/GCF_007830185.1_ASM783018v1/
+696762,696762,696762,Planktotalea frisia,GCF_001890925.1,reference genome,Contig,2016-12-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/890/925/GCF_001890925.1_ASM189092v1/
+696763,696763,696763,Thermasporomyces composti,GCF_003386795.1,reference genome,Contig,2018-08-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/386/795/GCF_003386795.1_ASM338679v1/
+708132,708132,708132,Oligoflexus tunisiensis,GCF_001748245.1,reference genome,Scaffold,2016-06-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/748/245/GCF_001748245.1_ASM174824v1/
+710696,710696,53358,Intrasporangium calvum DSM 43043,GCF_000184685.1,reference genome,Complete Genome,2010-12-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/184/685/GCF_000184685.1_ASM18468v1/
+747076,747076,747076,Tepidamorphus gemmatus,GCF_004346195.1,reference genome,Scaffold,2019-03-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/346/195/GCF_004346195.1_ASM434619v1/
+755310,755310,755310,Halobellus litoreus,GCF_024464595.1,reference genome,Contig,2022-07-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/024/464/595/GCF_024464595.1_ASM2446459v1/
+756689,756689,756689,Nocardia amikacinitolerans,GCF_900215415.1,reference genome,Scaffold,2017-09-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/215/415/GCF_900215415.1_IMG-taxon_2599185153_annotated_assembly/
+760260,760260,760260,Oligosphaera ethanolica,GCF_030814695.1,reference genome,Contig,2023-08-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/030/814/695/GCF_030814695.1_ASM3081469v1/
+765177,765177,2275,Desulfurococcus mucosus DSM 2162,GCF_000186365.1,reference genome,Complete Genome,2011-01-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/186/365/GCF_000186365.1_ASM18636v1/
+768670,768670,477976,Calditerrivibrio nitroreducens DSM 19672,GCF_000183405.1,reference genome,Complete Genome,2010-11-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/183/405/GCF_000183405.1_ASM18340v1/
+768672,768672,94694,Desulfurococcus amylolyticus DSM 16532,GCF_000231015.2,reference genome,Complete Genome,2012-06-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/231/015/GCF_000231015.2_ASM23101v3/
+768679,768679,2271,Thermoproteus tenax Kra 1,GCF_000253055.1,reference genome,Complete Genome,2011-10-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/253/055/GCF_000253055.1_ASM25305v1/
+795359,795359,1295609,Thermodesulfobacterium geofontis OPF15,GCF_000215975.1,reference genome,Complete Genome,2011-06-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/215/975/GCF_000215975.1_ASM21597v1/
+857293,857293,515264,Caloramator australicus RC3,GCF_000297115.1,reference genome,Contig,2012-07-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/297/115/GCF_000297115.1_ASM29711v1/
+858215,858215,29329,Thermoanaerobacterium xylanolyticum LX-11,GCF_000189775.2,reference genome,Complete Genome,2011-05-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/189/775/GCF_000189775.2_ASM18977v3/
+861299,861299,861299,Gemmatirosa kalamazoonensis,GCF_000522985.1,reference genome,Complete Genome,2014-01-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/522/985/GCF_000522985.1_ASM52298v1/
+863522,863522,863522,Bryocella elongata,GCF_900108185.1,reference genome,Contig,2016-10-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/108/185/GCF_900108185.1_IMG-taxon_2684622995_annotated_assembly/
+866790,866790,866790,Methanothermobacter sp. CaT2,GCF_000828575.1,na,Complete Genome,2012-12-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/828/575/GCF_000828575.1_ASM82857v1/
+870242,870242,870242,Carboxydothermus pertinax,GCF_001950255.1,reference genome,Scaffold,2016-12-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/950/255/GCF_001950255.1_ASM195025v1/
+874266,874266,874266,Rhabdothermus arcticus,GCF_055382915.1,reference genome,Complete Genome,2025-08-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/382/915/GCF_055382915.1_ASM5538291v1/
+877466,877466,1495650,Thermoflexus hugenholtzii JAD2,GCF_900187885.1,reference genome,Scaffold,2017-06-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/187/885/GCF_900187885.1_IMG-taxon_2140918011_annotated_assembly/
+882378,882378,412963,Mycetohabitans rhizoxinica HKI 454,GCF_000198775.1,na,Complete Genome,2010-11-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/198/775/GCF_000198775.1_ASM19877v1/
+887929,887929,113287,Pseudoramibacter alactolyticus ATCC 23263,GCF_000185505.1,reference genome,Scaffold,2011-01-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/185/505/GCF_000185505.1_ASM18550v1/
+908809,908809,908809,Caloramator mitchellensis,GCF_001440545.1,reference genome,Contig,2015-11-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/440/545/GCF_001440545.1_ASM144054v1/
+913969,913969,913969,Knoellia flava,GCF_014636255.1,reference genome,Scaffold,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/636/255/GCF_014636255.1_ASM1463625v1/
+926357,926357,926357,Asanoa siamensis,GCF_016862555.1,reference genome,Contig,2021-01-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/016/862/555/GCF_016862555.1_ASM1686255v1/
+926571,926571,1034015,Nitrososphaera viennensis EN76,GCF_000698785.1,reference genome,Complete Genome,2014-06-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/698/785/GCF_000698785.1_ASM69878v1/
+929558,929558,1176482,Sulfurimonas gotlandica GD1,GCF_000242915.1,reference genome,Complete Genome,2012-01-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/242/915/GCF_000242915.1_ASM24291v2/
+930805,930805,930805,Halioglobus japonicus,GCF_002869505.1,reference genome,Contig,2018-01-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/869/505/GCF_002869505.1_ASM286950v1/
+935223,935223,935223,Flavobacterium xueshanense,GCF_900112975.1,reference genome,Scaffold,2016-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/112/975/GCF_900112975.1_IMG-taxon_2617270785_annotated_assembly/
+935224,935224,935224,Flavobacterium urumqiense,GCF_900108015.1,reference genome,Scaffold,2016-10-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/108/015/GCF_900108015.1_IMG-taxon_2617270781_annotated_assembly/
+936456,653733,936456,Desulfurispirillum indicum S5,GCF_000177635.2,reference genome,Complete Genome,2011-01-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/177/635/GCF_000177635.2_ASM17763v2/
+940295,940295,54259,Ignicoccus islandicus DSM 13165,GCF_001481685.1,reference genome,Complete Genome,2015-12-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/481/685/GCF_001481685.1_ASM148168v1/
+944479,944479,944479,Hippea jasoniae,GCF_000744435.1,reference genome,Contig,2014-08-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/744/435/GCF_000744435.1_ASM74443v1/
+981222,981222,458033,Chloracidobacterium thermophilum B,GCF_000226295.1,reference genome,Complete Genome,2011-09-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/226/295/GCF_000226295.1_ASM22629v1/
+985016,985016,985016,Olivibacter jilunii,GCF_900607235.1,reference genome,Scaffold,2018-12-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/607/235/GCF_900607235.1_PRJEB29385/
+985053,985053,985052,Vulcanisaeta moutnovskia 768-28,GCF_000190315.1,reference genome,Complete Genome,2011-02-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/190/315/GCF_000190315.1_ASM19031v1/
+988821,988821,988821,Cellulomonas marina,GCF_900111925.1,reference genome,Contig,2016-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/111/925/GCF_900111925.1_IMG-taxon_2675903053_annotated_assembly/
+995037,995037,995037,Cryobacterium aureum,GCF_002954245.1,reference genome,Contig,2018-02-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/954/245/GCF_002954245.1_ASM295424v1/
+995038,995038,995038,Cryobacterium levicorallinum,GCF_007992355.1,reference genome,Contig,2019-07-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/992/355/GCF_007992355.1_ASM799235v1/
+996115,996115,996115,Ruegeria intermedia,GCF_900129345.1,reference genome,Scaffold,2019-09-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/129/345/GCF_900129345.1_IMG-taxon_2695420938_annotated_assembly/
+997296,997296,1471,Bacillus methanolicus PB1,GCF_000262755.1,reference genome,Contig,2012-05-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/262/755/GCF_000262755.1_ASM26275v1/
+1002795,1002795,1002795,Pectinatus sottacetonis,GCF_015732155.1,reference genome,Contig,2020-12-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/015/732/155/GCF_015732155.1_ASM1573215v1/
+1004261,1004261,1004261,Oceanobacillus indicireducens,GCF_014647195.1,reference genome,Scaffold,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/647/195/GCF_014647195.1_ASM1464719v1/
+1033806,1033806,430914,Halorhabdus tiamatea SARL4B,GCF_000470655.1,reference genome,Complete Genome,2013-08-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/470/655/GCF_000470655.1_HATI1/
+1049583,1049583,223184,Kocuria marina subsp. indica,GCF_004328535.1,na,Complete Genome,2019-03-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/328/535/GCF_004328535.1_ASM432853v1/
+1056495,1056495,200415,Caldisphaera lagunensis DSM 15908,GCF_000317795.1,reference genome,Complete Genome,2012-12-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/317/795/GCF_000317795.1_ASM31779v1/
+1069083,1069083,667126,Methanocaldococcus villosus KIN24-T80,GCF_000371805.1,reference genome,Contig,2013-04-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/371/805/GCF_000371805.1_ASM37180v1/
+1070431,1070431,1070431,Polymorphobacter multimanifer,GCF_014205635.1,reference genome,Scaffold,2020-08-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/205/635/GCF_014205635.1_ASM1420563v1/
+1073253,1073253,1073253,Thermocatellispora tengchongensis,GCF_014202315.1,reference genome,Scaffold,2020-08-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/202/315/GCF_014202315.1_ASM1420231v1/
+1078754,1078754,1078754,Dyadobacter arcticus,GCF_011762185.1,reference genome,Scaffold,2020-03-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/762/185/GCF_011762185.1_ASM1176218v1/
+1111041,1111041,1111041,Lentisphaera marina,GCF_028745505.1,reference genome,Contig,2023-02-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/028/745/505/GCF_028745505.1_ASM2874550v1/
+1111730,1111730,271155,Flavobacterium antarcticum DSM 19726,GCF_000419685.1,reference genome,Contig,2013-07-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/419/685/GCF_000419685.1_ASM41968v1/
+1117313,1117313,394751,Pseudoalteromonas arctica A 37-1-2,GCF_000238395.3,reference genome,Complete Genome,2017-09-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/238/395/GCF_000238395.3_ASM23839v4/
+1121338,1121338,420412,Clostridium tepidiprofundi DSM 19306,GCF_001594005.1,reference genome,Contig,2016-03-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/594/005/GCF_001594005.1_ASM159400v1/
+1121381,1121381,249408,Deinococcus marmoris DSM 12784,GCF_000701405.1,reference genome,Scaffold,2014-06-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/701/405/GCF_000701405.1_ASM70140v1/
+1121922,1121922,56807,Brumicola pallidula DSM 14239 = ACAM 615,GCF_000428905.1,reference genome,Scaffold,2013-09-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/428/905/GCF_000428905.1_ASM42890v1/
+1123032,1123032,271091,Psychrilyobacter atlanticus DSM 19335,GCF_000426625.1,reference genome,Scaffold,2013-07-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/426/625/GCF_000426625.1_ASM42662v1/
+1123239,1123239,427078,Salsuginibacillus kocurii DSM 18087,GCF_000377705.1,reference genome,Scaffold,2013-04-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/377/705/GCF_000377705.1_ASM37770v1/
+1128113,1128113,1128113,Algimonas porphyrae,GCF_030159935.1,reference genome,Scaffold,2023-02-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/030/159/935/GCF_030159935.1_ASM3015993v1/
+1129794,1129794,326544,Paraglaciecola psychrophila 170,GCF_000315075.1,reference genome,Contig,2012-10-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/315/075/GCF_000315075.1_ASM31507v1/
+1132498,1132498,43080,Saccharolobus islandicus M.16.12,GCF_000245115.1,na,Contig,2012-01-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/245/115/GCF_000245115.1_ASM24511v2/
+1132502,1132502,43080,Saccharolobus islandicus M.16.30,GCF_000245195.1,na,Contig,2012-01-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/245/195/GCF_000245195.1_ASM24519v2/
+1137985,1137985,1137985,Lutibacter holmesii,GCF_042679665.1,reference genome,Contig,2024-10-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/679/665/GCF_042679665.1_ASM4267966v1/
+1150600,1150600,1288027,Arcticibacter svalbardensis MN12-7,GCF_000403135.1,reference genome,Contig,2013-05-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/403/135/GCF_000403135.1_ArSv1/
+1162668,1162668,180,Leptospirillum ferrooxidans C2-3,GCF_000284315.1,reference genome,Complete Genome,2012-03-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/284/315/GCF_000284315.1_ASM28431v1/
+1165852,1165852,1165852,Melaminivora alkalimesophila,GCF_003182375.1,reference genome,Scaffold,2018-05-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/182/375/GCF_003182375.1_ASM318237v1/
+1168730,1168730,1168730,Nocardioides glacieisoli,GCF_004137245.1,reference genome,Contig,2019-02-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/137/245/GCF_004137245.1_ASM413724v1/
+1176239,1176239,1176239,Halobacillus andaensis,GCF_014636475.1,reference genome,Contig,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/636/475/GCF_014636475.1_ASM1463647v1/
+1178778,1178778,1178778,Maribacter cobaltidurans,GCF_002269385.1,reference genome,Complete Genome,2017-08-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/269/385/GCF_002269385.1_ASM226938v1/
+1184251,1184251,1200300,Thermogladius calderae 1633,GCF_000264495.1,reference genome,Complete Genome,2012-05-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/264/495/GCF_000264495.1_ASM26449v1/
+1186196,1186196,1186196,Natrinema salaciae,GCF_900110865.1,reference genome,Scaffold,2016-10-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/110/865/GCF_900110865.1_IMG-taxon_2639762573_annotated_assembly/
+1187852,1187852,1187852,Methylobacterium tarhaniae,GCF_001043955.1,reference genome,Contig,2015-06-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/043/955/GCF_001043955.1_ASM104395v1/
+1189325,1189325,1189325,Oceanicella actignis,GCF_900111545.1,reference genome,Scaffold,2016-10-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/111/545/GCF_900111545.1_IMG-taxon_2615840710_annotated_assembly/
+1191523,1191523,1134405,Melioribacter roseus P3M-2,GCF_000279145.1,reference genome,Complete Genome,2012-07-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/279/145/GCF_000279145.1_ASM27914v1/
+1192854,1192854,437505,Granulosicoccus antarcticus IMCC3135,GCF_002215215.1,reference genome,Complete Genome,2017-07-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/215/215/GCF_002215215.1_ASM221521v1/
+1198114,1198114,940615,Granulicella tundricola MP5ACTX9,GCF_000178975.2,reference genome,Complete Genome,2011-02-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/178/975/GCF_000178975.2_ASM17897v2/
+1201293,1201293,428031,Moritella dasanensis ArB 0140,GCF_000276805.1,reference genome,Contig,2012-07-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/276/805/GCF_000276805.1_ASM27680v1/
+1211323,1211323,1211323,Deinococcus carri,GCF_039545055.1,reference genome,Contig,2024-03-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/545/055/GCF_039545055.1_ASM3954505v1/
+1217908,391626,1217908,Octadecabacter antarcticus 307,GCF_000155675.2,reference genome,Complete Genome,2013-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/155/675/GCF_000155675.2_ASM15567v2/
+1220595,1220595,1462,Geobacillus kaustophilus NBRC 102445,GCF_005160065.1,na,Complete Genome,2019-05-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/005/160/065/GCF_005160065.1_ASM516006v1/
+1230528,1230528,1230528,Myceligenerans salitolerans,GCF_017349295.1,reference genome,Scaffold,2021-03-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/017/349/295/GCF_017349295.1_ASM1734929v1/
+1245522,1245522,1245522,Siminovitchia thermophila,GCF_016909185.1,reference genome,Contig,2021-02-19,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/016/909/185/GCF_016909185.1_ASM1690918v1/
+1247960,1247960,251051,Pallidibacillus thermolactis subsp. kokeshiiformis,GCF_042431705.1,na,Scaffold,2024-09-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/431/705/GCF_042431705.1_ASM4243170v1/
+1259795,1259795,108819,Coprothermobacter platensis DSM 11748,GCF_000378005.1,reference genome,Scaffold,2013-04-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/378/005/GCF_000378005.1_ASM37800v1/
+1288391,521393,1288391,Actinomyces timonensis DSM 23838,GCF_000295095.1,reference genome,Scaffold,2012-09-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/295/095/GCF_000295095.1_ASM29509v1/
+1293043,1293043,164451,Vulcanisaeta distributa JCM 11216,GCF_001315985.1,na,Contig,2015-10-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/315/985/GCF_001315985.1_ASM131598v1/
+1293648,1293648,1293648,Acidiplasma sp. MBA-1,GCF_000949015.1,na,Contig,2015-03-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/949/015/GCF_000949015.1_ASM94901v1/
+1294262,1294262,1294262,Sulfuracidifex tepidarius,GCF_008326425.1,reference genome,Complete Genome,2019-08-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/326/425/GCF_008326425.1_SulIC006_1.0/
+1295612,1295612,1295612,Mucilaginibacter yixingensis,GCF_003050755.1,reference genome,Contig,2018-04-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/050/755/GCF_003050755.1_ASM305075v1/
+1303518,1303518,454171,Chthonomonas calidirosea T49,GCF_000427095.1,reference genome,Chromosome,2013-06-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/427/095/GCF_000427095.1_T49/
+1312852,1312852,1312852,Thermoanaerobaculum aquaticum,GCF_000687145.1,reference genome,Scaffold,2014-05-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/687/145/GCF_000687145.1_TheAqu1.0/
+1314748,1314748,1123961,Alicyclobacillus mali NBRC 102425,GCF_001570745.1,na,Contig,2016-02-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/570/745/GCF_001570745.1_ASM157074v1/
+1323370,1323370,1323370,Caloranaerobacter ferrireducens,GCF_001730685.1,reference genome,Contig,2016-09-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/730/685/GCF_001730685.1_ASM173068v1/
+1324956,1324956,1324956,Melghiribacillus thermohalophilus,GCF_004342905.1,reference genome,Scaffold,2019-03-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/342/905/GCF_004342905.1_ASM434290v1/
+1331910,1331910,1331910,Thermogutta terrifontis,GCF_002277955.1,reference genome,Complete Genome,2017-08-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/277/955/GCF_002277955.1_ASM227795v1/
+1335048,1335048,1335048,Frigidibacter mobilis,GCF_001620265.1,reference genome,Complete Genome,2016-04-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/620/265/GCF_001620265.1_ASM162026v1/
+1335746,1260251,1335746,Spiribacter salinus M19-40,GCF_000319575.2,reference genome,Complete Genome,2013-05-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/319/575/GCF_000319575.2_ASM31957v2/
+1336806,1336806,1336806,Reinekea forsetii,GCF_002795845.1,reference genome,Complete Genome,2017-11-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/795/845/GCF_002795845.1_ASM279584v1/
+1339250,1339250,172827,Meiothermus taiwanensis WR-220,GCF_003568585.1,reference genome,Complete Genome,2018-06-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/568/585/GCF_003568585.1_meiothermus1.04/
+1344584,1344584,2234,Archaeoglobus fulgidus DSM 8774,GCF_000734035.1,na,Complete Genome,2014-07-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/734/035/GCF_000734035.1_ASM73403v1/
+1353778,1353778,1353778,Flavobacterium lacus,GCF_003268815.1,reference genome,Scaffold,2018-06-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/268/815/GCF_003268815.1_ASM326881v1/
+1356854,1356854,1450,Alicyclobacillus acidoterrestris ATCC 49025,GCF_000444055.1,na,Contig,2013-08-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/444/055/GCF_000444055.1_Alicyclobac_acidoter_v1/
+1378066,1378066,1378066,Chroococcidiopsis sp. TS-821,GCF_963877035.1,na,Contig,2024-03-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/963/877/035/GCF_963877035.1_ena-yuan-GCF_002939305.1/
+1381558,1381558,1381558,Sphaerisporangium rufum,GCF_016863395.1,reference genome,Contig,2021-01-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/016/863/395/GCF_016863395.1_ASM1686339v1/
+1382306,1382306,1382306,Thermogemmatispora carboxidivorans,GCF_000702505.1,reference genome,Contig,2014-06-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/702/505/GCF_000702505.1_ASM70250v1/
+1382356,1382356,1382356,Thermorudis peleae,GCF_000744775.1,reference genome,Contig,2014-08-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/744/775/GCF_000744775.1_ASM74477v1/
+1382359,1382359,1382359,Pseudacidobacterium ailaaui,GCF_000688455.1,reference genome,Contig,2014-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/688/455/GCF_000688455.1_ASM68845v1/
+1392641,1392641,1392641,Rubrobacter naiadicus,GCF_028617085.1,reference genome,Contig,2023-02-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/028/617/085/GCF_028617085.1_ASM2861708v1/
+1393122,1393122,1393122,Thermoflavifilum thermophilum,GCF_900116565.1,reference genome,Scaffold,2016-11-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/116/565/GCF_900116565.1_IMG-taxon_2600255258_annotated_assembly/
+1407499,1407499,1407499,Halobacterium hubeiense,GCF_001488575.1,reference genome,Complete Genome,2015-12-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/488/575/GCF_001488575.1_Halobacterium_hubeiense_JI20-1/
+1410674,1410674,322505,Sharpea azabuensis DSM 18934,GCF_000702165.1,reference genome,Scaffold,2014-06-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/702/165/GCF_000702165.1_ASM70216v1/
+1411117,1411117,1411117,Thermomonospora amylolytica,GCF_003589885.1,reference genome,Complete Genome,2018-09-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/589/885/GCF_003589885.1_ASM358988v1/
+1432656,1432656,110164,Thermococcus guaymasensis DSM 11113,GCF_000816105.1,reference genome,Complete Genome,2015-01-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/816/105/GCF_000816105.1_ASM81610v1/
+1434730,1434730,1434730,Dactylosporangium cerinum,GCF_042653625.1,reference genome,Scaffold,2024-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/653/625/GCF_042653625.1_ASM4265362v1/
+1434752,1434752,1434752,Arcticibacter eurypsychrophilus,GCF_001730525.1,reference genome,Contig,2016-09-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/730/525/GCF_001730525.1_ASM173052v1/
+1441628,1441628,178606,Leptospirillum ferriphilum YSK,GCF_000695975.1,na,Complete Genome,2014-05-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/695/975/GCF_000695975.1_ASM69597v1/
+1449352,1449352,105425,Streptacidiphilus albus JL83,GCF_000744705.1,reference genome,Contig,2014-08-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/744/705/GCF_000744705.1_ASM74470v1/
+1450156,1450156,1450156,Defluviitalea raffinosedens,GCF_009765695.1,reference genome,Contig,2019-12-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/765/695/GCF_009765695.1_ASM976569v1/
+1452487,1452487,1452487,Crenobacter luteus,GCF_004345725.1,reference genome,Scaffold,2019-03-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/345/725/GCF_004345725.1_ASM434572v1/
+1457250,1457250,1457250,Halapricum salinum,GCF_004799665.1,reference genome,Complete Genome,2019-04-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/799/665/GCF_004799665.1_ASM479966v1/
+1469144,1469144,1469144,Carbonactinospora thermoautotrophica,GCF_001543895.1,reference genome,Contig,2016-02-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/543/895/GCF_001543895.1_ASM154389v1/
+1469557,1469557,1469557,Lacinutrix jangbogonensis,GCF_000797445.1,reference genome,Contig,2014-12-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/797/445/GCF_000797445.1_ASM79744v1/
+1472767,1472767,1472767,Lentibacillus amyloliquefaciens,GCF_001307805.1,reference genome,Complete Genome,2016-01-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/307/805/GCF_001307805.1_ASM130780v2/
+1477021,1477021,1477021,Conyzicola nivalis,GCF_014639655.1,reference genome,Scaffold,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/639/655/GCF_014639655.1_ASM1463965v1/
+1485217,1485217,1485217,Massilia eurypsychrophila,GCF_002760655.1,reference genome,Contig,2017-11-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/760/655/GCF_002760655.1_ASM276065v1/
+1495650,1495650,1495650,Thermoflexus hugenholtzii,GCF_018771565.1,na,Complete Genome,2021-06-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/018/771/565/GCF_018771565.1_ASM1877156v1/
+1505907,1505907,1505907,Thermococcus eurythermalis,GCF_000769655.1,reference genome,Complete Genome,2014-10-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/769/655/GCF_000769655.1_ASM76965v1/
+1515746,1515746,1515746,Shewanella mangrovi,GCF_000753795.1,reference genome,Contig,2014-09-10,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/753/795/GCF_000753795.1_ASM75379v1/
+1524095,1524095,1524095,Hymenobacter frigidus,GCF_014640435.1,reference genome,Scaffold,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/640/435/GCF_014640435.1_ASM1464043v1/
+1524097,1524097,1524097,Massilia glaciei,GCF_003011895.2,reference genome,Contig,2018-05-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/011/895/GCF_003011895.2_ASM301189v2/
+1524260,1524260,1524260,Polaribacter marinivivus,GCF_042651285.1,reference genome,Scaffold,2024-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/651/285/GCF_042651285.1_ASM4265128v1/
+1524462,1524462,1524462,Rhodanobacter sp. FW510-R10,GCF_001617435.1,na,Contig,2016-04-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/617/435/GCF_001617435.1_ASM161743v1/
+1524463,1524463,1524463,Rhodanobacter sp. FW106-PBR-LB-2-11,GCF_041107305.1,na,Contig,2024-08-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/041/107/305/GCF_041107305.1_ASM4110730v1/
+1526162,1526162,1526162,Halorubrum yunnanense,GCF_055381185.1,reference genome,Complete Genome,2025-08-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/055/381/185/GCF_055381185.1_ASM5538118v1/
+1536900,1536900,1536900,Wenyingzhuangia gracilariae,GCF_056387575.1,reference genome,Complete Genome,2026-03-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/056/387/575/GCF_056387575.1_ASM5638757v1/
+1538023,1538023,1538023,Aureisphaera galaxeae,GCF_028561275.1,reference genome,Contig,2023-02-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/028/561/275/GCF_028561275.1_ASM2856127v1/
+1550241,1550241,1550241,Infirmifilum uzonense,GCF_000993805.1,reference genome,Complete Genome,2015-05-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/993/805/GCF_000993805.1_ASM99380v1/
+1555112,1555112,1555112,Limnochorda pilosa,GCF_001544015.1,reference genome,Complete Genome,2015-08-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/544/015/GCF_001544015.1_ASM154401v1/
+1562124,1562124,1562124,Hymenobacter glacieicola,GCF_014640315.1,reference genome,Scaffold,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/640/315/GCF_014640315.1_ASM1464031v1/
+1573172,1573172,1573172,Deferrisoma palaeochoriense,GCF_054656955.1,reference genome,Contig,2025-07-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/054/656/955/GCF_054656955.1_ASM5465695v1/
+1582439,1582439,1582439,Nitrosopumilus piranensis,GCF_000875775.1,reference genome,Complete Genome,2015-02-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/875/775/GCF_000875775.1_ASM87577v1/
+1617087,1617087,1617087,Streptomyces polygonati,GCF_042650325.1,reference genome,Scaffold,2024-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/650/325/GCF_042650325.1_ASM4265032v1/
+1627895,1627895,1627895,Hypnocyclicus thermotrophus,GCF_004365575.1,reference genome,Scaffold,2019-03-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/365/575/GCF_004365575.1_ASM436557v1/
+1632025,1632025,1632025,Aliiroseovarius zhejiangensis,GCF_014656375.1,reference genome,Contig,2020-09-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/656/375/GCF_014656375.1_ASM1465637v1/
+1641715,1641715,1641715,Sinobacterium norvegicum,GCF_923077115.1,reference genome,Contig,2022-02-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/923/077/115/GCF_923077115.1_Sinobacterium_norvegicum_CECT_8267_Spades_Prokka/
+1642299,1642299,1642299,Streptomyces alfalfae,GCF_018141485.1,reference genome,Complete Genome,2021-04-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/018/141/485/GCF_018141485.1_ASM1814148v1/
+1650659,1650659,1650659,Thermoproteus sp. CP80,GCF_002077075.2,na,Scaffold,2018-01-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/077/075/GCF_002077075.2_ASM207707v2/
+1658618,1658618,1658618,Rubritalea profundi,GCF_002954445.1,reference genome,Scaffold,2018-02-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/954/445/GCF_002954445.1_ASM295444v1/
+1674942,1674942,1674942,Caenibacillus caldisaponilyticus,GCF_002003465.1,reference genome,Contig,2017-01-27,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/003/465/GCF_002003465.1_B157_assembly01/
+1678840,1678840,1678840,Flexilinea flocculi,GCF_001192795.1,reference genome,Scaffold,2015-07-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/192/795/GCF_001192795.1_ASM119279v1/
+1698799,1698799,1698799,Marinobacterium aestuariivivens,GCF_042661465.1,reference genome,Contig,2024-10-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/661/465/GCF_042661465.1_ASM4266146v1/
+1707952,1707952,1707952,Chloroflexus islandicus,GCF_001650695.1,reference genome,Scaffold,2016-05-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/650/695/GCF_001650695.1_ASM165069v1/
+1715806,1715806,1715806,Methanosarcina flavescens,GCF_001304615.2,reference genome,Complete Genome,2018-10-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/304/615/GCF_001304615.2_ASM130461v2/
+1750597,1750597,1750597,Inmirania thermothiophila,GCF_003751635.1,reference genome,Contig,2018-11-15,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/751/635/GCF_003751635.1_ASM375163v1/
+1770529,1770529,1770529,Spirosoma soli,GCF_042684525.1,reference genome,Scaffold,2024-10-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/684/525/GCF_042684525.1_ASM4268452v1/
+1776378,1776378,1776378,Paenibacillus phocaeensis,GCF_900021165.1,reference genome,Contig,2016-01-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/021/165/GCF_900021165.1_Paenibacillus_phoceensis/
+1784724,1784724,1784724,Lentzea chajnantorensis,GCF_054300775.1,reference genome,Contig,2026-01-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/054/300/775/GCF_054300775.1_ASM5430077v1/
+1794944,1794944,1794944,Flexivirga oryzae,GCF_014190805.1,reference genome,Contig,2020-08-14,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/014/190/805/GCF_014190805.1_ASM1419080v1/
+1795632,1795632,1795632,Thermodesulfatator autotrophicus,GCF_001642325.1,reference genome,Contig,2016-05-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/642/325/GCF_001642325.1_ASM164232v1/
+1812810,1812810,1812810,Rhodohalobacter halophilus,GCF_001715195.1,reference genome,Contig,2016-08-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/715/195/GCF_001715195.1_ASM171519v1/
+1833852,1833852,1833852,Desulforamulus ferrireducens,GCF_002005145.1,reference genome,Complete Genome,2017-02-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/005/145/GCF_002005145.1_ASM200514v1/
+1837344,1837344,1837344,Propioniciclava sinopodophylli,GCF_004324755.1,reference genome,Contig,2019-03-04,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/324/755/GCF_004324755.1_ASM432475v1/
+1839801,1839801,1839801,Dehalogenimonas formicexedens,GCF_001953175.1,reference genome,Complete Genome,2017-01-17,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/953/175/GCF_001953175.1_ASM195317v1/
+1841482,1841482,1841482,Flavitalea antarctica,GCF_054461535.1,reference genome,Contig,2026-01-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/054/461/535/GCF_054461535.1_ASM5446153v1/
+1843235,1843235,1843235,Pedobacter psychrotolerans,GCF_004340665.1,reference genome,Scaffold,2019-03-11,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/340/665/GCF_004340665.1_ASM434066v1/
+1843236,1843236,1843236,Sphingomonas montana,GCF_001956315.1,reference genome,Scaffold,2017-01-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/956/315/GCF_001956315.1_ASM195631v1/
+1844006,1844006,1844006,Phaeobacter porticola,GCF_001888185.1,reference genome,Complete Genome,2016-12-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/888/185/GCF_001888185.1_ASM188818v1/
+1849968,1849968,1849968,Flavivirga aquatica,GCF_001747085.1,reference genome,Contig,2016-09-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/747/085/GCF_001747085.1_ASM174708v1/
+1858794,1858794,1858794,Mycobacterium talmoniae,GCF_001854525.1,reference genome,Scaffold,2016-10-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/854/525/GCF_001854525.1_ASM185452v1/
+1859457,1859457,1859457,Pseudoalteromonas amylolytica,GCF_001854605.1,reference genome,Scaffold,2016-10-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/854/605/GCF_001854605.1_ASM185460v1/
+1864947,1864947,1864947,Chitinophaga rhizosphaerae,GCF_003958645.1,reference genome,Contig,2018-12-21,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/958/645/GCF_003958645.1_ASM395864v1/
+1873883,1873883,1873883,Rhodoplanes sp. JGI PP 4-B12,GCF_900188135.1,na,Contig,2017-06-24,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/188/135/GCF_900188135.1_IMG-taxon_2675903048_annotated_assembly/
+1908239,1908239,1908239,Pedobacter lithocola,GCF_042650845.1,reference genome,Contig,2024-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/650/845/GCF_042650845.1_ASM4265084v1/
+1908308,1908308,1908308,Microbulbifer aestuariivivens,GCF_039545115.1,reference genome,Contig,2024-03-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/545/115/GCF_039545115.1_ASM3954511v1/
+1914305,1914305,1914305,Desulfurobacterium indicum,GCF_001968985.1,reference genome,Contig,2017-01-23,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/968/985/GCF_001968985.1_ASM196898v1/
+1920749,1920749,1920749,Candidatus Mancarchaeum acidiphilum,GCF_002214165.1,reference genome,Complete Genome,2017-07-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/165/GCF_002214165.1_ASM221416v1/
+1925762,1925762,1925762,Algoriphagus marinus,GCF_001936475.1,reference genome,Contig,2017-01-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/936/475/GCF_001936475.1_ASM193647v1/
+1936021,1936021,1936021,Thermosulfuriphilus ammonigenes,GCF_011207455.1,reference genome,Complete Genome,2020-03-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/207/455/GCF_011207455.1_ASM1120745v1/
+1940529,1940529,1940529,Lentibacillus sediminis,GCF_002763455.1,reference genome,Contig,2017-11-13,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/763/455/GCF_002763455.1_ASM276345v1/
+1960156,1960156,1960156,Abditibacterium utsteinense,GCF_002973605.1,reference genome,Contig,2018-03-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/973/605/GCF_002973605.1_ASM297360v1/
+1962263,1962263,1962263,Clostridium tepidum,GCF_002008345.1,reference genome,Contig,2017-02-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/008/345/GCF_002008345.1_ASM200834v1/
+1967665,1967665,1967665,Cognaticolwellia beringensis,GCF_002076895.1,reference genome,Complete Genome,2017-04-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/076/895/GCF_002076895.1_ASM207689v1/
+1970307,1970307,1970307,Acidovorax sp. 16-64-162,GCF_002281795.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/281/795/GCF_002281795.1_ASM228179v1/
+1970309,1970309,1970309,Acidovorax sp. 24-64-9,GCF_002257135.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/257/135/GCF_002257135.1_ASM225713v1/
+1970310,1970310,1970310,Acidovorax sp. 28-64-14,GCF_002278845.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/278/845/GCF_002278845.1_ASM227884v1/
+1970312,1970312,1970312,Acidovorax sp. 35-64-16,GCF_002281195.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/281/195/GCF_002281195.1_ASM228119v1/
+1970313,1970313,1970313,Acidovorax sp. 39-64-12,GCF_002282335.1,na,Contig,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/282/335/GCF_002282335.1_ASM228233v1/
+1970432,1970432,1970432,Sphingomonas sp. 28-62-11,GCF_002278865.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/278/865/GCF_002278865.1_ASM227886v1/
+1970433,1970433,1970433,Sphingomonas sp. 28-62-20,GCF_002281505.1,na,Contig,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/281/505/GCF_002281505.1_ASM228150v1/
+1970434,1970434,1970434,Sphingomonas sp. 28-63-12,GCF_002281535.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/281/535/GCF_002281535.1_ASM228153v1/
+1970436,1970436,1970436,Sphingomonas sp. 32-62-10,GCF_002280555.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/280/555/GCF_002280555.1_ASM228055v1/
+1970447,1970447,1970447,Thiomonas sp. 13-64-67,GCF_002282795.1,na,Scaffold,2017-08-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/282/795/GCF_002282795.1_ASM228279v1/
+1972068,1972068,1972068,Sulfurivermis fontis,GCF_004001245.1,reference genome,Complete Genome,2018-10-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/001/245/GCF_004001245.1_ASM400124v1/
+2014610,2014610,2014610,Roseisolibacter agri,GCF_030159095.1,reference genome,Scaffold,2023-02-03,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/030/159/095/GCF_030159095.1_ASM3015909v1/
+2018669,2018669,2018669,Desulfosporosinus fructosivorans,GCF_004766045.1,reference genome,Scaffold,2019-04-09,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/766/045/GCF_004766045.1_ASM476604v1/
+2023717,2023717,2023717,Photobacterium carnosum,GCF_021236965.1,reference genome,Contig,2021-12-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/021/236/965/GCF_021236965.1_ASM2123696v1/
+2026176,2026176,2026176,Massilia phosphatilytica,GCF_977014125.1,reference genome,Contig,2025-11-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/977/014/125/GCF_977014125.1_Ri157/
+2029677,2029677,2029677,Tenacibaculum insulae,GCF_964512435.1,reference genome,Complete Genome,2024-12-06,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/964/512/435/GCF_964512435.1_ASM96451243v1/
+2038737,2038737,2038737,Flavobacterium ardleyense,GCF_042686085.1,reference genome,Scaffold,2024-10-07,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/686/085/GCF_042686085.1_ASM4268608v1/
+2040274,2040274,2040274,Sphingomonas antarctica,GCF_965137005.1,reference genome,Contig,2025-02-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/965/137/005/GCF_965137005.1_CIP111604T/
+2049879,2049879,2049879,Sulfurisphaera javensis,GCF_041154675.1,reference genome,Complete Genome,2024-06-25,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/041/154/675/GCF_041154675.1_ASM4115467v1/
+2054411,2054411,2054411,Hymenobacter defluvii,GCF_017589435.1,na,Contig,2021-03-26,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/017/589/435/GCF_017589435.1_ASM1758943v1/
+2056433,2056433,2056433,Subtercola vilae,GCF_004923255.1,reference genome,Contig,2019-04-29,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/923/255/GCF_004923255.1_ASM492325v1/
+2058097,2058097,2058097,Candidatus Nitrosocaldus cavascurensis,GCF_900248165.1,reference genome,Complete Genome,2018-01-31,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/248/165/GCF_900248165.1_Nitrosocaldus_cavascurensis_SCU2_chromosome/
+2070508,2070508,2070508,Blastococcus atacamensis,GCF_002938425.1,reference genome,Contig,2018-02-22,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/938/425/GCF_002938425.1_ASM293842v1/
+2077091,2077091,2077091,Flavipsychrobacter stenotrophus,GCF_002954265.1,reference genome,Contig,2018-01-28,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/954/265/GCF_002954265.1_ASM295426v1/
+2182385,2182385,2182385,Brachybacterium endophyticum,GCF_003130585.1,reference genome,Contig,2018-05-16,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/130/585/GCF_003130585.1_ASM313058v1/
+2184083,2184083,2184083,Pseudothauera hydrothermalis,GCF_003345255.1,reference genome,Complete Genome,2018-07-30,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/345/255/GCF_003345255.1_ASM334525v1/
+2493090,2493090,2493090,Thermomonospora catenispora,GCF_006363815.1,reference genome,Scaffold,2019-06-18,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/006/363/815/GCF_006363815.1_ASM636381v1/
+2499078,2499078,2499078,Vibrio ouci,GCF_004551525.1,reference genome,Contig,2019-04-01,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/551/525/GCF_004551525.1_ASM455152v1/
+2499220,2499220,2499220,Mycoplasma enhydrae,GCF_025779955.1,reference genome,Contig,2022-10-20,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/025/779/955/GCF_025779955.1_ASM2577995v1/
+2509433,2509433,2509433,Senegalimassilia faecalis,GCF_004135645.1,reference genome,Contig,2019-02-02,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/135/645/GCF_004135645.1_ASM413564v1/
+2586643,2586643,2586643,Thermococcus indicus,GCF_006274605.1,reference genome,Complete Genome,2019-06-12,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/006/274/605/GCF_006274605.1_ASM627460v1/
+2663009,2663009,2663009,Fusobacterium pseudoperiodonticum,GCF_002761955.1,reference genome,Contig,2017-11-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/761/955/GCF_002761955.1_ASM276195v1/
+2689387,2689387,2689387,Thermococcus bergensis,GCF_020386975.1,reference genome,Contig,2021-10-08,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/020/386/975/GCF_020386975.1_ASM2038697v1/
+2707049,2707049,2707049,Coralloluteibacterium thermophilum,GCF_042654365.1,reference genome,Scaffold,2024-10-05,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/654/365/GCF_042654365.1_ASM4265436v1/
