@@ -1,0 +1,11 @@
+biopython
+certifi
+charset-normalizer
+idna
+numpy
+pandas
+python-dateutil
+requests
+six
+tqdm
+urllib3
