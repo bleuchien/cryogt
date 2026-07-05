@@ -75,7 +75,8 @@ fi
 echo "Combining sampled proteomes."
 cat "$PROTEOMES/"*.faa > "$MMSEQS_DIR/proteomes_combined.faa"
 
-echo "Analyzing $(grep '^>' "$MMSEQS_DIR/proteomes_combined.faa" | wc -l) sequences."
+SEQUENCE_COUNT_PRE=$(grep '^>' "$MMSEQS_DIR/proteomes_combined.faa" | wc -l)
+echo "Analyzing $SEQUENCE_COUNT_PRE sequences."
 
 echo "Stage 1 : Removing highly similar sequences."
 
@@ -102,7 +103,8 @@ cut -f1 "$MMSEQS_DIR/stage1/clusters.tsv" | sort -u > "$MMSEQS_DIR/stage1/repres
 "$MMSEQS" createsubdb "$MMSEQS_DIR/stage1/representatives.txt" "$MMSEQS_DIR/stage1/proteomes_combined.db" "$MMSEQS_DIR/stage1/representatives.db" --id-mode 1
 "$MMSEQS" convert2fasta "$MMSEQS_DIR/stage1/representatives.db" "$MMSEQS_DIR/stage1/representatives.faa"
 
-echo "Stage 1 complete: $(wc -l "$MMSEQS_DIR/stage1/representatives.txt") representative sequences remaining."
+SEQUENCE_COUNT_POST=$(cat "$MMSEQS_DIR/stage1/representatives.txt" | wc -l)
+echo "Stage 1 complete: $SEQUENCE_COUNT_POST representative sequences remaining (from $SEQUENCE_COUNT_PRE)."
 
 # stage 2 - clustering the remaining sequences
 
@@ -116,7 +118,6 @@ echo "Creating new database from the representative sequences."
 # --min-seq-id minimum pairwise sequence identity -> low to group distant relatives 0.3-0.6
 # -c minimum coverage of the alignment -> lower coverage 0.5-0.8
 # --cov-mode require coverage threshold on both sequences (strict) -> 0
-# --cluster-mode -> 1 to connect clusters transitively
 echo "Clustering with low similarity."
 "$MMSEQS" cluster "$MMSEQS_DIR/stage2/representatives.db" "$MMSEQS_DIR/stage2/cluster.db" "$MMSEQS_DIR/temp_stage2" --min-seq-id 0.3 -c 0.9 --cov-mode 0
 
@@ -124,7 +125,12 @@ echo "Creating a TSV formatted output."
 "$MMSEQS" createtsv "$MMSEQS_DIR/stage2/representatives.db" "$MMSEQS_DIR/stage2/representatives.db" "$MMSEQS_DIR/stage2/cluster.db" "$MMSEQS_DIR/stage2/split_clusters.tsv"
 
 CLUSTERS=$(cut -f1 "$MMSEQS_DIR/stage2/split_clusters.tsv" | sort -u | wc -l)
-echo "Stage 2 complete. $CLUSTERS identified. Output written to $MMSEQS_DIR/stage2/split_clusters.tsv."
+echo "Stage 2 complete. $CLUSTERS clusters identified. Output written to $MMSEQS_DIR/stage2/split_clusters.tsv."
+
+SEQUENCE_COUNT_DIFF=$((SEQUENCE_COUNT_PRE - SEQUENCE_COUNT_POST))
+echo "SUMMARY
+  $SEQUENCE_COUNT_DIFF sequences removed due to high similarity. $SEQUENCE_COUNT_POST remaining sequences.
+  The remaining sequences can be (roughly) grouped into $CLUSTERS clusters."
 
 # return to where we where
 popd
