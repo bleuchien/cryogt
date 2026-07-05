@@ -90,10 +90,11 @@ selected_parts = []
 
 for b in bin_config:
     t_low, t_high, bin_name = b
-    print(f'Working on bin {bin_name} ({t_low}°C <= X < {t_high}°C).')
-
+    
     # select the given temperature bin
     df_bin = df[(df['Temp_Duplicate_Average'] >= t_low) & (df['Temp_Duplicate_Average'] < t_high)]
+
+    print(f'Working on bin {bin_name} ({t_low}°C <= X < {t_high}°C). {len(df_bin)} members.')
 
     if df_bin.empty: continue
 
