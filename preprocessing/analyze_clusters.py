@@ -20,7 +20,7 @@ fasta_file = data_dir / 'mmseqs/stage1/representatives.faa'
 for f in [cluster_file, fasta_file]:
     if not f.exists():
         print(f'{f} does not exist.')
-        sys.exit(-1)
+        sys.exit(1)
 
 print(f'Analyzing clusters from {cluster_file}.')
 print(f'Using sequences from {fasta_file}.')
