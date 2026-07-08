@@ -101,9 +101,11 @@ rng = np.random.default_rng(1202)
 # not only on the cluster boundary but also over the bin label
 for bin_name, bin_group in small.groupby('dominant_bin'):
     # get the representatives from this cluster
-    reps = bin_group['representative'].values.copy()
-    # shuffel the series
-    rng.shuffle(reps)
+    reps = bin_group['representative'].to_numpy(dtype=object)
+    # shuffle the index (as shuffling the string/object causes issues)
+    idx = rng.permutation(len(reps))
+    # update the dataframe with shuffled index
+    reps = reps[idx]
     # number of series entries
     n = len(reps)
     # calculate the split boundaries
