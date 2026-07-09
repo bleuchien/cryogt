@@ -27,10 +27,6 @@ dropped_refseq_missing_out = data_in_file.with_name(data_in_file.stem + '_refseq
 
 taxid_col = 'ncbiTaxID_new'
 
-#
-# main script
-#  
-
 # read growth temp dataset
 df = pd.read_csv(data_in_file)
 
@@ -104,7 +100,6 @@ merged_unique_new = int(df.loc[df['taxid_was_merged'], taxid_col].nunique())
 deleted_unique_before = int(df.loc[df['taxid_was_deleted'], 'taxid_original'].nunique())
 
 print('Summary')
-print('-------')
 print(f'input file:   {data_in_file}')
 print(f'output file:  {data_out_file}')
 print(f'rows:         {n_rows_before} -> {n_rows_after} (dropped {n_rows_before - n_rows_after})')
