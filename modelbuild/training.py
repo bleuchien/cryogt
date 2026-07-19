@@ -1,11 +1,12 @@
 import sys
 import pandas as pd
 from pathlib import Path
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, DataCollatorWithPadding
 from config import Config
 from build_utils import (
-    PsychrophileDataset, 
+    PsychrophileDataset,
+    PsychrophileCollator,
     prepare_split_data, 
     download_model,
 )
@@ -66,9 +67,8 @@ print(f'Validation dataset has {len(val_dataset)} entries.')
 
 print(val_dataset[0])
 
-# use the HuggingFace collator with the created tokenizer
-# using the collator is more efficient than pre-processing the whole dataset in one step
-collator = DataCollatorWithPadding(tokenizer=tokenizer, padding=True)
+# custom collator for dynamic batch padding and mask creation
+collator = PsychrophileCollator(tokenizer=tokenizer)
 
 # create the dataloaders
 train_loader = DataLoader(

@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 from torch.utils.data import Dataset
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, DataCollatorWithPadding
 from huggingface_hub import snapshot_download
 from typing import Literal
 from pathlib import Path
@@ -46,6 +46,30 @@ class PsychrophileDataset(Dataset):
             'special_tokens_mask': self.special_tokens_mask[idx],
             'label': self.ogt_values[idx],
         }
+
+# customized data collator for dynamic padding and mask creation
+class PsychrophileCollator:
+    def __init__(self, tokenizer):
+        # use HuggingFace collator for padding
+        self.hf_collator = DataCollatorWithPadding(
+            tokenizer=tokenizer,
+            padding=True,
+            return_tensors='pt',
+        )
+
+    def __call__(self, examples):
+        batch = self.hf_collator(examples)
+
+        # ensure the datatype of the OGT (label) is float
+        batch['labels'] = batch['labels'].float()
+
+        # create a "residue mask" for mean pooling of amino acids only
+        batch['residue_mask'] = (
+            batch['attention_mask'].bool()
+            & ~batch['special_tokens_mask'].bool()
+        )
+
+        return batch
 
 # download the specified model from huggingface to the specified directory
 def download_model(
