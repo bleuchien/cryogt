@@ -71,6 +71,66 @@ class PsychrophileCollator:
 
         return batch
 
+# MLP regression head
+class RegressionHead(nn.Module):
+    def __init__(
+        self,
+        input_dim: int,                                                 # dimensionality of the input
+        hidden_dims: list[int] | tuple[int, ...] = (512, 128),          # dimesions of the MLP layers
+        dropout: float = 0.1,                                           # dropout value
+        layer_norm: bool = True,                                        # should normalization be applied
+        log_var_min: float = -10.0,                                     # log_var clamping min value
+        log_var_max: float = 5.0,                                       # log_var clamping max value
+    ):
+        super().__init__()
+
+        # log_var clamping values
+        self.log_var_min = log_var_min
+        self.log_var_max = log_var_max
+
+        # layer configuration
+        layers = []
+
+        # add a normalization layer
+        if layer_norm:
+            layers.append(nn.LayerNorm(input_dim))
+
+        # store the current layer dimension temporarely
+        prev_dim = input_dim
+        # build the MLP from the hidden_dims given
+        for hidden_dim in hidden_dims:
+            # add a linear layer (reducing the dimensionality)
+            layers.append(nn.Linear(prev_dim, hidden_dim))
+            # add a GELU layer (should perform better than ReLU)
+            layers.append(nn.GELU())
+            # add a dropout layer to improve learning and reduce overfitting
+            layers.append(nn.Dropout(dropout))
+            # update the stored previous layer dimension
+            prev_dim = hidden_dim
+
+        # build shared neural net for both output heads
+        self.shared_net = nn.Sequential(*layers)
+
+        # output heads for OGT and log_var
+        self.mean_out = nn.Linear(prev_dim, 1)
+        self.logvar_out = nn.Linear(prev_dim, 1)
+        
+        # initialize log_var close to zero (for added stability)
+        nn.init.zeros_(self.logvar_out.bias)
+
+    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        # pass through the shared network
+        shared_features = self.shared_net(x)
+        
+        # predict OGT and log_var
+        mu = self.mean_out(shared_features).squeeze(-1)
+        log_var = self.logvar_out(shared_features).squeeze(-1)
+        
+        # clamp log_var for stability
+        log_var = torch.clamp(log_var, min=self.log_var_min, max=self.log_var_max)
+        
+        return mu, log_var
+
 # download the specified model from huggingface to the specified directory
 def download_model(
         model: str,                         # model name
