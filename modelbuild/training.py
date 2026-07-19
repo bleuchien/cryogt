@@ -1,4 +1,5 @@
 import sys
+import torch
 import pandas as pd
 from pathlib import Path
 from torch.utils.data import DataLoader
@@ -75,12 +76,23 @@ train_loader = DataLoader(
     train_dataset,
     batch_size=config.training.batch_size, 
     shuffle=True, 
-    collate_fn=collator
+    collate_fn=collator,
+    # num_workers=4,                                  # parallel dataloading (more efficient but bad for debugging)
+    # pin_memory=True,                                # PyTorch recommendation for parallel dataloading
 )
 
 val_loader = DataLoader(
     val_dataset,
     batch_size=config.training.batch_size, 
     shuffle=True, 
-    collate_fn=collator
+    collate_fn=collator,
+    # num_workers=4,                                  # parallel dataloading (more efficient but bad for debugging)
+    # pin_memory=True,                                # PyTorch recommendation for parallel dataloading
 )
+
+# model setup
+
+# PyTorch accelerator device setup
+device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else 'cpu'
+print(f'Using {device} device for tensor calculation acceleration.')
+
