@@ -225,3 +225,13 @@ __marimo__/
 
 # ignore the extracted dump files
 *.dmp
+
+# ignore mmseqs output
+data/mmseqs/
+
+# ignore mmseqs binaries (directory and download)
+preprocessing/mmseqs/
+preprocessing/mmseqs*.tar.gz
+
+# ignore ESM model downloads
+data/models/facebook/
