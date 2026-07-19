@@ -16,6 +16,15 @@ training:
     batch_size: 32
     # maximum aa sequence length
     max_length: 1024
+    # MLP configuration
+    hidden_layers: (512, 128)
+    # dropout value
+    dropout: 0.1
+    # layer normaliztion
+    layer_norm: true
+    # log_var clamping min/max values
+    log_var_min: -10.0
+    log_var_max: 5.0
 
 paths:
     # data directory base path

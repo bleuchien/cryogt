@@ -11,6 +11,11 @@ class TrainingConfig:
     epochs: int
     batch_size: int
     max_length: int
+    hidden_layers: list[int] | tuple[int, ...]
+    dropout: float
+    layer_norm: bool
+    log_var_min: float
+    log_var_max: float
 
 @dataclass
 class PathsConfig:
