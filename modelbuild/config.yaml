@@ -1,0 +1,29 @@
+# model build configuration
+
+model:
+    # quick tests
+    name: "facebook/esm2_t12_35M_UR50D"
+    # base model
+    # name: "facebook/esm2_t30_150M_UR50D"
+    # extended model
+    # name: "facebook/esm2_t33_650M_UR50D"
+
+training:
+    # number of epochs to train
+    epochs: 10
+    # batch size
+    batch_size: 32
+    # maximum aa sequence length
+    max_length: 1024
+
+paths:
+    # data directory base path
+    data_dir: "../data"
+    # train/test/val split data file
+    split_file: "../data/ttv_splits.csv"
+    # proteome files references in the split file
+    proteomes_dir: "../data/proteomes_sampled"
+    # ML models directory
+    model_dir: "../data/models"
+    # DoRA adapter directory
+    adapter_dir: "../data/adapters"
