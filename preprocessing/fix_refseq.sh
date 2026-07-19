@@ -18,4 +18,4 @@ NF==39 {
 ' "$REFSEQ" > "$REFSEQ_FIX"
 
 # move fixed file to original
-mv "$REFSEQ_NEW" "$REFSEQ"
+mv "$REFSEQ_FIX" "$REFSEQ"
