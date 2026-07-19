@@ -1,6 +1,7 @@
 # model build configuration
 
 model:
+    # HF FB-ESM models https://huggingface.co/facebook/esm2_t30_150M_UR50D
     # quick tests
     name: "facebook/esm2_t12_35M_UR50D"
     # base model
