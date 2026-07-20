@@ -197,17 +197,22 @@ class ESMDoRA(nn.Module):
         return summed / denom
     
     def forward(self, input_ids, attention_mask, residue_mask, labels=None):
+        # run the input through ESM
         outputs = self.esm(
             input_ids=input_ids,
             attention_mask=attention_mask,
         )
 
+        # retrieve the output
         hidden = outputs.last_hidden_state
 
+        # mean pooling the aa residues only
         pooled = self.pool_mean(hidden, residue_mask)
 
+        # run the pooled output through the regression head
         mu, log_var = self.head(pooled)
 
+        # prepare the results for return
         result = {
             'mu': mu,
             'log_var': log_var,
@@ -215,6 +220,7 @@ class ESMDoRA(nn.Module):
             'std': torch.exp(0.5 * log_var),
         }
 
+        # calculate the Gaussian NLL loss
         if labels is not None:
             result['loss'] = gaussian_NLL(mu, log_var, labels)
 
