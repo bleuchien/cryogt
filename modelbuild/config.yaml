@@ -1,5 +1,6 @@
 # model build configuration
 
+# base model configuration
 model:
     # HF FB-ESM models https://huggingface.co/facebook/esm2_t30_150M_UR50D
     # quick tests
@@ -9,6 +10,7 @@ model:
     # extended model
     # name: "facebook/esm2_t33_650M_UR50D"
 
+# basic training configuration
 training:
     # number of epochs to train
     epochs: 10
@@ -16,6 +18,9 @@ training:
     batch_size: 32
     # maximum aa sequence length
     max_length: 1024
+
+# regression head configuration
+head:
     # MLP configuration
     hidden_layers: (512, 128)
     # dropout value
@@ -26,6 +31,18 @@ training:
     log_var_min: -10.0
     log_var_max: 5.0
 
+# ESM DoRA model configuration
+esmdora:
+    # DoRA rank
+    dora_r: 16
+    # DoRA alpha value
+    dora_alpha: 32
+    # DoRA dropout
+    dora_dropout: 0.05
+    # fine-tune target modules
+    target_modules: ('query', 'key', 'value')
+
+# paths configuration
 paths:
     # data directory base path
     data_dir: "../data"

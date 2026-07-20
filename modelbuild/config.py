@@ -11,11 +11,21 @@ class TrainingConfig:
     epochs: int
     batch_size: int
     max_length: int
+
+@dataclass
+class RegressionHeadConfig:
     hidden_layers: list[int] | tuple[int, ...]
     dropout: float
     layer_norm: bool
     log_var_min: float
     log_var_max: float
+
+@dataclass
+class ESMDoRAConfig:
+    dora_r: int
+    dora_alpha: int
+    dora_dropout: float
+    target_modules: list[str] | tuple[str, ...]
 
 @dataclass
 class PathsConfig:
@@ -29,6 +39,8 @@ class PathsConfig:
 class Config:
     model: ModelConfig = field(default_factory=ModelConfig)
     training: TrainingConfig = field(default_factory=TrainingConfig)
+    head: RegressionHeadConfig = field(default_factory=RegressionHeadConfig)
+    esmdora: ESMDoRAConfig = field(default_factory=ESMDoRAConfig)
     paths: PathsConfig = field(default_factory=PathsConfig)
 
     @classmethod
@@ -49,5 +61,7 @@ class Config:
         return cls(
             model=ModelConfig(**raw.get('model', {})),
             training=TrainingConfig(**raw.get('training', {})),
+            head=RegressionHeadConfig(**raw.get('head', {})),
+            esmdora=ESMDoRAConfig(**raw.get('esmdora', {})),
             paths=PathsConfig(**raw.get('paths', {})),
         )
