@@ -11,6 +11,9 @@ class TrainingConfig:
     epochs: int
     batch_size: int
     max_length: int
+    head_learning_rate: float
+    adapter_learning_rate: float
+    weight_decay: float
 
 @dataclass
 class RegressionHeadConfig:
