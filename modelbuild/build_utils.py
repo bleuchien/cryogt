@@ -1,8 +1,10 @@
 import torch
+import math
 from torch import nn
 from torch.utils.data import Dataset
-from transformers import AutoTokenizer, DataCollatorWithPadding
+from transformers import AutoModel, AutoTokenizer, DataCollatorWithPadding
 from huggingface_hub import snapshot_download
+from peft import LoraConfig, TaskType, get_peft_model
 from typing import Literal
 from pathlib import Path
 import pandas as pd
@@ -130,6 +132,106 @@ class RegressionHead(nn.Module):
         log_var = torch.clamp(log_var, min=self.log_var_min, max=self.log_var_max)
         
         return mu, log_var
+
+class ESMDoRA(nn.Module):
+    def __init__(
+        self,
+        esm_model_name: str,                                                        # ESM model name
+        head_hidden_dims: list[int] | tuple[int, ...] = (512, 128),                 # head MLP setup
+        head_dropout: float = 0.1,                                                  # head dropout
+        layer_norm: bool = True,                                                    # head should normalization be applied
+        log_var_min: float = -10.0,                                                 # head log_var clamping min value
+        log_var_max: float = 5.0,                                                   # head log_var clamping max value   
+        dora_r: int = 16,                                                           # DoRA rank
+        dora_alpha: int = 32,                                                       # DoRA alpha value
+        dora_dropout: float = 0.05,                                                 # DoRA dropout
+        target_modules: list[str] | tuple[str, ...] = ('query', 'key', 'value'),    # base model fine-tune targets
+        gradient_checkpointing: bool = False,                                       # option to reduce GPU memory footprint
+        ):
+        super().__init__()
+
+        # load the HuggingFace base model
+        base = AutoModel.from_pretrained(esm_model_name)
+
+        # option to reduce the GPU memory footprint
+        if gradient_checkpointing:
+            base.gradient_checkpointing_enable()
+            if hasattr(base, 'enable_input_require_grads'):
+                base.enable_input_require_grads()
+
+        # setup the DoRA fine-tuning configuration
+        peft_config = LoraConfig(
+            task_type=TaskType.FEATURE_EXTRACTION,
+            r=dora_r,
+            lora_alpha=dora_alpha,
+            lora_dropout=dora_dropout,
+            use_dora=True,
+            bias='none',
+            target_modules=list(target_modules),
+        )
+
+        # wrap the base model and DoRA configuration
+        self.esm = get_peft_model(base, peft_config)
+
+        # get the output dimensionality of the base model
+        input_dim = base.config.hidden_size
+
+        # prepare the regression head
+        self.head = RegressionHead(
+            input_dim=input_dim,
+            hidden_dims=head_hidden_dims,
+            dropout=head_dropout,
+            layer_norm=layer_norm,
+            log_var_min=log_var_min,
+            log_var_max=log_var_max
+        )
+
+    # mean pooling ovcer the amino acid residues only
+    def pool_mean(self, last_hidden_state, residue_mask):
+        # apply the residue mask 
+        mask = residue_mask.unsqueeze(-1).to(last_hidden_state.dtype)
+
+        summed = (last_hidden_state * mask).sum(dim=1)
+        denom = mask.sum(dim=1).clamp_min(1.0)
+
+        return summed / denom
+    
+    def forward(self, input_ids, attention_mask, residue_mask, labels=None):
+        outputs = self.esm(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+        )
+
+        hidden = outputs.last_hidden_state
+
+        pooled = self.pool_mean(hidden, residue_mask)
+
+        mu, log_var = self.head(pooled)
+
+        result = {
+            'mu': mu,
+            'log_var': log_var,
+            'var': torch.exp(log_var),
+            'std': torch.exp(0.5 * log_var),
+        }
+
+        if labels is not None:
+            result['loss'] = gaussian_NLL(mu, log_var, labels)
+
+        return result
+
+# Gaussian NLL function (based on the PyTorch source with (almost) the same name)
+# using mu and log_var instead of var
+def gaussian_NLL(
+        mu: torch.Tensor,
+        log_var: torch.Tensor,
+        y: torch.Tensor,
+        full: bool = True,
+    ):
+    loss = 0.5 * (log_var + (y - mu).pow(2) * torch.exp(-log_var))
+    if full:
+        loss += 0.5 * math.log(2.0 * math.pi)
+    return loss.mean()
 
 # download the specified model from huggingface to the specified directory
 def download_model(
