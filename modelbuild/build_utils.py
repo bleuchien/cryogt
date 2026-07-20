@@ -2,6 +2,7 @@ import torch
 import math
 from torch import nn
 from torch.utils.data import Dataset
+from torch.utils.tensorboard import SummaryWriter
 from transformers import AutoModel, AutoTokenizer, DataCollatorWithPadding
 from huggingface_hub import snapshot_download
 from peft import LoraConfig, TaskType, get_peft_model
@@ -118,6 +119,7 @@ class RegressionHead(nn.Module):
         self.logvar_out = nn.Linear(prev_dim, 1)
         
         # initialize log_var close to zero (for added stability)
+        nn.init.zeros_(self.logvar_out.weight)
         nn.init.zeros_(self.logvar_out.bias)
 
     def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
@@ -133,6 +135,8 @@ class RegressionHead(nn.Module):
         
         return mu, log_var
 
+# ESM model setup
+# https://github.com/ProteinVision/ESM2-Tutorial/blob/main/ESM2.ipynb
 class ESMDoRA(nn.Module):
     def __init__(
         self,
@@ -222,22 +226,90 @@ class ESMDoRA(nn.Module):
 
         # calculate the Gaussian NLL loss
         if labels is not None:
-            result['loss'] = gaussian_NLL(mu, log_var, labels)
+            result['loss'] = gaussian_nll_loss(mu, log_var, labels)
 
         return result
 
 # Gaussian NLL function (based on the PyTorch source with (almost) the same name)
 # using mu and log_var instead of var
-def gaussian_NLL(
+def gaussian_nll_loss(
         mu: torch.Tensor,
         log_var: torch.Tensor,
         y: torch.Tensor,
         full: bool = True,
     ):
+
+    # make sure tensors are floats
+    mu = mu.float()
+    log_var = log_var.float()
+    y = y.float()
+
+    # loss calculation
     loss = 0.5 * (log_var + (y - mu).pow(2) * torch.exp(-log_var))
+
+    # add the static term if necessary
     if full:
         loss += 0.5 * math.log(2.0 * math.pi)
+
     return loss.mean()
+
+# one training run
+# https://docs.pytorch.org/tutorials/beginner/introyt/trainingyt.html
+def train_one_epoch(
+        training_loader: torch.utils.data.DataLoader,
+        optimizer: torch.optim,
+        model: torch.nn,
+        epoch_index: int,
+        tb_writer: SummaryWriter,
+        device,
+        log_every: int = 300
+    ):
+    model.train(True)
+
+    total_loss = 0.0
+    running_loss = 0.0
+
+    # enumerate the training loader for more detailed reporting
+    for i, batch in enumerate(training_loader):
+        # get data from batch and transfer it to accelerator
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        residue_mask = batch['residue_mask'].to(device)
+        labels = batch['labels'].to(device)
+
+        # zero your gradients for every batch
+        optimizer.zero_grad()
+
+        # make predictions for this batch
+        outputs = model(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            residue_mask=residue_mask,
+            labels=labels,
+        )
+
+        # get loss and compute gradients
+        loss = outputs['loss']
+        loss.backward()
+
+        # adjust learning weights
+        optimizer.step()
+
+        loss_value = loss.item()
+        total_loss += loss_value
+        running_loss += loss_value
+
+        if i % log_every == 0:
+            avg_running_loss = running_loss / log_every
+            print(f'  batch {i} loss: {avg_running_loss:.5f}')
+
+            tb_x = epoch_index * len(training_loader) + i
+            tb_writer.add_scalar('Loss/train_batch', avg_running_loss, tb_x)
+
+            running_loss = 0.0
+
+    # return average loss
+    return total_loss / len(training_loader)
 
 # download the specified model from huggingface to the specified directory
 def download_model(
@@ -279,7 +351,7 @@ def prepare_split_data(
     # loop over all dictionary entries
     for taxid, members in needed_by_taxid.items():
         # proteome filenames start with the taxonomy ID and ends with _protein.faa
-        matches = list(Path(proteomes_dir).glob(f'{str(taxid)}_*_protein.faa'))
+        matches = list(Path(proteomes_dir).glob(f'{str(int(taxid))}_*_protein.faa'))
 
         # sanity check for file existence
         if not matches:
