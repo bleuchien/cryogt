@@ -112,7 +112,7 @@ model = ESMDoRA(
     dora_alpha=config.esmdora.dora_alpha,
     dora_dropout=config.esmdora.dora_dropout,
     target_modules=config.esmdora.target_modules,
-    gradient_checkpointing=False
+    gradient_checkpointing=True
 )
 
 # move model to the accelerator

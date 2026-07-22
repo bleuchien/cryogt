@@ -157,7 +157,7 @@ class ESMDoRA(nn.Module):
         super().__init__()
 
         # load the HuggingFace base model
-        base = AutoModel.from_pretrained(esm_model_name)
+        base = AutoModel.from_pretrained(esm_model_name, torch_dtype=torch.bfloat16)
 
         # option to reduce the GPU memory footprint
         if gradient_checkpointing:
@@ -291,15 +291,19 @@ def train_one_epoch(
         optimizer.zero_grad()
 
         # make predictions for this batch
-        outputs = model(
-            input_ids=input_ids,
-            attention_mask=attention_mask,
-            residue_mask=residue_mask,
-            labels=labels,
-        )
+        # autocast enables mix precision (necessary to overcome OOM problems)
+        with torch.autocast(device_type=device, dtype=torch.bfloat16):
+            outputs = model(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                residue_mask=residue_mask,
+                labels=labels,
+            )
 
-        # get loss and compute gradients
-        loss = outputs['loss']
+            # compute loss
+            loss = outputs['loss']
+
+        # compute gradients
         loss.backward()
 
         # adjust learning weights
