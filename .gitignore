@@ -226,8 +226,9 @@ __marimo__/
 # ignore the extracted dump files
 *.dmp
 
-# ignore mmseqs output
+# ignore stuff in data output
 data/mmseqs/
+data/summarywriter/
 
 # ignore mmseqs binaries (directory and download)
 preprocessing/mmseqs/
