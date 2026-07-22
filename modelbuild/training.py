@@ -6,12 +6,14 @@ from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 from torch.utils.tensorboard import SummaryWriter
 from datetime import datetime
+from tqdm.auto import tqdm
 from config import Config
 from build_utils import (
     PsychrophileDataset,
     PsychrophileCollator,
     ESMDoRA,
     train_one_epoch,
+    evaluate,
     prepare_split_data, 
     download_model,
 )
@@ -108,7 +110,7 @@ model = ESMDoRA(
     log_var_max=config.head.log_var_max,
     dora_r=config.esmdora.dora_r,
     dora_alpha=config.esmdora.dora_alpha,
-    dora_dropout=config.esmdora.dropout,
+    dora_dropout=config.esmdora.dora_dropout,
     target_modules=config.esmdora.target_modules,
     gradient_checkpointing=False
 )
@@ -143,77 +145,84 @@ for name, param in model.named_parameters():
 
 # optimizer setup
 optimizer = torch.optim.AdamW(
-    [p for p in model.parameters() if p.requires_grad],
-    lr=config.training.learning_rate,
-    weight_decay=config.training.weight_decay
+    [
+        {
+            'params': adapter_params,
+            'lr': config.training.adapter_learning_rate,
+        },
+        {
+            'params': head_params,
+            'lr': config.training.head_learning_rate,
+        },
+    ],
+    weight_decay=config.training.weight_decay,
 )
 
 # training loop setup
 # https://docs.pytorch.org/tutorials/beginner/introyt/trainingyt.html
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 writer = SummaryWriter(Path(config.paths.data_dir) / f'summarywriter/esmdora_{timestamp}')
-epoch_number = 0
+
+total_steps = config.training.epochs * (len(train_loader) + len(val_loader))
+
+overall_progbar = tqdm(
+    total=total_steps,
+    desc='Overall training',
+    position=0,
+    leave=True,
+    dynamic_ncols=True,
+)
 
 best_vloss = 1_000_000.
 
 for epoch in range(config.training.epochs):
-    print(f'EPOCH {epoch_number + 1}:')
-
-    # make sure gradient tracking is on, and do a pass over the data
+    # train the model with the training set
     avg_loss = train_one_epoch(
         training_loader=train_loader,
         optimizer=optimizer,
         model=model,
-        epoch_index=epoch_number,
+        epoch_index=epoch,
         tb_writer=writer,
-        device=device
+        device=device,
+        overall_progbar=overall_progbar
     )
 
-    running_vloss = 0.0
-    # set the model to evaluation mode
-    model.eval()
+    # evaluate with the validation set
+    avg_vloss = evaluate(
+        validation_loader=val_loader,
+        model=model,
+        device=device,
+        epoch_index=epoch,
+        overall_progbar=overall_progbar,
+    )
 
-    # disable gradient computation and reduce memory consumption.
-    with torch.no_grad():
-        for i, vbatch in enumerate(val_loader):
-            vinput_ids = vbatch['input_ids'].to(device)
-            vattention_mask = vbatch['attention_mask'].to(device)
-            vresidue_mask = vbatch['residue_mask'].to(device)
-            vlabels = vbatch['labels'].to(device)
-
-            # make predictions for this batch
-            voutputs = model(
-                input_ids=vinput_ids,
-                attention_mask=vattention_mask,
-                residue_mask=vresidue_mask,
-                labels=vlabels,
-            )
-            running_vloss += voutputs['loss'].item()
-
-    avg_vloss = running_vloss / len(val_loader)
-    print(f'LOSS train {avg_loss} valid {avg_vloss}')
+    tqdm.write(
+        f'Epoch {epoch + 1}: '
+        f'train_loss={avg_loss:.5f}, '
+        f'val_loss={avg_vloss:.5f}'
+    )
 
     # log the running loss averaged per batch for both training and validation
     writer.add_scalars('Training vs. Validation Loss',
                     { 'Training' : avg_loss, 'Validation' : avg_vloss },
-                    epoch_number + 1)
+                    epoch + 1)
     writer.flush()
 
     # track best performance, and save the model's state
     if avg_vloss < best_vloss:
         best_vloss = avg_vloss
         # save adapter
-        model.esm.save_pretrained(Path(config.paths.adapter_dir) / f'{timestamp}_{epoch_number}')
+        model.esm.save_pretrained(Path(config.paths.adapter_dir) / f'{timestamp}_{epoch}')
         # save head
-        torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}_{epoch_number}.pt')
+        torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}_{epoch}.pt')
         # save training state
         torch.save(
             {
-                'epoch': epoch_number,
+                'epoch': epoch,
                 'optimizer_state_dict': optimizer.state_dict(),
                 'best_vloss': best_vloss,
             },
-            Path(config.paths.model_dir) / f'training_state_{timestamp}_{epoch_number}.pt'
+            Path(config.paths.model_dir) / f'training_state_{timestamp}_{epoch}.pt'
         )
 
-    epoch_number += 1
+overall_progbar.close()

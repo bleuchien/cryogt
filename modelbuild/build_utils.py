@@ -1,5 +1,6 @@
 import torch
 import math
+import pandas as pd
 from torch import nn
 from torch.utils.data import Dataset
 from torch.utils.tensorboard import SummaryWriter
@@ -8,7 +9,7 @@ from huggingface_hub import snapshot_download
 from peft import LoraConfig, TaskType, get_peft_model
 from typing import Literal
 from pathlib import Path
-import pandas as pd
+from tqdm.auto import tqdm
 from Bio import SeqIO
 
 # dataset class for PyTorch ML input
@@ -99,9 +100,10 @@ class RegressionHead(nn.Module):
             layers.append(nn.LayerNorm(input_dim))
 
         # store the current layer dimension temporarely
-        prev_dim = input_dim
+        prev_dim = int(input_dim)
         # build the MLP from the hidden_dims given
         for hidden_dim in hidden_dims:
+            hidden_dim = int(hidden_dim)
             # add a linear layer (reducing the dimensionality)
             layers.append(nn.Linear(prev_dim, hidden_dim))
             # add a GELU layer (should perform better than ReLU)
@@ -262,15 +264,23 @@ def train_one_epoch(
         epoch_index: int,
         tb_writer: SummaryWriter,
         device,
-        log_every: int = 300
+        log_every: int = 100,
+        overall_progbar=None
     ):
-    model.train(True)
+    model.train()
 
     total_loss = 0.0
-    running_loss = 0.0
+    
+    progbar = tqdm(
+        training_loader,
+        desc=f'Epoch {epoch_index + 1} train',
+        position=1,
+        leave=False,
+        dynamic_ncols=True
+    )
 
     # enumerate the training loader for more detailed reporting
-    for i, batch in enumerate(training_loader):
+    for i, batch in enumerate(progbar, start=1):
         # get data from batch and transfer it to accelerator
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
@@ -297,19 +307,78 @@ def train_one_epoch(
 
         loss_value = loss.item()
         total_loss += loss_value
-        running_loss += loss_value
+        avg_loss = total_loss / i
 
-        if i % log_every == 0:
-            avg_running_loss = running_loss / log_every
-            print(f'  batch {i} loss: {avg_running_loss:.5f}')
+        if i % log_every == 0 or i == 1:
+            progbar.set_postfix({
+                'batch_loss': f'{loss_value:.5f}',
+                'avg_loss': f'{avg_loss:.5f}'
+            })
 
-            tb_x = epoch_index * len(training_loader) + i
-            tb_writer.add_scalar('Loss/train_batch', avg_running_loss, tb_x)
+            if overall_progbar is not None:
+                overall_progbar.set_postfix({
+                    'epoch': epoch_index + 1,
+                    'train_loss': f'{avg_loss:.4f}',
+                })
 
-            running_loss = 0.0
+            global_step = epoch_index * len(training_loader) + i
+            tb_writer.add_scalar('Loss/train_batch', loss_value, global_step)
+
+        if overall_progbar is not None:
+            overall_progbar.update(1)
 
     # return average loss
     return total_loss / len(training_loader)
+
+def evaluate(
+        validation_loader: torch.utils.data.DataLoader,
+        model: torch.nn.Module,
+        epoch_index: int,
+        device,
+        overall_progbar=None
+    ):
+    model.eval()
+
+    total_loss = 0.0
+
+    progbar = tqdm(
+        validation_loader,
+        desc=f'Epoch {epoch_index + 1} val',
+        position=1,
+        leave=False,
+        dynamic_ncols=True,
+    )
+
+    with torch.no_grad():
+        for i, batch in enumerate(progbar, start=1):
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            residue_mask = batch['residue_mask'].to(device)
+            labels = batch['labels'].to(device)
+
+            outputs = model(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                residue_mask=residue_mask,
+                labels=labels,
+            )
+
+            loss_value = outputs['loss'].item()
+            total_loss += loss_value
+            avg_loss = total_loss / i
+
+            progbar.set_postfix({
+                'val_loss': f'{avg_loss:.4f}',
+            })
+
+            if overall_progbar is not None:
+                overall_progbar.set_postfix({
+                    'epoch': epoch_index + 1,
+                    'val_loss': f'{avg_loss:.4f}',
+                })
+                overall_progbar.update(1)
+
+    return total_loss / len(validation_loader)
 
 # download the specified model from huggingface to the specified directory
 def download_model(
