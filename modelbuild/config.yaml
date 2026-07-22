@@ -27,7 +27,7 @@ training:
 # regression head configuration
 head:
     # MLP configuration
-    hidden_layers: (512, 128)
+    hidden_layers: [512, 128]
     # dropout value
     dropout: 0.1
     # layer normaliztion
@@ -45,7 +45,7 @@ esmdora:
     # DoRA dropout
     dora_dropout: 0.05
     # fine-tune target modules
-    target_modules: ('query', 'key', 'value')
+    target_modules: [ 'query', 'key', 'value' ]
 
 # paths configuration
 paths:
