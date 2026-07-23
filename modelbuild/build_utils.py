@@ -215,20 +215,23 @@ class ESMDoRA(nn.Module):
         # mean pooling the aa residues only
         pooled = self.pool_mean(hidden, residue_mask)
 
-        # run the pooled output through the regression head
-        mu, log_var = self.head(pooled)
+        # run small regression head and NLL in FP32
+        with torch.autocast(device_type=pooled.device.type, enabled=False):
+            pooled = pooled.float()
+            # run the pooled output through the regression head
+            mu, log_var = self.head(pooled)
 
-        # prepare the results for return
-        result = {
-            'mu': mu,
-            'log_var': log_var,
-            'var': torch.exp(log_var),
-            'std': torch.exp(0.5 * log_var),
-        }
+            # prepare the results for return
+            result = {
+                'mu': mu,
+                'log_var': log_var,
+                'var': torch.exp(log_var),
+                'std': torch.exp(0.5 * log_var),
+            }
 
-        # calculate the Gaussian NLL loss
-        if labels is not None:
-            result['loss'] = gaussian_nll_loss(mu, log_var, labels)
+            # calculate the Gaussian NLL loss
+            if labels is not None:
+                result['loss'] = gaussian_nll_loss(mu, log_var, labels)
 
         return result
 
