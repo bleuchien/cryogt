@@ -360,14 +360,19 @@ def evaluate(
             residue_mask = batch['residue_mask'].to(device)
             labels = batch['labels'].to(device)
 
-            outputs = model(
-                input_ids=input_ids,
-                attention_mask=attention_mask,
-                residue_mask=residue_mask,
-                labels=labels,
-            )
+            # make predictions for this batch
+            # autocast enables mix precision (necessary to overcome OOM problems)
+            with torch.autocast(device_type=device, dtype=torch.bfloat16):
+                outputs = model(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    residue_mask=residue_mask,
+                    labels=labels,
+                )
 
-            loss_value = outputs['loss'].item()
+                # compute loss
+                loss_value = outputs['loss'].item()
+
             total_loss += loss_value
             avg_loss = total_loss / i
 
