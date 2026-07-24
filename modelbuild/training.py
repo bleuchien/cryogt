@@ -1,9 +1,10 @@
 import sys
 import torch
+import statistics
 import pandas as pd
 from pathlib import Path
 from torch.utils.data import DataLoader
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, get_cosine_schedule_with_warmup
 from torch.utils.tensorboard import SummaryWriter
 from datetime import datetime
 from tqdm.auto import tqdm
@@ -53,8 +54,12 @@ tokenizer = AutoTokenizer.from_pretrained(full_model_path)
 
 # prepare datasets
 print('Preparing training dataset.')
+sequences, ogts = prepare_split_data(df, 'train', config.paths.proteomes_dir)
+mean_ogt = statistics.mean(ogts)
+print(f'Training set mean OGT: {mean_ogt:.1f}°C.')
 train_dataset = PsychrophileDataset(
-    *prepare_split_data(df, 'train', config.paths.proteomes_dir),
+    sequences,
+    ogts,
     tokenizer,
     config.training.max_length,
 )
@@ -158,6 +163,15 @@ optimizer = torch.optim.AdamW(
     weight_decay=config.training.weight_decay,
 )
 
+# setup scheduler (reducing the learning rate over time)
+total_steps = config.training.epochs * len(train_loader)
+warmup_steps = int(0.05 * total_steps)  # 5% warmup
+scheduler = get_cosine_schedule_with_warmup(
+    optimizer,
+    num_warmup_steps=warmup_steps,
+    num_training_steps=total_steps,
+)
+
 # training loop setup
 # https://docs.pytorch.org/tutorials/beginner/introyt/trainingyt.html
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -174,12 +188,15 @@ overall_progbar = tqdm(
 )
 
 best_vloss = 1_000_000.
+patience = 5
+epochs_no_improve = 0
 
 for epoch in range(config.training.epochs):
     # train the model with the training set
     avg_loss = train_one_epoch(
         training_loader=train_loader,
         optimizer=optimizer,
+        scheduler=scheduler,
         model=model,
         epoch_index=epoch,
         tb_writer=writer,
@@ -188,7 +205,7 @@ for epoch in range(config.training.epochs):
     )
 
     # evaluate with the validation set
-    avg_vloss = evaluate(
+    avg_vloss, vrmse, vmae = evaluate(
         validation_loader=val_loader,
         model=model,
         device=device,
@@ -200,21 +217,26 @@ for epoch in range(config.training.epochs):
         f'Epoch {epoch + 1}: '
         f'train_loss={avg_loss:.5f}, '
         f'val_loss={avg_vloss:.5f}'
+        f'RMSE={vrmse:.2f}°C'
+        f'MAE={vmae:.2f}°C'
     )
 
     # log the running loss averaged per batch for both training and validation
     writer.add_scalars('Training vs. Validation Loss',
                     { 'Training' : avg_loss, 'Validation' : avg_vloss },
                     epoch + 1)
+    writer.add_scalar('RMSE/val', vrmse, epoch + 1)
+    writer.add_scalar('MAE/val', vmae, epoch + 1)
     writer.flush()
 
     # track best performance, and save the model's state
     if avg_vloss < best_vloss:
         best_vloss = avg_vloss
+        epochs_no_improve = 0
         # save adapter
-        model.esm.save_pretrained(Path(config.paths.adapter_dir) / f'{timestamp}_{epoch}')
+        model.esm.save_pretrained(Path(config.paths.adapter_dir) / f'adapter_{timestamp}')
         # save head
-        torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}_{epoch}.pt')
+        torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}.pt')
         # save training state
         torch.save(
             {
@@ -222,7 +244,12 @@ for epoch in range(config.training.epochs):
                 'optimizer_state_dict': optimizer.state_dict(),
                 'best_vloss': best_vloss,
             },
-            Path(config.paths.model_dir) / f'training_state_{timestamp}_{epoch}.pt'
+            Path(config.paths.model_dir) / f'training_state_{timestamp}.pt'
         )
+    else:
+        epochs_no_improve += 1
+        if epochs_no_improve >= patience:
+            print(f'Early stopping triggered in epoch {epoch}.')
+            break
 
 overall_progbar.close()

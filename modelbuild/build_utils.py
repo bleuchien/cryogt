@@ -85,6 +85,7 @@ class RegressionHead(nn.Module):
         layer_norm: bool = True,                                        # should normalization be applied
         log_var_min: float = -10.0,                                     # log_var clamping min value
         log_var_max: float = 5.0,                                       # log_var clamping max value
+        mean_out_bias_init: float = 30.0                                # mean_out bias initialization
     ):
         super().__init__()
 
@@ -124,6 +125,9 @@ class RegressionHead(nn.Module):
         nn.init.zeros_(self.logvar_out.weight)
         nn.init.zeros_(self.logvar_out.bias)
 
+        # initialize mean_out bias to approximate training set mean OGT
+        nn.init.constant_(self.mean_out.bias, mean_out_bias_init)
+
     def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
         # pass through the shared network
         shared_features = self.shared_net(x)
@@ -147,7 +151,8 @@ class ESMDoRA(nn.Module):
         head_dropout: float = 0.1,                                                  # head dropout
         layer_norm: bool = True,                                                    # head should normalization be applied
         log_var_min: float = -10.0,                                                 # head log_var clamping min value
-        log_var_max: float = 5.0,                                                   # head log_var clamping max value   
+        log_var_max: float = 5.0,                                                   # head log_var clamping max value
+        mean_out_bias_init: float = 30.0,                                           # head mean_out bias initialization
         dora_r: int = 16,                                                           # DoRA rank
         dora_alpha: int = 32,                                                       # DoRA alpha value
         dora_dropout: float = 0.05,                                                 # DoRA dropout
@@ -157,7 +162,7 @@ class ESMDoRA(nn.Module):
         super().__init__()
 
         # load the HuggingFace base model
-        base = AutoModel.from_pretrained(esm_model_name, torch_dtype=torch.bfloat16)
+        base = AutoModel.from_pretrained(esm_model_name, dtype=torch.bfloat16)
 
         # option to reduce the GPU memory footprint
         if gradient_checkpointing:
@@ -189,18 +194,18 @@ class ESMDoRA(nn.Module):
             dropout=head_dropout,
             layer_norm=layer_norm,
             log_var_min=log_var_min,
-            log_var_max=log_var_max
+            log_var_max=log_var_max,
+            mean_out_bias_init=mean_out_bias_init
         )
 
     # mean pooling ovcer the amino acid residues only
     def pool_mean(self, last_hidden_state, residue_mask):
-        # apply the residue mask 
-        mask = residue_mask.unsqueeze(-1).to(last_hidden_state.dtype)
-
-        summed = (last_hidden_state * mask).sum(dim=1)
+        # mean pooling with higher precision
+        mask = residue_mask.unsqueeze(-1).float()
+        summed = (last_hidden_state.float() * mask).sum(dim=1)
         denom = mask.sum(dim=1).clamp_min(1.0)
 
-        return summed / denom
+        return (summed / denom).to(last_hidden_state.dtype)
     
     def forward(self, input_ids, attention_mask, residue_mask, labels=None):
         # run the input through ESM
@@ -263,6 +268,7 @@ def gaussian_nll_loss(
 def train_one_epoch(
         training_loader: torch.utils.data.DataLoader,
         optimizer: torch.optim,
+        scheduler: torch.optim.lr_scheduler.LambdaLR,
         model: torch.nn,
         epoch_index: int,
         tb_writer: SummaryWriter,
@@ -309,8 +315,14 @@ def train_one_epoch(
         # compute gradients
         loss.backward()
 
+        # prevent exploding gradients
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+
         # adjust learning weights
         optimizer.step()
+
+        # reduce learning rate
+        scheduler.step()
 
         loss_value = loss.item()
         total_loss += loss_value
@@ -325,7 +337,7 @@ def train_one_epoch(
             if overall_progbar is not None:
                 overall_progbar.set_postfix({
                     'epoch': epoch_index + 1,
-                    'train_loss': f'{avg_loss:.4f}',
+                    'train_loss': f'{avg_loss:.5f}',
                 })
 
             global_step = epoch_index * len(training_loader) + i
@@ -356,6 +368,9 @@ def evaluate(
         dynamic_ncols=True,
     )
 
+    all_mu: list[torch.Tensor] = []
+    all_labels: list[torch.Tensor] = []
+
     with torch.no_grad():
         for i, batch in enumerate(progbar, start=1):
             input_ids = batch['input_ids'].to(device)
@@ -376,6 +391,9 @@ def evaluate(
                 # compute loss
                 loss_value = outputs['loss'].item()
 
+                all_mu.append(outputs['mu'].detach().cpu())
+                all_labels.append(labels.detach().cpu())
+
             total_loss += loss_value
             avg_loss = total_loss / i
 
@@ -390,7 +408,14 @@ def evaluate(
                 })
                 overall_progbar.update(1)
 
-    return total_loss / len(validation_loader)
+    # compute RMSE and MAE from accumulated predictions
+    all_mu_t = torch.cat(all_mu).float()
+    all_labels_t = torch.cat(all_labels).float()
+
+    rmse = torch.sqrt(torch.mean((all_mu_t - all_labels_t) ** 2)).item()
+    mae  = torch.mean(torch.abs(all_mu_t - all_labels_t)).item()
+
+    return total_loss / len(validation_loader), rmse, mae
 
 # download the specified model from huggingface to the specified directory
 def download_model(
