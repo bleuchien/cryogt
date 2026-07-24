@@ -13,7 +13,7 @@ model:
 # basic training configuration
 training:
     # number of epochs to train
-    epochs: 2
+    epochs: 10
     # batch size
     batch_size: 32
     # maximum aa sequence length
@@ -45,7 +45,8 @@ esmdora:
     # DoRA dropout
     dora_dropout: 0.05
     # fine-tune target modules
-    target_modules: [ 'query', 'key', 'value' ]
+    # target_modules: [ 'query', 'key', 'value' ]
+    target_modules: [ 'query', 'key', 'value', 'dense' ]
 
 # paths configuration
 paths:
