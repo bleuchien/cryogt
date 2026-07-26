@@ -216,8 +216,8 @@ for epoch in range(config.training.epochs):
     tqdm.write(
         f'Epoch {epoch + 1}: '
         f'train_loss={avg_loss:.5f}, '
-        f'val_loss={avg_vloss:.5f}'
-        f'RMSE={vrmse:.2f}°C'
+        f'val_loss={avg_vloss:.5f}, '
+        f'RMSE={vrmse:.2f}°C, '
         f'MAE={vmae:.2f}°C'
     )
 
