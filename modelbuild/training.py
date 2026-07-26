@@ -249,7 +249,7 @@ for epoch in range(config.training.epochs):
     else:
         epochs_no_improve += 1
         if epochs_no_improve >= patience:
-            print(f'Early stopping triggered in epoch {epoch}.')
+            tqdm.write(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch}.')
             break
 
 overall_progbar.close()
