@@ -1,6 +1,7 @@
 import sys
 import torch
 import statistics
+import argparse
 import pandas as pd
 from pathlib import Path
 from torch.utils.data import DataLoader
@@ -21,8 +22,20 @@ from build_utils import (
 
 # this script fine-tunes ESM-2 and trains the regression head
 
+# parse command line arguments
+parser = argparse.ArgumentParser(prog='CryOGT model training')
+parser.add_argument('-c', '--config', nargs='?', help='Configuration file', default='config.yaml')
+parser.add_argument('-r', '--resume', nargs='?', help='Resume training with the given state file')
+args = parser.parse_args()
+
+# sanity check for the config file
+config_path = Path(args.config)
+if not config_path.exists():
+    print(f'Config file {config_path} does not exit!')
+    sys.exit(1)
+
 # read configuration
-config = Config.from_yaml('config.yaml')
+config = Config.from_yaml(config_path)
 
 print('Performing some sanity checks.')
 
@@ -190,8 +203,28 @@ overall_progbar = tqdm(
 best_vloss = 1_000_000.
 patience = 5
 epochs_no_improve = 0
+start_epoch = 0
 
-for epoch in range(config.training.epochs):
+# if resume is given load state
+if args.resume is not None:
+    resume_path = Path(args.resume)
+    if not resume_path.exists():
+        print(f'Training resume file {resume_path} does not exist!')
+        sys.exit(1)
+
+    # load saved checkpoint
+    checkpoint = torch.load(resume_path, map_location=device, weights_only=True)
+
+    model.load_state_dict(checkpoint['model_state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
+    start_epoch = checkpoint['epoch']
+    best_vloss = checkpoint['best_vloss']
+    epochs_no_improve = checkpoint['epochs_no_improve']
+
+    print(f'Resuming training from epoch {start_epoch}.')
+
+for epoch in range(start_epoch, config.training.epochs):
     # train the model with the training set
     avg_loss = train_one_epoch(
         training_loader=train_loader,
@@ -229,7 +262,7 @@ for epoch in range(config.training.epochs):
     writer.add_scalar('MAE/val', vmae, epoch + 1)
     writer.flush()
 
-    # track best performance, and save the model's state
+    # track best performance, and save the model's adapter and regression head
     if avg_vloss < best_vloss:
         best_vloss = avg_vloss
         epochs_no_improve = 0
@@ -237,19 +270,25 @@ for epoch in range(config.training.epochs):
         model.esm.save_pretrained(Path(config.paths.adapter_dir) / f'adapter_{timestamp}')
         # save head
         torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}.pt')
-        # save training state
-        torch.save(
-            {
-                'epoch': epoch,
-                'optimizer_state_dict': optimizer.state_dict(),
-                'best_vloss': best_vloss,
-            },
-            Path(config.paths.model_dir) / f'training_state_{timestamp}.pt'
-        )
     else:
         epochs_no_improve += 1
-        if epochs_no_improve >= patience:
-            tqdm.write(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch + 1}.')
-            break
+
+    # save training checkpoint
+    torch.save(
+        {
+            'epoch': epoch + 1,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'scheduler_state_dict': scheduler.state_dict(),
+            'best_vloss': best_vloss,
+            'epochs_no_improve': epochs_no_improve
+        },
+        Path(config.paths.model_dir) / f'training_state_{timestamp}.pt'
+    )
+
+    # stop training if there is no improvement
+    if epochs_no_improve >= patience:
+        tqdm.write(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch + 1}.')
+        break
 
 overall_progbar.close()
