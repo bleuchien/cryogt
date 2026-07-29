@@ -252,7 +252,7 @@ overall_progbar = tqdm(
 )
 
 for epoch in range(start_epoch, config.training.epochs):
-    logger.info(f'Starting epoch {epoch + 1}.', extras=file_only)
+    logger.info(f'Starting epoch {epoch + 1}.', extra=file_only)
 
     # train the model with the training set
     avg_loss = train_one_epoch(
@@ -283,7 +283,7 @@ for epoch in range(start_epoch, config.training.epochs):
         f'MAE={vmae:.2f}°C'
     )
 
-    logger.info(f'Epoch {epoch + 1}: train_loss={avg_loss:.5f}, val_loss={avg_vloss:.5f}, RMSE={vrmse:.2f}°C, MAE={vmae:.2f}°C', extras=file_only)
+    logger.info(f'Epoch {epoch + 1}: train_loss={avg_loss:.5f}, val_loss={avg_vloss:.5f}, RMSE={vrmse:.2f}°C, MAE={vmae:.2f}°C', extra=file_only)
 
     # log the running loss averaged per batch for both training and validation
     writer.add_scalars('Training vs. Validation Loss',
@@ -302,7 +302,7 @@ for epoch in range(start_epoch, config.training.epochs):
         # save head
         torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}.pt')
 
-        logger.info(f'Saved best performing adapter and head {epoch + 1} extension {timestamp}.', extras=file_only)
+        logger.info(f'Saved best performing adapter and head {epoch + 1} extension {timestamp}.', extra=file_only)
     else:
         epochs_no_improve += 1
 
@@ -322,7 +322,7 @@ for epoch in range(start_epoch, config.training.epochs):
     # stop training if there is no improvement
     if epochs_no_improve >= patience:
         tqdm.write(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch + 1}.')
-        logging.info(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch + 1}.', extras=file_only)
+        logging.info(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch + 1}.', extra=file_only)
         break
 
 overall_progbar.close()
