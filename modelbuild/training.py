@@ -302,7 +302,7 @@ for epoch in range(start_epoch, config.training.epochs):
         # save head
         torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}.pt')
 
-        logger.info(f'Saved best performing adapter and head {epoch + 1} extension {timestamp}.', extra=file_only)
+        logger.info(f'Saved best performing adapter and head, epoch {epoch + 1}, file extension {timestamp}.', extra=file_only)
     else:
         epochs_no_improve += 1
 
