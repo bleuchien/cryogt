@@ -1,6 +1,7 @@
 import torch
 import math
 import pandas as pd
+import logging
 from torch import nn
 from torch.utils.data import Dataset
 from torch.utils.tensorboard import SummaryWriter
@@ -11,6 +12,8 @@ from typing import Literal
 from pathlib import Path
 from tqdm.auto import tqdm
 from Bio import SeqIO
+
+logger = logging.getLogger(__name__)
 
 # dataset class for PyTorch ML input
 # https://docs.pytorch.org/tutorials/beginner/basics/data_tutorial.html
@@ -423,14 +426,14 @@ def download_model(
         local_dir: Path                     # path to store the model in
     ):
 
-    print(f'Downloading {model} to {local_dir}.')
+    logger.info(f'Downloading {model} to {local_dir}.')
     snapshot_download(
         repo_id=model,
         local_dir=local_dir,
         # ignore_patterns=["*.msgpack", "*.h5", "*.tflite", "*.safetensors"],  # Optional: skip large files if needed
         force_download=False,
     )
-    print(f'Finished downloading {model}.')
+    logger.info(f'Finished downloading {model}.')
 
 # prepare the sequences and OGT values for the given split
 def prepare_split_data(

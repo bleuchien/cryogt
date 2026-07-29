@@ -1,6 +1,9 @@
 from dataclasses import dataclass, field
 from pathlib import Path
 import yaml
+import logging
+
+logger = logging.getLogger(__name__)
 
 @dataclass
 class ModelConfig:
@@ -53,11 +56,11 @@ class Config:
 
         # check if the config file exists
         if not f.exists():
-            print(f'WARNING: {file} not found!')
+            logger.warning(f'WARNING: {file} not found!')
 
         # read the config and return the content as dictionary or an empty dictionary
         with open(f) as c:
-            print(f'Reading configuration from {file}.')
+            logger.info(f'Reading configuration from {file}.')
             raw = yaml.safe_load(c) or {}
 
         # build the config object from the YAML read dictionary

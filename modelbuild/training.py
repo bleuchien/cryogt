@@ -3,6 +3,7 @@ import torch
 import statistics
 import argparse
 import pandas as pd
+import logging
 from pathlib import Path
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, get_cosine_schedule_with_warmup
@@ -22,6 +23,30 @@ from build_utils import (
 
 # this script fine-tunes ESM-2 and trains the regression head
 
+# current time stamp
+timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+
+# setup logging to console and file
+class ConsoleFilter(logging.Filter):
+    def filter(self, record):
+        return not getattr(record, 'file_only', False)
+
+file_only = {'file_only': True}
+    
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+file_handler = logging.FileHandler(f'training_{timestamp}.log')
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(formatter)
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+console_handler.addFilter(ConsoleFilter())
+console_handler.setFormatter(formatter)
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
+
 # parse command line arguments
 parser = argparse.ArgumentParser(prog='CryOGT model training')
 parser.add_argument('-c', '--config', nargs='?', help='Configuration file', default='config.yaml')
@@ -31,24 +56,24 @@ args = parser.parse_args()
 # sanity check for the config file
 config_path = Path(args.config)
 if not config_path.exists():
-    print(f'Config file {config_path} does not exit!')
+    logger.error(f'Config file {config_path} does not exit!')
     sys.exit(1)
 
 # read configuration
 config = Config.from_yaml(config_path)
 
-print('Performing some sanity checks.')
+logger.info('Performing some sanity checks.')
 
 # check proteomes directory existence
 proteomes_dir = Path(config.paths.proteomes_dir)
 if not proteomes_dir.exists():
-    print(f'{proteomes_dir} does not exist!')
+    logger.error(f'{proteomes_dir} does not exist!')
     sys.exit(1)
 
 # check split file existence
 split_file = Path(config.paths.split_file)
 if not split_file.exists():
-    print(f'{split_file} does not exist!')
+    logger.error(f'{split_file} does not exist!')
     sys.exit(1)
 
 # check model directory
@@ -56,20 +81,20 @@ full_model_path = Path(config.paths.model_dir) / config.model.name
 if not full_model_path.exists():
     download_model(config.model.name, full_model_path)
 
-print(f'Using model: {config.model.name}.')
+logger.info(f'Using model: {config.model.name}.')
 
 # read split file
-print(f'Reading splits file: {split_file}.')
+logger.info(f'Reading splits file: {split_file}.')
 df = pd.read_csv(split_file)
 
 # create the tokenizer from the configured model
 tokenizer = AutoTokenizer.from_pretrained(full_model_path)
 
 # prepare datasets
-print('Preparing training dataset.')
+logger.info('Preparing training dataset.')
 sequences, ogts = prepare_split_data(df, 'train', config.paths.proteomes_dir)
 mean_ogt = statistics.mean(ogts)
-print(f'Training set mean OGT: {mean_ogt:.1f}°C.')
+logger.info(f'Training set mean OGT: {mean_ogt:.1f}°C.')
 train_dataset = PsychrophileDataset(
     sequences,
     ogts,
@@ -77,18 +102,18 @@ train_dataset = PsychrophileDataset(
     config.training.max_length,
 )
 
-print(f'Training dataset has {len(train_dataset)} entries.')
+logger.info(f'Training dataset has {len(train_dataset)} entries.')
 
 # print(train_dataset[0])
 
-print('Preparing validation dataset.')
+logger.info('Preparing validation dataset.')
 val_dataset = PsychrophileDataset(
     *prepare_split_data(df, 'val', config.paths.proteomes_dir),
     tokenizer,
     config.training.max_length,
 )
 
-print(f'Validation dataset has {len(val_dataset)} entries.')
+logger.info(f'Validation dataset has {len(val_dataset)} entries.')
 
 # print(val_dataset[0])
 
@@ -116,9 +141,10 @@ val_loader = DataLoader(
 
 # PyTorch accelerator device setup
 device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else 'cpu'
-print(f'Using {device} device for tensor calculation acceleration.')
+logger.info(f'Using {device} device for tensor calculation acceleration.')
 
 # model setup
+logger.info('Setting up model.')
 model = ESMDoRA(
     esm_model_name=full_model_path,
     head_hidden_dims=config.head.hidden_layers,
@@ -137,16 +163,16 @@ model = ESMDoRA(
 model.to(device)
 
 # check tunable parameters of the head and adapter
-model.esm.print_trainable_parameters()
+# model.esm.print_trainable_parameters()
 
 total_trainable = 0
 
 for name, param in model.named_parameters():
     if param.requires_grad:
-        print(name, param.numel())
+        # print(name, param.numel())
         total_trainable += param.numel()
 
-print(f'Total trainable parameters: {total_trainable:,}')
+logger.info(f'Total trainable parameters: {total_trainable:,}')
 
 # separate MLP head and ESM parameters
 adapter_params = []
@@ -187,18 +213,7 @@ scheduler = get_cosine_schedule_with_warmup(
 
 # training loop setup
 # https://docs.pytorch.org/tutorials/beginner/introyt/trainingyt.html
-timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 writer = SummaryWriter(Path(config.paths.data_dir) / f'summarywriter/esmdora_{timestamp}')
-
-total_steps = config.training.epochs * (len(train_loader) + len(val_loader))
-
-overall_progbar = tqdm(
-    total=total_steps,
-    desc='Overall training',
-    position=0,
-    leave=True,
-    dynamic_ncols=True,
-)
 
 best_vloss = 1_000_000.
 patience = 5
@@ -209,7 +224,7 @@ start_epoch = 0
 if args.resume is not None:
     resume_path = Path(args.resume)
     if not resume_path.exists():
-        print(f'Training resume file {resume_path} does not exist!')
+        logger.error(f'Training resume file {resume_path} does not exist!')
         sys.exit(1)
 
     # load saved checkpoint
@@ -222,9 +237,23 @@ if args.resume is not None:
     best_vloss = checkpoint['best_vloss']
     epochs_no_improve = checkpoint['epochs_no_improve']
 
-    print(f'Resuming training from epoch {start_epoch}.')
+    logger.info(f'Resuming training from epoch {start_epoch} for {config.training.epochs} epochs.')
+else:
+    logger.info(f'Starting training for {config.training.epochs} epochs.')
+
+# setup TQDM output
+total_steps = config.training.epochs * (len(train_loader) + len(val_loader))
+overall_progbar = tqdm(
+    total=total_steps,
+    desc='Overall training',
+    position=0,
+    leave=True,
+    dynamic_ncols=True,
+)
 
 for epoch in range(start_epoch, config.training.epochs):
+    logger.info(f'Starting epoch {epoch + 1}.', extras=file_only)
+
     # train the model with the training set
     avg_loss = train_one_epoch(
         training_loader=train_loader,
@@ -254,6 +283,8 @@ for epoch in range(start_epoch, config.training.epochs):
         f'MAE={vmae:.2f}°C'
     )
 
+    logger.info(f'Epoch {epoch + 1}: train_loss={avg_loss:.5f}, val_loss={avg_vloss:.5f}, RMSE={vrmse:.2f}°C, MAE={vmae:.2f}°C', extras=file_only)
+
     # log the running loss averaged per batch for both training and validation
     writer.add_scalars('Training vs. Validation Loss',
                     { 'Training' : avg_loss, 'Validation' : avg_vloss },
@@ -270,6 +301,8 @@ for epoch in range(start_epoch, config.training.epochs):
         model.esm.save_pretrained(Path(config.paths.adapter_dir) / f'adapter_{timestamp}')
         # save head
         torch.save(model.head.state_dict(), Path(config.paths.model_dir) / f'head_{timestamp}.pt')
+
+        logger.info(f'Saved best performing adapter and head {epoch + 1} extension {timestamp}.', extras=file_only)
     else:
         epochs_no_improve += 1
 
@@ -289,6 +322,9 @@ for epoch in range(start_epoch, config.training.epochs):
     # stop training if there is no improvement
     if epochs_no_improve >= patience:
         tqdm.write(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch + 1}.')
+        logging.info(f'Early stopping triggered after {epochs_no_improve} epochs without improvement in epoch {epoch + 1}.', extras=file_only)
         break
 
 overall_progbar.close()
+
+logger.info('Finished training.')

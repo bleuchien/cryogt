@@ -59,4 +59,4 @@ paths:
     # ML models directory
     model_dir: "../data/models"
     # DoRA adapter directory
-    adapter_dir: "../data/adapters"
+    adapter_dir: "../data/models/adapters"
