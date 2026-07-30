@@ -11,12 +11,15 @@ class ModelConfig:
 
 @dataclass
 class TrainingConfig:
+    base_seed: int
+    adapters: int
     epochs: int
     batch_size: int
     max_length: int
     head_learning_rate: float
     adapter_learning_rate: float
     weight_decay: float
+    patience: int
 
 @dataclass
 class RegressionHeadConfig:

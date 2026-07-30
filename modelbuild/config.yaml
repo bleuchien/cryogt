@@ -12,6 +12,10 @@ model:
 
 # basic training configuration
 training:
+    # base RNG seed
+    base_seed: 1202
+    # number of adapters to train
+    adapters: 5
     # number of epochs to train
     epochs: 10
     # batch size
@@ -23,6 +27,8 @@ training:
     adapter_learning_rate: 0.0001
     # weight decay
     weight_decay: 0.01
+    # early stopping patience
+    patience: 5
 
 # regression head configuration
 head:
