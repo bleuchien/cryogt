@@ -2,6 +2,7 @@ import torch
 import math
 import pandas as pd
 import logging
+from typing import Union
 from torch import nn
 from torch.utils.data import Dataset
 from torch.utils.tensorboard import SummaryWriter
@@ -437,13 +438,15 @@ def download_model(
 
 # prepare the sequences and OGT values for the given split
 def prepare_split_data(
-        df: pd.DataFrame,                           # train/test/val split dataframe
-        split: Literal['train', 'test', 'val'],     # choice of split from the list
-        proteomes_dir: Path,                        # directory of the proteome files
-    ) -> tuple[list[str], list[float]]:             # returns a list of sequences and corresponding OGTs
+        df: pd.DataFrame,                                       # train/test/val split dataframe
+        split: Literal['train', 'test', 'val', 'all'],          # choice of split from the list
+        proteomes_dir: Path,                                    # directory of the proteome files
+        as_dataframe: bool = False                              # return as dataframe instaed of tuple of lists
+    ) -> Union[tuple[list[str], list[float]] | pd.DataFrame]:   # returns a list of sequences and corresponding OGTs
 
     # only access the required split
-    df = df[df['split'] == split].copy()
+    if not split == 'all':
+        df = df[df['split'] == split]
 
     # sanity check of the dataframe
     if df.empty:
@@ -495,5 +498,11 @@ def prepare_split_data(
     sequences = mapped.tolist()
     ogts = df['Temp_Duplicate_Average'].astype(float).tolist()
 
-    return sequences, ogts
+    if as_dataframe:
+        # add the sequences to the dataframe
+        df['sequence'] = sequences
+
+        return df
+    else:
+        return sequences, ogts
 
