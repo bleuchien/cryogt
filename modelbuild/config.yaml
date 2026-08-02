@@ -60,6 +60,8 @@ paths:
     data_dir: "../data"
     # train/test/val split data file
     split_file: "../data/ttv_splits.csv"
+    # splits with embeddings
+    embedding_file: "../data/ttv_splits_with_embeddings.csv"
     # proteome files references in the split file
     proteomes_dir: "../data/proteomes_sampled"
     # ML models directory

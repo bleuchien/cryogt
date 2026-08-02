@@ -40,6 +40,7 @@ class ESMDoRAConfig:
 class PathsConfig:
     data_dir: str
     split_file: str
+    embedding_file: str
     proteomes_dir: str
     model_dir: str
     adapter_dir: str
