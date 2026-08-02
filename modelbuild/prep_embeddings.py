@@ -81,6 +81,8 @@ if not split_file.exists():
 logger.info(f'Reading splits file: {split_file}.')
 df = pd.read_csv(split_file)
 
+df = df.head(100)
+
 logger.info('Resolving record IDs to sequences.')
 # find all sequences resolving the IDs and updating the df with a "sequence" column
 df = prepare_split_data(df, 'all', config.paths.proteomes_dir, as_dataframe=True)
@@ -153,7 +155,7 @@ with torch.inference_mode():
         all_embeddings.append(pooled.cpu())
         # all_ogts.append(labels.float().cpu())
 
-embeddings = torch.cat(all_embeddings, dim=0)
+embeddings = torch.cat(all_embeddings, dim=0).tolist()
 # ogts_tensor = torch.cat(all_ogts, dim=0)
 
 # output file path and name
@@ -174,6 +176,6 @@ logger.info('Adding new embedding column.')
 df[config.model.name] = embeddings
 logger.info(f'Saving dataframe to {outfile}.')
 # save file
-df.to_csv(outfile)
+df.to_csv(outfile, index=False)
 
 logger.info('Done.')
