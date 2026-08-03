@@ -157,7 +157,7 @@ embeddings = torch.cat(all_embeddings, dim=0).tolist()
 # ogts_tensor = torch.cat(all_ogts, dim=0)
 
 # output file path and name
-outfile = config.paths.embedding_file
+outfile = Path(config.paths.embedding_file)
 
 # check if the file already exists
 if outfile.exists():
