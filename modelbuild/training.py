@@ -204,6 +204,7 @@ for adapter in range(start_adapter, stop_adapter):
         layer_norm=config.head.layer_norm,
         log_var_min=config.head.log_var_min,
         log_var_max=config.head.log_var_max,
+        mean_out_bias_init=mean_ogt,
         dora_r=config.esmdora.dora_r,
         dora_alpha=config.esmdora.dora_alpha,
         dora_dropout=config.esmdora.dora_dropout,
