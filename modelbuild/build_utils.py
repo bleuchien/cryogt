@@ -442,7 +442,7 @@ def prepare_split_data(
         split: Literal['train', 'test', 'val', 'all'],          # choice of split from the list
         proteomes_dir: Path,                                    # directory of the proteome files
         as_dataframe: bool = False                              # return as dataframe instaed of tuple of lists
-    ) -> Union[Tuple[List[str], List[float]] | pd.DataFrame]:   # returns a list of sequences and corresponding OGTs
+    ) -> Union[Tuple[List[str], List[float]], pd.DataFrame]:    # returns a list of sequences and corresponding OGTs
 
     # only access the required split
     if not split == 'all':
