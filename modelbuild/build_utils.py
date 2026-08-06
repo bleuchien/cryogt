@@ -84,7 +84,7 @@ class RegressionHead(nn.Module):
     def __init__(
         self,
         input_dim: int,                                                 # dimensionality of the input
-        hidden_dims: Union[List[int] | Tuple[int, ...]] = (512, 128),   # dimesions of the MLP layers
+        hidden_dims: Union[List[int], Tuple[int, ...]] = (512, 128),    # dimesions of the MLP layers
         dropout: float = 0.1,                                           # dropout value
         layer_norm: bool = True,                                        # should normalization be applied
         log_var_min: float = -10.0,                                     # log_var clamping min value
@@ -132,7 +132,7 @@ class RegressionHead(nn.Module):
         # initialize mean_out bias to approximate training set mean OGT
         nn.init.constant_(self.mean_out.bias, mean_out_bias_init)
 
-    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, x: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         # pass through the shared network
         shared_features = self.shared_net(x)
         
@@ -150,18 +150,18 @@ class RegressionHead(nn.Module):
 class ESMDoRA(nn.Module):
     def __init__(
         self,
-        esm_model_name: str,                                                        # ESM model name
-        head_hidden_dims: list[int] | tuple[int, ...] = (512, 128),                 # head MLP setup
-        head_dropout: float = 0.1,                                                  # head dropout
-        layer_norm: bool = True,                                                    # head should normalization be applied
-        log_var_min: float = -10.0,                                                 # head log_var clamping min value
-        log_var_max: float = 5.0,                                                   # head log_var clamping max value
-        mean_out_bias_init: float = 30.0,                                           # head mean_out bias initialization
-        dora_r: int = 16,                                                           # DoRA rank
-        dora_alpha: int = 32,                                                       # DoRA alpha value
-        dora_dropout: float = 0.05,                                                 # DoRA dropout
-        target_modules: list[str] | tuple[str, ...] = ('query', 'key', 'value'),    # base model fine-tune targets
-        gradient_checkpointing: bool = False,                                       # option to reduce GPU memory footprint
+        esm_model_name: str,                                                            # ESM model name
+        head_hidden_dims: Union[List[int], Tuple[int, ...]] = (512, 128),               # head MLP setup
+        head_dropout: float = 0.1,                                                      # head dropout
+        layer_norm: bool = True,                                                        # head should normalization be applied
+        log_var_min: float = -10.0,                                                     # head log_var clamping min value
+        log_var_max: float = 5.0,                                                       # head log_var clamping max value
+        mean_out_bias_init: float = 30.0,                                               # head mean_out bias initialization
+        dora_r: int = 16,                                                               # DoRA rank
+        dora_alpha: int = 32,                                                           # DoRA alpha value
+        dora_dropout: float = 0.05,                                                     # DoRA dropout
+        target_modules: Union[List[str], Tuple[str, ...]] = ('query', 'key', 'value'),  # base model fine-tune targets
+        gradient_checkpointing: bool = False,                                           # option to reduce GPU memory footprint
         ):
         super().__init__()
 
@@ -442,7 +442,7 @@ def prepare_split_data(
         split: Literal['train', 'test', 'val', 'all'],          # choice of split from the list
         proteomes_dir: Path,                                    # directory of the proteome files
         as_dataframe: bool = False                              # return as dataframe instaed of tuple of lists
-    ) -> Union[tuple[list[str], list[float]] | pd.DataFrame]:   # returns a list of sequences and corresponding OGTs
+    ) -> Union[Tuple[List[str], List[float]] | pd.DataFrame]:   # returns a list of sequences and corresponding OGTs
 
     # only access the required split
     if not split == 'all':
