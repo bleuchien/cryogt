@@ -1,4 +1,5 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from typing import List, Tuple, Union
 from pathlib import Path
 import yaml
 import logging
@@ -23,7 +24,7 @@ class TrainingConfig:
 
 @dataclass
 class RegressionHeadConfig:
-    hidden_layers: list[int] | tuple[int, ...]
+    hidden_layers: Union[List[int], Tuple[int, ...]]
     dropout: float
     layer_norm: bool
     log_var_min: float
@@ -34,7 +35,7 @@ class ESMDoRAConfig:
     dora_r: int
     dora_alpha: int
     dora_dropout: float
-    target_modules: list[str] | tuple[str, ...]
+    target_modules: Union[List[str], Tuple[str, ...]]
 
 @dataclass
 class PathsConfig:
