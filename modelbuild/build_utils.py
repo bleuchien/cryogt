@@ -2,7 +2,7 @@ import torch
 import math
 import pandas as pd
 import logging
-from typing import Union
+from typing import Union, List, Tuple
 from torch import nn
 from torch.utils.data import Dataset
 from torch.utils.tensorboard import SummaryWriter
@@ -84,7 +84,7 @@ class RegressionHead(nn.Module):
     def __init__(
         self,
         input_dim: int,                                                 # dimensionality of the input
-        hidden_dims: list[int] | tuple[int, ...] = (512, 128),          # dimesions of the MLP layers
+        hidden_dims: Union[List[int] | Tuple[int, ...]] = (512, 128),   # dimesions of the MLP layers
         dropout: float = 0.1,                                           # dropout value
         layer_norm: bool = True,                                        # should normalization be applied
         log_var_min: float = -10.0,                                     # log_var clamping min value
