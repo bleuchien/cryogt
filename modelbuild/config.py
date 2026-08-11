@@ -24,6 +24,7 @@ class TrainingConfig:
 
 @dataclass
 class RegressionHeadConfig:
+    name: str
     hidden_layers: Union[List[int], Tuple[int, ...]]
     dropout: float
     layer_norm: bool

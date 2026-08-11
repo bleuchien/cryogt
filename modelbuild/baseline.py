@@ -501,14 +501,15 @@ ogts = torch.cat(all_preds, dim=0).tolist()
 outfile = Path(config.paths.data_dir) / 'baseline.csv'
 
 # build a small dataframe of (member, prediction) using the current test order
+full_model_name = config.model.name + '_head_' + config.head.name
 test_df = df[df['split'] == 'test'].reset_index(drop=True)
-pred_df = pd.DataFrame({'member': test_df['member'], config.model.name: ogts})
+pred_df = pd.DataFrame({'member': test_df['member'], full_model_name: ogts})
 
 if outfile.exists():
-    logger.info(f'Output file already exists. Updating {config.model.name} column.')
+    logger.info(f'Output file already exists. Updating {full_model_name} column.')
     out_df = pd.read_csv(outfile)
     # drop the column if it already exists
-    out_df = out_df.drop(columns=config.model.name, errors='ignore')
+    out_df = out_df.drop(columns=full_model_name, errors='ignore')
 else:
     # pepare new dataframe
     column_list = ['member', 'ncbiTaxID_new', 'Temp_Duplicate_Average', 'bin_name']
@@ -518,7 +519,7 @@ else:
 out_df = out_df.merge(pred_df, on='member', how='left', validate='one_to_one')
 
 # sanity check for missing values
-n_missing = out_df[config.model.name].isna().sum()
+n_missing = out_df[full_model_name].isna().sum()
 if n_missing:
     logger.error(f'{n_missing} rows failed to align on "member" — check split file consistency!')
     sys.exit(1)

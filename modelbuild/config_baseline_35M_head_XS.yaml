@@ -32,6 +32,8 @@ training:
 
 # regression head configuration
 head:
+    # name
+    name: "XS"
     # MLP configuration
     hidden_layers: []
     # dropout value

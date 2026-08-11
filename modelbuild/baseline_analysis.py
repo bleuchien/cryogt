@@ -20,6 +20,7 @@ timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 # parse command line arguments
 parser = argparse.ArgumentParser(prog='CryOGT baseline calculation')
 parser.add_argument('-c', '--config', help='Configuration file.', default='config.yaml')
+parser.add_argument('-s', '--size', default=None, help='Head size parameter.')
 args = parser.parse_args()
 
 # sanity check for the config file
@@ -43,8 +44,11 @@ df = pd.read_csv(data_file)
 
 # get the model names from the dataframe
 models = [ c for c in df.columns if c.startswith('facebook/esm2') ]
-# build tuple of full model name and shortened model name (ie 150M)
-model_info = sorted([ (m, m.split('_')[2]) for m in models ], key=lambda x: int(x[1].rstrip('M')))
+# select a subset if given
+if not args.size is None:
+    models = [ c for c in models if c.endswith('head_' + str(args.size)) ]
+# build tuple of full model name and shortened model name (ie 150M) (facebook/esm2_t30_150M_UR50D_head_S)
+model_info = sorted([ (m, m.split('_')[2]) for m in models ], key=lambda x: int(x[1].removesuffix('M')))
 
 models = [m for m, label in model_info]
 model_labels = [label for m, label in model_info]

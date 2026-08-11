@@ -34,6 +34,8 @@ training:
 
 # regression head configuration
 head:
+    # name
+    name: "S"
     # MLP configuration
     hidden_layers: [128]
     # dropout value
