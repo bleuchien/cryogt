@@ -500,19 +500,28 @@ ogts = torch.cat(all_preds, dim=0).tolist()
 # output file path and name
 outfile = Path(config.paths.data_dir) / 'baseline.csv'
 
+# build a small dataframe of (member, prediction) using the current test order
+test_df = df[df['split'] == 'test'].reset_index(drop=True)
+pred_df = pd.DataFrame({'member': test_df['member'], config.model.name: ogts})
+
 if outfile.exists():
     logger.info(f'Output file already exists. Updating {config.model.name} column.')
-    df = pd.read_csv(outfile)
-    # drop the column with the current model name
-    df = df.drop(columns=config.model.name, errors='ignore')
+    out_df = pd.read_csv(outfile)
+    # drop the column if it already exists
+    out_df = out_df.drop(columns=config.model.name, errors='ignore')
 else:
-    # preparing new dataframe
-    # extract only the test set and selected columns
+    # pepare new dataframe
     column_list = ['member', 'ncbiTaxID_new', 'Temp_Duplicate_Average', 'bin_name']
-    df = df[df['split'] == 'test'][column_list]
+    out_df = test_df[column_list]
 
-logger.info(f'Adding baseline OGT prediction for model {config.model.name}.')
-df[config.model.name] = ogts
+# merge on 'member' in case the row order is different
+out_df = out_df.merge(pred_df, on='member', how='left', validate='one_to_one')
+
+# sanity check for missing values
+n_missing = out_df[config.model.name].isna().sum()
+if n_missing:
+    logger.error(f'{n_missing} rows failed to align on "member" — check split file consistency!')
+    sys.exit(1)
 
 logger.info(f'Saving dataframe to {outfile}.')
-df.to_csv(outfile, index=False)
+out_df.to_csv(outfile, index=False)
