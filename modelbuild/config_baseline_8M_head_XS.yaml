@@ -1,0 +1,72 @@
+# model build configuration
+
+# base model configuration
+model:
+    # HF FB-ESM models https://huggingface.co/facebook/esm2_t30_150M_UR50D
+    # even q0uicker tests
+    name: "facebook/esm2_t6_8M_UR50D"
+    # quick tests
+    #name: "facebook/esm2_t12_35M_UR50D"
+    # base model
+    # name: "facebook/esm2_t30_150M_UR50D"
+    # extended model
+    # name: "facebook/esm2_t33_650M_UR50D"
+
+# basic training configuration
+training:
+    # base RNG seed
+    base_seed: 1202
+    # number of adapters to train
+    adapters: 5
+    # number of epochs to train
+    epochs: 20
+    # batch size
+    batch_size: 32
+    # maximum aa sequence length
+    max_length: 1024
+    # learning rates
+    head_learning_rate: 0.001
+    adapter_learning_rate: 0.0001
+    # weight decay
+    weight_decay: 0.01
+    # early stopping patience
+    patience: 5
+
+# regression head configuration
+head:
+    # MLP configuration
+    hidden_layers: []
+    # dropout value
+    dropout: 0.1
+    # layer normaliztion
+    layer_norm: true
+    # log_var clamping min/max values
+    log_var_min: -10.0
+    log_var_max: 5.0
+
+# ESM DoRA model configuration
+esmdora:
+    # DoRA rank
+    dora_r: 16
+    # DoRA alpha value
+    dora_alpha: 32
+    # DoRA dropout
+    dora_dropout: 0.05
+    # fine-tune target modules
+    # target_modules: [ 'query', 'key', 'value' ]
+    target_modules: [ 'query', 'key', 'value', 'dense' ]
+
+# paths configuration
+paths:
+    # data directory base path
+    data_dir: "../data"
+    # train/test/val split data file
+    split_file: "../data/ttv_splits.csv"
+    # splits with embeddings
+    embedding_file: "../data/ttv_splits_with_embeddings.csv"
+    # proteome files references in the split file
+    proteomes_dir: "../data/proteomes_sampled"
+    # ML models directory
+    model_dir: "../data/models"
+    # DoRA adapter directory
+    adapter_dir: "../data/models/adapters"
