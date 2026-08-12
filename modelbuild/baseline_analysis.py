@@ -48,10 +48,10 @@ models = [ c for c in df.columns if c.startswith('facebook/esm2') ]
 if not args.size is None:
     models = [ c for c in models if c.endswith('head_' + str(args.size)) ]
 # build tuple of full model name and shortened model name (ie 150M) (facebook/esm2_t30_150M_UR50D_head_S)
-model_info = sorted([ (m, m.split('_')[2]) for m in models ], key=lambda x: int(x[1].removesuffix('M')))
+model_info = sorted([ (m, m.split('_')[2] + ' ' + m.split('_')[5], m.split('_')[2]) for m in models ], key=lambda x: int(x[2].removesuffix('M')))
 
-models = [m for m, label in model_info]
-model_labels = [label for m, label in model_info]
+models = [m for m, label, short in model_info]
+model_labels = [label for m, label, short in model_info]
 
 # convert OGT columns to a numeric type
 df[target_col] = pd.to_numeric(df[target_col], errors='coerce')
@@ -163,7 +163,8 @@ print(tests_df.to_string(index=False, float_format=lambda x: f'{x:.4g}'))
 sns.set_theme(style='whitegrid')
 
 # figure 1: Predicted vs True OGT (2x2 Grid)
-fig, axes = plt.subplots(2, 2, figsize=(16, 14))
+rows = int(len(models) / 2)
+fig, axes = plt.subplots(rows, 2, figsize=(16, 7 * rows))
 axes = axes.flatten()
 
 for i, (model, label) in enumerate(zip(models, model_labels)):
@@ -198,7 +199,7 @@ bin_order = [
     'thermophiles', 
     'hyperthermophiles'
 ]
-fig, axes = plt.subplots(2, 2, figsize=(16, 14))
+fig, axes = plt.subplots(rows, 2, figsize=(16, 7 * rows))
 axes = axes.flatten()
 
 for i, (model, label) in enumerate(zip(models, model_labels)):
@@ -226,7 +227,7 @@ plt.savefig(outfile, dpi=300, bbox_inches='tight')
 plt.close(fig)
 
 # figure 3: Metric Comparison Bar Charts (Psychrophiles vs Overall)
-fig, axes = plt.subplots(1, 4, figsize=(18, 6))
+fig, axes = plt.subplots(4, 1, figsize=(int(len(models)), 21))
 
 # melt dataframe for easier plotting
 melted_df = pd.melt(results_df, id_vars=['Model', 'Subset'], value_vars=['MAE', 'RMSE', 'R2', 'Pct_Within_10C'])
