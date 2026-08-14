@@ -1,5 +1,6 @@
 import sys
 import argparse
+import math
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -21,7 +22,12 @@ timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 parser = argparse.ArgumentParser(prog='CryOGT baseline calculation')
 parser.add_argument('-c', '--config', help='Configuration file.', default='config.yaml')
 parser.add_argument('-s', '--size', default=None, help='Head size parameter.')
+parser.add_argument('-p', '--prefix', default='baseline', help='Filename prefix.')
+parser.add_argument('-f', '--file', default='baseline.csv', help='File to read.')
 args = parser.parse_args()
+
+# filename prefix
+filename_prefix = f'{args.prefix}_{timestamp}'
 
 # sanity check for the config file
 config_path = Path(args.config)
@@ -33,7 +39,7 @@ if not config_path.exists():
 config = Config.from_yaml(config_path)
 
 # data file path
-data_file = Path(config.paths.data_dir) / 'baseline.csv'
+data_file = Path(config.paths.data_dir) / args.file
 
 if not data_file.exists():
     print(f'Baseline data file {data_file} not found.')
@@ -108,7 +114,7 @@ results_df = pd.DataFrame(results_list)
 # reorder columns for readability
 cols = ['Model', 'Subset', 'MAE', 'RMSE', 'Mean_Residual_Bias', 'Median_Residual', 'Median_Abs_Error', 'R2', 'Pct_Within_5C', 'Pct_Within_10C']
 results_df = results_df[cols]
-outfile = Path(config.paths.data_dir) / 'baseline_metrics_summary.csv'
+outfile = Path(config.paths.data_dir) / f'{filename_prefix}_metrics_summary.csv'
 results_df.to_csv(outfile, index=False)
 print(f'Metrics saved to {outfile}')
 print('Metrics Summary')
@@ -151,7 +157,7 @@ for model, label in zip(models, model_labels):
         })
 
 tests_df = pd.DataFrame(test_rows)
-outfile = Path(config.paths.data_dir) / 'baseline_psychro_vs_other_tests.csv'
+outfile = Path(config.paths.data_dir) / f'{filename_prefix}_psychro_vs_other_tests.csv'
 tests_df.to_csv(outfile, index=False)
 print(f'\nSignificance saved to {outfile}')
 print('Significance Summary')
@@ -163,7 +169,7 @@ print(tests_df.to_string(index=False, float_format=lambda x: f'{x:.4g}'))
 sns.set_theme(style='whitegrid')
 
 # figure 1: Predicted vs True OGT (2x2 Grid)
-rows = int(len(models) / 2)
+rows = math.ceil(len(models) / 2)
 fig, axes = plt.subplots(rows, 2, figsize=(16, 7 * rows))
 axes = axes.flatten()
 
@@ -184,7 +190,7 @@ for i, (model, label) in enumerate(zip(models, model_labels)):
         axes[i].get_legend().remove()
 
 plt.tight_layout()
-outfile = Path(config.paths.data_dir) / 'figure_1_baseline_scatter_grid.png'
+outfile = Path(config.paths.data_dir) / f'{filename_prefix}_figure_1_baseline_scatter_grid.png'
 plt.savefig(outfile, dpi=300, bbox_inches='tight')
 plt.close(fig)
 
@@ -222,12 +228,12 @@ for i, (model, label) in enumerate(zip(models, model_labels)):
     axes[i].tick_params(axis='x', rotation=45)
 
 plt.tight_layout()
-outfile = Path(config.paths.data_dir) / 'figure_2_baseline_bias_violin_grid.png'
+outfile = Path(config.paths.data_dir) / f'{filename_prefix}_figure_2_baseline_bias_violin_grid.png'
 plt.savefig(outfile, dpi=300, bbox_inches='tight')
 plt.close(fig)
 
 # figure 3: Metric Comparison Bar Charts (Psychrophiles vs Overall)
-fig, axes = plt.subplots(4, 1, figsize=(int(len(models)), 21))
+fig, axes = plt.subplots(4, 1, figsize=(max(16, int(len(models))), 21))
 
 # melt dataframe for easier plotting
 melted_df = pd.melt(results_df, id_vars=['Model', 'Subset'], value_vars=['MAE', 'RMSE', 'R2', 'Pct_Within_10C'])
@@ -255,6 +261,6 @@ axes[3].set_ylabel('Percentage (%)')
 axes[3].set_ylim(0, 100)
 
 plt.tight_layout()
-outfile = Path(config.paths.data_dir) / 'figure_3_baseline_metrics_barcharts.png'
+outfile = Path(config.paths.data_dir) / f'{filename_prefix}_figure_3_baseline_metrics_barcharts.png'
 plt.savefig(outfile, dpi=300)
 plt.close(fig)
