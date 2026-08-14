@@ -8,7 +8,7 @@ from torch.utils.data import Dataset
 from torch.utils.tensorboard import SummaryWriter
 from transformers import AutoModel, AutoTokenizer, DataCollatorWithPadding
 from huggingface_hub import snapshot_download
-from peft import LoraConfig, TaskType, get_peft_model
+from peft import LoraConfig, TaskType, PeftModel, get_peft_model
 from typing import Literal
 from pathlib import Path
 from tqdm.auto import tqdm
@@ -162,6 +162,9 @@ class ESMDoRA(nn.Module):
         dora_dropout: float = 0.05,                                                     # DoRA dropout
         target_modules: Union[List[str], Tuple[str, ...]] = ('query', 'key', 'value'),  # base model fine-tune targets
         gradient_checkpointing: bool = False,                                           # option to reduce GPU memory footprint
+        adapter_path: Union[str, Path, None] = None,                                    # path to the adapter to load
+        adapter_trainable: bool = True,                                                 # set the adapter to trainable or not
+        head_path: Union[str, Path, None] = None                                        # path to the head to load
         ):
         super().__init__()
 
@@ -174,19 +177,22 @@ class ESMDoRA(nn.Module):
             if hasattr(base, 'enable_input_require_grads'):
                 base.enable_input_require_grads()
 
-        # setup the DoRA fine-tuning configuration
-        peft_config = LoraConfig(
-            task_type=TaskType.FEATURE_EXTRACTION,
-            r=dora_r,
-            lora_alpha=dora_alpha,
-            lora_dropout=dora_dropout,
-            use_dora=True,
-            bias='none',
-            target_modules=list(target_modules),
-        )
+        if adapter_path is None:
+            # setup the DoRA fine-tuning configuration
+            peft_config = LoraConfig(
+                task_type=TaskType.FEATURE_EXTRACTION,
+                r=dora_r,
+                lora_alpha=dora_alpha,
+                lora_dropout=dora_dropout,
+                use_dora=True,
+                bias='none',
+                target_modules=list(target_modules),
+            )
 
-        # wrap the base model and DoRA configuration
-        self.esm = get_peft_model(base, peft_config)
+            # wrap the base model and DoRA configuration
+            self.esm = get_peft_model(base, peft_config)
+        else:
+            self.esm = PeftModel.from_pretrained(base, adapter_path, is_trainable=adapter_trainable)
 
         # get the output dimensionality of the base model
         input_dim = base.config.hidden_size
@@ -201,6 +207,10 @@ class ESMDoRA(nn.Module):
             log_var_max=log_var_max,
             mean_out_bias_init=mean_out_bias_init
         )
+
+        if head_path is not None:
+            checkpoint = torch.load(head_path, map_location='cpu')
+            self.head.load_state_dict(checkpoint)
 
     # mean pooling ovcer the amino acid residues only
     def pool_mean(self, last_hidden_state, residue_mask):

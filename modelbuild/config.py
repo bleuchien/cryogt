@@ -23,6 +23,12 @@ class TrainingConfig:
     patience: int
 
 @dataclass
+class TestingConfig:
+    name: str
+    adapters: List[str]
+    heads: List[str]
+
+@dataclass
 class RegressionHeadConfig:
     name: str
     hidden_layers: Union[List[int], Tuple[int, ...]]
@@ -51,6 +57,7 @@ class PathsConfig:
 class Config:
     model: ModelConfig = field(default_factory=ModelConfig)
     training: TrainingConfig = field(default_factory=TrainingConfig)
+    testing: TestingConfig = field(default_factory=TestingConfig)
     head: RegressionHeadConfig = field(default_factory=RegressionHeadConfig)
     esmdora: ESMDoRAConfig = field(default_factory=ESMDoRAConfig)
     paths: PathsConfig = field(default_factory=PathsConfig)
@@ -73,6 +80,7 @@ class Config:
         return cls(
             model=ModelConfig(**raw.get('model', {})),
             training=TrainingConfig(**raw.get('training', {})),
+            testing=TestingConfig(**raw.get('testing', {})),
             head=RegressionHeadConfig(**raw.get('head', {})),
             esmdora=ESMDoRAConfig(**raw.get('esmdora', {})),
             paths=PathsConfig(**raw.get('paths', {})),
