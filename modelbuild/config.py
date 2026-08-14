@@ -24,7 +24,6 @@ class TrainingConfig:
 
 @dataclass
 class TestingConfig:
-    name: str
     adapters: List[str]
     heads: List[str]
 
