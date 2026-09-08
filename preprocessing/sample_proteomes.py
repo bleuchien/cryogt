@@ -65,7 +65,7 @@ def write_samples(records, output_path):
 def scaled_sample_count(bin_name, total_samples=275000, organism_count=77):
     # bin scaling factors
     scaling_factors = {
-        'psychrophiles': 6,
+        'psychrophiles': 5,
         'mesophiles bin 1': 0.2,
         'mesophiles bin 2': 0.1,
         'mesophiles bin 3': 0.05,
