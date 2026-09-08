@@ -4,9 +4,9 @@
 model:
     # HF FB-ESM models https://huggingface.co/facebook/esm2_t30_150M_UR50D
     # quick tests
-    #name: "facebook/esm2_t12_35M_UR50D"
+    name: "facebook/esm2_t12_35M_UR50D"
     # base model
-    name: "facebook/esm2_t30_150M_UR50D"
+    # name: "facebook/esm2_t30_150M_UR50D"
     # extended model
     # name: "facebook/esm2_t33_650M_UR50D"
 
@@ -32,8 +32,8 @@ training:
 
 # testing configuration
 testing:
-    adapters: ["20260903_225219_adapter_1", "20260903_225219_adapter_2", "20260903_225219_adapter_3", "20260903_225418_adapter_4", "20260903_225438_adapter_5"]
-    heads: ["20260903_225219_adapter_1.pt", "20260903_225219_adapter_2.pt", "20260903_225219_adapter_3.pt", "20260903_225418_adapter_4.pt", "20260903_225438_adapter_5.pt"]
+    adapters: ["20260821_002859_adapter_1", "20260821_002859_adapter_2", "20260821_002859_adapter_3", "20260821_002859_adapter_4", "20260821_002859_adapter_5", "20260902_233500_adapter_1", "20260902_233500_adapter_2", "20260902_233715_adapter_3", "20260902_233802_adapter_4", "20260902_235239_adapter_5"]
+    heads: ["20260821_002859_adapter_1.pt", "20260821_002859_adapter_2.pt", "20260821_002859_adapter_3.pt", "20260821_002859_adapter_4.pt", "20260821_002859_adapter_5.pt", "20260902_233500_adapter_1.pt", "20260902_233500_adapter_2.pt", "20260902_233715_adapter_3.pt", "20260902_233802_adapter_4.pt", "20260902_235239_adapter_5.pt"]
 
 # regression head configuration
 head:
