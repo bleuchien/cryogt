@@ -70,8 +70,8 @@ def scaled_sample_count(bin_name, total_samples=275000, organism_count=77):
         'mesophiles bin 2': 0.1,
         'mesophiles bin 3': 0.05,
         'mesophiles bin 4': 0.05,
-        'thermophiles': 0.05,
-        'hyperthermophiles': 0.05
+        'thermophiles': 0.1,
+        'hyperthermophiles': 0.2
     }
 
     # get the sum of the scaling factors
