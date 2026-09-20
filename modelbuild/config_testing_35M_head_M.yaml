@@ -32,8 +32,8 @@ training:
 
 # testing configuration
 testing:
-    adapters: ["20260902_233500_adapter_1", "20260902_233500_adapter_2", "20260902_233715_adapter_3", "20260902_233802_adapter_4", "20260902_235239_adapter_5"]
-    heads: ["20260902_233500_adapter_1.pt", "20260902_233500_adapter_2.pt", "20260902_233715_adapter_3.pt", "20260902_233802_adapter_4.pt", "20260902_235239_adapter_5.pt"]
+    adapters: ["20260908_223339_adapter_1", "20260908_223413_adapter_2", "20260908_223532_adapter_3", "20260908_223605_adapter_4", "20260908_224004_adapter_5"]
+    heads: ["20260908_223339_adapter_1.pt", "20260908_223413_adapter_2.pt", "20260908_223532_adapter_3.pt", "20260908_223605_adapter_4.pt", "20260908_224004_adapter_5.pt"]
 
 # regression head configuration
 head:
