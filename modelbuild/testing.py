@@ -232,7 +232,7 @@ outfile = Path(config.paths.data_dir) / 'prediction.csv'
 
 # build a small dataframe of (member, prediction) using the current test order
 full_model_name = config.model.name + '_head_' + config.head.name
-test_df = df[df['split'] == 'test'].reset_index(drop=True)
+test_df = df[df['split'] == args.split].reset_index(drop=True)
 pred_df = pd.DataFrame({
     'member': test_df['member'], 
     full_model_name: ensemble_ogts.numpy(),
