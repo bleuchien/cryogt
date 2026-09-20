@@ -95,7 +95,7 @@ df = pd.read_csv(split_file)
 tokenizer = AutoTokenizer.from_pretrained(full_model_path)
 
 # prepare datasets
-logger.info('Preparing testing dataset.')
+logger.info(f'Preparing dataset using {args.split} split.')
 sequences, ogts = prepare_split_data(df, args.split, config.paths.proteomes_dir)
 # mean_ogt = statistics.mean(ogts)
 # logger.info(f'Testing set mean OGT: {mean_ogt:.1f}°C.')
