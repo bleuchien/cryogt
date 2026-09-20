@@ -30,10 +30,11 @@ training:
     # early stopping patience
     patience: 5
 
+
 # testing configuration
 testing:
-    adapters: ["20260807_010146_adapter_1", "20260807_010146_adapter_2", "20260807_010146_adapter_3", "20260807_010146_adapter_4", "20260807_010146_adapter_5"]
-    heads: ["20260807_010146_adapter_1.pt", "20260807_010146_adapter_2.pt", "20260807_010146_adapter_3.pt", "20260807_010146_adapter_4.pt", "20260807_010146_adapter_5.pt"]
+    adapters: ["20260821_225617_adapter_1", "20260821_232315_adapter_2", "20260821_232614_adapter_3", "20260822_003548_adapter_4", "20260822_003548_adapter_5"]
+    heads: ["20260821_225617_adapter_1.pt", "20260821_232315_adapter_2.pt", "20260821_232614_adapter_3.pt", "20260822_003548_adapter_4.pt", "20260822_003548_adapter_5.pt"]
 
 # regression head configuration
 head:
