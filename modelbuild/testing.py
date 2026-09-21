@@ -54,6 +54,7 @@ logger.addHandler(file_handler)
 # parse command line arguments
 parser = argparse.ArgumentParser(prog='CryOGT model training')
 parser.add_argument('-c', '--config', help='Configuration file.', default='config.yaml')
+parser.add_argument('-s', '--split', help='Which split to use.', choices=['test', 'train', 'val'], default='test')
 args = parser.parse_args()
 
 # sanity check for the config file
@@ -94,8 +95,8 @@ df = pd.read_csv(split_file)
 tokenizer = AutoTokenizer.from_pretrained(full_model_path)
 
 # prepare datasets
-logger.info('Preparing testing dataset.')
-sequences, ogts = prepare_split_data(df, 'test', config.paths.proteomes_dir)
+logger.info(f'Preparing dataset using {args.split} split.')
+sequences, ogts = prepare_split_data(df, args.split, config.paths.proteomes_dir)
 # mean_ogt = statistics.mean(ogts)
 # logger.info(f'Testing set mean OGT: {mean_ogt:.1f}°C.')
 test_dataset = PsychrophileDataset(
@@ -231,7 +232,7 @@ outfile = Path(config.paths.data_dir) / 'prediction.csv'
 
 # build a small dataframe of (member, prediction) using the current test order
 full_model_name = config.model.name + '_head_' + config.head.name
-test_df = df[df['split'] == 'test'].reset_index(drop=True)
+test_df = df[df['split'] == args.split].reset_index(drop=True)
 pred_df = pd.DataFrame({
     'member': test_df['member'], 
     full_model_name: ensemble_ogts.numpy(),
