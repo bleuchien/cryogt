@@ -1,0 +1,4 @@
+plan,split_file,val_predictions,test_predictions
+plan c,../data/ttv_splits_planc.csv,../data/prediction_planc_valsplit.csv,../data/prediction_planc.csv
+plan d,../data/ttv_splits_pland.csv,../data/prediction_pland_valsplit.csv,../data/prediction_pland.csv
+plan e,../data/ttv_splits_plane.csv,../data/prediction_plane_valsplit.csv,../data/prediction_plane.csv
