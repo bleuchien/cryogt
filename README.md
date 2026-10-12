@@ -32,3 +32,5 @@ source venv/bin/activate
 3. Test the configured models ```python testing.py -c config_something.yaml```.
 4. Generate the analysis and graphics ```python baseline_analysis.py -c config_something.yaml```.
 5. Prepare the calibration config and run ```python calibrate2.py --manifest ../data/calibration_manifest.csv --output-dir ../data/calibration2_psych099 --psych-weight 0.99``` to calibrate the system and analyze it.
+
+Different sequence selection strategies are different branches in git.
